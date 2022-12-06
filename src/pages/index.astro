@@ -1,0 +1,32 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ProductFace from "../components/ProductFace.astro";
+import Header from "../components/Header.astro";
+import Banner from "../components/Banner.astro";
+---
+
+<Layout title="Welcome to Astro.">
+  <main class="font-sans text-base leading-normal text-gray-800">
+    <div class="px-8">
+      <Header />
+    </div>
+    <div class="px-8">
+      <Banner />
+    </div>
+    <div class="px-8 relative">
+      <div
+        class="absolute bg-[#6556C5] inset-0 -z-10 mx-8 transform rotate-3 rounded-3xl"
+      >
+      </div>
+      <div
+        class="absolute bg-[#DF34BC] inset-0 -z-10 mx-8 transform -rotate-3 rounded-3xl"
+      >
+      </div>
+      <ProductFace class="z-10 block relative" />
+    </div>
+  </main>
+
+  <footer class="px-6 py-12 text-center">
+    © Content Genius. All rights reserved since 2022.
+  </footer>
+</Layout>
