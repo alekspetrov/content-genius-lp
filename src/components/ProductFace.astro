@@ -1,24 +1,31 @@
-<div class="bg-gray-200 rounded-3xl px-6 pb-4 font-medium text-lg z-0">
-  <div class="flex justify-between py-4 z-50">
+---
+import AIPointer from "./AIPointer.astro";
+---
+
+<div
+  class="dark:bg-neutral-900 bg-gray-200 rounded-3xl font-medium text-lg z-0"
+>
+  <div class="flex justify-between py-4 px-6">
     <div class="flex items-center space-x-4">
       <div class="space-y-2">
-        <div class="h-[3px] w-8 bg-black"></div>
-        <div class="h-[3px] w-8 bg-black"></div>
+        <div class="h-[3px] w-8 bg-neutral-200"></div>
+        <div class="h-[3px] w-8 bg-neutral-200"></div>
       </div>
       <div>
-        <span class="">10-seo-tips</span>
-        <span class="text-gray-400 font-normal">— saved</span>
+        <span class="text-neutral-500">10-seo-tips</span>
+        <span class="text-neutral-700 font-normal">— saved</span>
       </div>
     </div>
-    <div class="flex items-center gap-6">
-      <div>Setup</div>
-      <div class="border rounded-full border-gray-400 px-4 py-1">Publish</div>
+    <div class="flex items-center">
+      <div class="text-gray-200">Publish</div>
     </div>
   </div>
-  <div class="bg-gray-100 rounded-xl px-8 py-16">
-    <div class="mx-auto max-w-3xl">
-      <div class="font-bold text-3xl mb-8 text-gray-700">10 SEO Tips</div>
-      <div class="text-gray-600 space-y-8">
+  <div class="bg-neutral-800 rounded-xl px-8 py-16">
+    <div class="mx-auto max-w-2xl">
+      <div class="font-bold text-3xl mb-8 dark:text-gray-200 text-gray-700">
+        10 SEO Tips
+      </div>
+      <div class="dark:text-gray-400 font-normal text-gray-600 space-y-8">
         <p>Here is 10 SEO tips to make yor site better for Google.</p>
         <ol class="list-decimal list-inside space-y-4">
           <li>
@@ -67,19 +74,17 @@
           </li>
         </ol>
       </div>
+      <!-- Pannel -->
       <div
-        class="mt-12 bg-gray-200 rounded-full flex px-6 py-4 justify-between items-center"
+        class="relative mt-12 bg-neutral-700 rounded-full flex justify-between items-center"
       >
-        <div class="text-gray-500">Enter your input...</div>
-        <div class="relative">
-          <span class="flex h-4 w-4">
-            <span
-              class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#6556C5]"
-            ></span>
-            <span
-              class="inline-flex rounded-full m-auto h-3 w-3 bg-[#6556C5] opacity-75"
-            ></span>
-          </span>
+        <div
+          class="bg-transparent focus:outline-none min-w-full rounded-full px-6 py-4"
+        >
+          <div class="text-neutral-200 font-normal">Write me 10 SEO tips</div>
+        </div>
+        <div class="absolute right-6">
+          <AIPointer />
         </div>
       </div>
     </div>
