@@ -1,4 +1,8 @@
-<!DOCTYPE html>
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+---
+
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -8,6 +12,8 @@
     <title>Content Genius</title>
   </head>
   <body class="dark:bg-[#0B0F19] text-gray-200">
+    <Header />
     <slot />
+    <Footer />
   </body>
 </html>
