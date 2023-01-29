@@ -1,5 +1,6 @@
 ---
 import "../assets/index.pcss";
+import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 ---
 
@@ -15,10 +16,9 @@ import Header from "../components/Header.astro";
     />
     <title>Content Genius</title>
   </head>
-  <body
-    class="bg-graphite-900 text-white font-sans px-6 xl:px-12 max-w-[1512px] mx-auto"
-  >
+  <body class="bg-graphite-900 text-white font-sans">
     <Header />
     <slot />
+    <Footer />
   </body>
 </html>
