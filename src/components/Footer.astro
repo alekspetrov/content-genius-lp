@@ -3,27 +3,33 @@ import Logo from "./Logo.astro";
 ---
 
 <footer class="bg-[#030203] rounded-t-3xl px-[80px]">
-  <div class="px-6 xl:px-12 max-w-[1512px] mx-auto mt-20 py-12">
+  <div class="px-6 xl:px-12 max-w-[1512px] mx-auto mt-20 py-20">
     <div class="flex justify-between mb-6 pb-6 border-b border-graphite-600">
-      <Logo />
+      <a href="/">
+        <Logo />
+      </a>
       <nav class="flex gap-6 text-sm">
         <a
-          href="#"
+          href="/privacy-policy"
           class="hover:underline decoration-2 decoration-brand-pink transition underline-offset-2"
           >Privacy policy</a
         >
-        <a href="#">Terms of service</a>
+        <a
+          href="/terms-of-service"
+          class="hover:underline decoration-2 decoration-brand-pink transition underline-offset-2"
+          >Terms of service</a
+        >
       </nav>
     </div>
     <div class="flex justify-between">
       <p class="text-sm text-graphite-400">
         © 2023 Content Genius by Neural Net Technologies. All right reserved.
       </p>
-      <div class="flex gap-4">
-        <a href="#">
+      <div class="flex gap-5">
+        <a href="mailto:hello@alekspetrov.com?subject=contentgenius">
           <img src="/email-icon.svg" alt="Email" />
         </a>
-        <a href="">
+        <a href="https://twitter.com/contentgeniusio">
           <img src="/twitter-icon.svg" alt="Twitter" />
         </a>
       </div>
