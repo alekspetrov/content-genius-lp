@@ -10,7 +10,9 @@ import BaseHead from "../components/BaseHead.astro";
   </head>
   <body class="bg-graphite-900 text-white font-sans">
     <Header />
-    <slot />
+    <div class="wrapper text-content">
+      <slot />
+    </div>
     <Footer />
   </body>
 </html>
