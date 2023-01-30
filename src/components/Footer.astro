@@ -2,9 +2,13 @@
 import Logo from "./Logo.astro";
 ---
 
-<footer class="bg-[#030203] rounded-t-3xl px-[80px]">
-  <div class="px-6 xl:px-12 max-w-[1512px] mx-auto mt-20 py-20">
-    <div class="flex justify-between mb-6 pb-6 border-b border-graphite-600">
+<footer class="bg-[#030203] rounded-t-3xl lg:px-[80px]">
+  <div
+    class="px-4 md:px-6 xl:px-12 max-w-[1512px] mx-auto mt-20 py-6 md:py-10 lg:py-20"
+  >
+    <div
+      class="flex items-center justify-between mb-6 pb-6 border-b border-graphite-600"
+    >
       <a href="/">
         <Logo />
       </a>
@@ -21,11 +25,12 @@ import Logo from "./Logo.astro";
         >
       </nav>
     </div>
-    <div class="flex justify-between">
-      <p class="text-sm text-graphite-400">
-        © 2023 Content Genius by Neural Net Technologies. All right reserved.
+    <div class="md:flex justify-between">
+      <p class="text-center md:text-left text-sm text-graphite-400">
+        © 2023 Content Genius by Neural Net Technologies.
+        All&nbsp;right&nbsp;reserved.
       </p>
-      <div class="flex gap-5">
+      <div class="mt-4 md:mt-0 flex gap-5 justify-center md:justify-start">
         <a href="mailto:hello@alekspetrov.com?subject=contentgenius">
           <img src="/email-icon.svg" alt="Email" />
         </a>
