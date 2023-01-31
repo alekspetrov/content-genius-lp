@@ -31,6 +31,10 @@ const supabase = createClient(SUPABASE_PUBLIC_URL, SUPABASE_PUBLIC_KEY);
 async function onSubmit(e: Event) {
   e.preventDefault();
 
+  if (!emailInputElement.value) {
+    return false;
+  }
+
   const { error, status } = await supabase.from("subscribers").insert([
     {
       email: emailInputElement.value,
