@@ -130,7 +130,7 @@ function Tab(props) {
           </div>
           <div class="font-medium">{props.name}</div>
         </div>
-        <div class="text-sm text-gray-400">{props.text}</div>
+        <div class="text-sm text-gray-400 hidden md:block">{props.text}</div>
       </div>
     </button>
   );
@@ -138,7 +138,7 @@ function Tab(props) {
 
 function Tabs() {
   return (
-    <div class="flex gap-2">
+    <div class="flex flex-col md:flex-row gap-1 md:gap-2">
       <Tab
         name="Full Stack Developer"
         index={1}
@@ -160,8 +160,8 @@ function Tabs() {
 
 function PromptForm({ data }) {
   return (
-    <div class=" pt-8 rounded-md border border-gray-500 bg-gray-700 ">
-      <div class="px-8">
+    <div class="pt-4 md:pt-8 rounded-md border border-gray-500 bg-gray-700">
+      <div class="px-4 md:px-8">
         <div class="flex gap-2 items-center mb-6">
           <div class="text-red-600 ">
             <RobotIcon />
@@ -183,16 +183,18 @@ function PromptForm({ data }) {
       </div>
 
       <div class="border-t border-gray-500 py-4">
-        <div class="px-8 flex justify-between">
-          <div class="flex items-center gap-2 text-sm text-gray-450">
-            <InfoIcon />
+        <div class="px-4 md:px-8 flex justify-between">
+          <div class="hidden md:flex items-center gap-2 text-sm text-gray-450">
+            <div>
+              <InfoIcon />
+            </div>
             <div>Learn how to prompt</div>
           </div>
-          <div class="flex gap-2 text-sm">
-            <div class="px-3 py-2 rounded-md border border-gray-500">
+          <div class="text-center flex w-full md:w-auto gap-2 text-sm">
+            <div class="flex-1 md:flex-none px-3 py-2 rounded-md border border-gray-500">
               Cancel
             </div>
-            <div class="px-3 py-2 rounded-md bg-indigo-500 text-white">
+            <div class="flex-1 md:flex-none px-3 py-2 rounded-md bg-indigo-500 text-white">
               Create assistant
             </div>
           </div>
@@ -204,7 +206,7 @@ function PromptForm({ data }) {
 
 export default function SystemPromptForm() {
   return (
-    <div class="space-y-2">
+    <div class="space-y-1 md:space-y-2">
       <Tabs />
       <Switch>
         <For each={TABS_DATA}>
