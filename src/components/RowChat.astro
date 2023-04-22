@@ -1,0 +1,44 @@
+---
+import SystemPromptForm from "./SystemPromptForm";
+---
+
+<section>
+  <div class="py-20 bg-gray-900">
+    <div class="container text-center">
+      <div class="font-medium text-xl lg:text-3xl text-pink-500 mb-10">
+        GPT Chat
+      </div>
+      <h2 class="mb-4 font-bold text-5xl lg:text-6xl text-white">
+        Meet your team of assistants
+      </h2>
+      <p class="lg:text-lg">
+        Get started with over 100 perfectly shaped AI assistants
+        and&nbsp;prompts.
+      </p>
+    </div>
+    <div class="relative my-20">
+      <img src="./chat-composition.png" alt="Content Genous GPT Chat" />
+      <div class="absolute w-full bottom-[24px] lg:bottom-[64px] text-center">
+        <a
+          href="/"
+          class="bg-gray-800 hover:bg-gray-700 border border-gray-600 bg-gray- 700 hover:border-gray-500 transition-colors px-6 lg:px-8 py-1 lg:py-2 rounded-full lg:text-lg text-white"
+          >Learn more -></a
+        >
+      </div>
+    </div>
+    <div class="container text-center">
+      <h2 class="mb-4 font-semibold text-3xl lg:text-5xl text-white">
+        Personalize your experience
+      </h2>
+      <p class="lg:text-lg">
+        Create you own assistant or tune up existing one for your personal needs
+        in seconds.
+      </p>
+    </div>
+    <div class="container mt-10">
+      <div class="max-w-[976px] mx-auto">
+        <SystemPromptForm client:load />
+      </div>
+    </div>
+  </div>
+</section>

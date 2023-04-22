@@ -5,15 +5,13 @@ import image from "@astrojs/image";
 import mdx from "@astrojs/mdx";
 
 // https://astro.build/config
+import solidJs from "@astrojs/solid-js";
+
+// https://astro.build/config
 export default defineConfig({
-  integrations: [
-    tailwind({
-      config: {
-        applyBaseStyles: false,
-      },
-    }),
-    sitemap(),
-    image(),
-    mdx(),
-  ],
+  integrations: [tailwind({
+    config: {
+      applyBaseStyles: false
+    }
+  }), sitemap(), image(), mdx(), solidJs()]
 });

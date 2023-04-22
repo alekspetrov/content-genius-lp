@@ -6,21 +6,32 @@ module.exports = {
       fontFamily: {
         sans: ["Inter", "sans-serif"],
       },
+      fontSize: {
+        // lg: ["1.5rem", "2rem"],
+        "7xl": ["5rem", "100%"],
+      },
       colors: {
-        graphite: {
+        white: "#ffffff",
+        black: "#000000",
+        gray: {
           900: "#090809",
           800: "#121212",
           700: "#181818",
           600: "#1F1F1F",
           500: "#2f2f2f",
+          450: "#757575",
           400: "#A0A0A0",
           300: "#BDBDBD",
           200: "#D9D9D9",
           100: "#F8F8F8",
         },
-        brand: {
-          indigo: "#7C00AC",
-          pink: "#D7009B",
+        pink: {
+          500: "#D7009B",
+        },
+        indigo: {
+          500: "#7C00AC",
+        },
+        state: {
           success: "#00D796",
           warning: "#F5A623",
           alert: "#D74D00",
@@ -33,6 +44,12 @@ module.exports = {
       backgroundSize: {
         "50%": "50% 50%",
       },
+    },
+    container: {
+      padding: {
+        DEFAULT: "0.25rem",
+      },
+      center: true,
     },
   },
   plugins: [],

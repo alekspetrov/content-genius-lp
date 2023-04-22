@@ -2,17 +2,21 @@
 import Logo from "./Logo.astro";
 ---
 
-<header
-  class="flex items-center justify-between py-4 px-4 md:px-6 xl:px-12 max-w-[1512px] mx-auto"
->
-  <a href="/">
-    <Logo />
-  </a>
-  <div>
-    <a
-      href="https://twitter.com/contentgeniusio"
-      class="underline decoration-brand-pink decoration-2 decoration underline-offset-4"
-      >Follow on Twitter</a
-    >
+<header>
+  <div class="container flex items-center justify-between py-6 text-white">
+    <a href="/">
+      <!-- <Logo /> -->
+      <span class="font-semibold text-lg tracking-tight">Content Genius</span>
+    </a>
+    <div class="space-x-8 font-medium">
+      <a href="/product">Product</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/blog">Blog</a>
+      <a href="/Roadmap">Roadmap</a>
+    </div>
+    <div class="space-x-4 font-medium">
+      <a href="/">Log in</a>
+      <a href="/" class="bg-gray-900 text-white px-4 py-2 rounded">Sign up</a>
+    </div>
   </div>
 </header>
