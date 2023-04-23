@@ -4,40 +4,43 @@ import SystemPromptForm from "./SystemPromptForm";
 
 <section>
   <div class="py-20 bg-gray-900">
-    <div class="container text-center">
+    <div class="container text-center mb-24">
       <div class="font-medium text-xl lg:text-3xl text-pink-500 mb-10">
         GPT Chat
       </div>
       <h2 class="mb-4 font-bold text-5xl lg:text-6xl text-white">
-        Meet your team of assistants
+        100+ Assistants and Prompts
       </h2>
-      <p class="lg:text-lg">
-        Get started with over 100 perfectly shaped AI assistants
-        and&nbsp;prompts.
+      <p class="lg:text-lg mb-24 max-w-[760px] mx-auto">
+        Meet you team of perfectly shaped AI assistants. Don't loose the context
+        of conversations anymore.
       </p>
-    </div>
-    <div class="relative my-20">
-      <img src="./chat-composition.png" alt="Content Genous GPT Chat" />
-      <div class="absolute w-full bottom-[24px] lg:bottom-[64px] text-center">
-        <a
-          href="/"
-          class="bg-gray-800 hover:bg-gray-700 border border-gray-600 bg-gray- 700 hover:border-gray-500 transition-colors px-6 lg:px-8 py-1 lg:py-2 rounded-full lg:text-lg text-white"
-          >Learn more -></a
-        >
+      <div class="relative max-w-[1280px] px-8 md:px-16 mx-auto">
+        <img
+          src="./chat-composition_1.png"
+          alt="Content Genius chat screenshot"
+        />
+        <img
+          class="hidden lg:block w-48 absolute top-12 right-6 shadow-xl"
+          src="./chat-composition_3.png"
+          alt="Content Genius menu screenshot"
+        />
       </div>
     </div>
     <div class="container text-center">
       <h2 class="mb-4 font-semibold text-3xl lg:text-5xl text-white">
         Personalize your experience
       </h2>
-      <p class="lg:text-lg">
-        Create you own assistant or tune up existing one for your personal needs
-        in seconds.
+      <p class="lg:text-lg max-w-[760px] mx-auto">
+        Create your assistants or tune-up existing for your personal needs
+        in&nbsp;seconds with a&npbs;simple form.
       </p>
     </div>
-    <div class="container mt-10">
-      <div class="max-w-[976px] mx-auto">
-        <SystemPromptForm client:load />
+    <div class="mt-16">
+      <div class="container mt-10">
+        <div class="max-w-[976px] mx-auto px-8">
+          <SystemPromptForm client:load />
+        </div>
       </div>
     </div>
   </div>

@@ -195,7 +195,7 @@ function PromptForm({ data }) {
               Cancel
             </div>
             <div class="flex-1 md:flex-none px-3 py-2 rounded-md bg-indigo-500 text-white">
-              Create assistant
+              Save assistant
             </div>
           </div>
         </div>
@@ -207,7 +207,6 @@ function PromptForm({ data }) {
 export default function SystemPromptForm() {
   return (
     <div class="space-y-1 md:space-y-2">
-      <Tabs />
       <Switch>
         <For each={TABS_DATA}>
           {(tab) => (
@@ -217,6 +216,7 @@ export default function SystemPromptForm() {
           )}
         </For>
       </Switch>
+      <Tabs />
     </div>
   );
 }
