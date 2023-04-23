@@ -1,5 +1,82 @@
-<section role="banner">
-  <div class="container px-4 py-36 rounded-b-3xl">
-    <div class="content"></div>
+---
+import NotesTabs from "./NotesTabs.jsx";
+---
+
+<section class="py-20 bg-gray-150 text-gray-450">
+  <div class="container text-center mb-20">
+    <div class="font-medium text-xl lg:text-3xl text-pink-500 mb-10">Notes</div>
+    <h2
+      class="mb-4 font-bold text-5xl lg:text-6xl text-gray-900 tracking-tight"
+    >
+      Keep ideas with notes
+    </h2>
+    <p class="text-lg lg:text-xl mb-24 max-w-[760px] mx-auto">
+      Save valuable insights from the chat to your notes for future reference
+      and publishing.
+    </p>
+  </div>
+
+  <div class="container mt-10">
+    <div class="max-w-[960px] mx-auto px-8">
+      <NotesTabs client:load />
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="text-center">
+      <h3 class="mb-4 font-semibold text-3xl lg:text-5xl text-gray-900">
+        Maximize your productivity
+      </h3>
+      <p class="lg:text-lg max-w-[760px] mx-auto">AI-Powered Note Options</p>
+    </div>
+    <div>
+      <div>
+        <div>I</div>
+        <div>
+          <h4>Rephrase.</h4>Reframe your ideas in new and creative ways with our
+          AI-powered rephrasing tool.
+        </div>
+      </div>
+
+      <div>
+        <div>I</div>
+        <div>
+          <h4>Change tone.</h4>Instantly adjust the tone of your notes to match
+          your brand voice or target audience.
+        </div>
+      </div>
+
+      <div>
+        <div>I</div>
+        <div>
+          <h4>Translate.</h4>Break down language barriers and communicate with a
+          global audience with our translation feature.
+        </div>
+      </div>
+
+      <div>
+        <div>I</div>
+        <div>
+          <h4>Correct.</h4>Ensure your notes are error-free with our AI-powered
+          correction tool.
+        </div>
+      </div>
+
+      <div>
+        <div>I</div>
+        <div>
+          <h4>Summarization.</h4>Use AI to create brief summaries of your notes,
+          making it easier to recall important information.
+        </div>
+      </div>
+
+      <div>
+        <div>I</div>
+        <div>
+          <h4>Suggestions.</h4>Let AI to suggest content ideas based on your
+          notes and other relevant information.
+        </div>
+      </div>
+    </div>
   </div>
 </section>
