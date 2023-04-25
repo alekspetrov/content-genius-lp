@@ -1,0 +1,27 @@
+---
+import FaqList from "./FaqList";
+---
+
+<section class="py-20 bg-gray-800 text-gray-300">
+  <div class="container text-center mb-20">
+    <h2 class="mb-4 font-bold text-5xl lg:text-6xl text-white tracking-tight">
+      Frequently Questions
+    </h2>
+    <p class="text-lg lg:text-xl max-w-[760px] mx-auto">
+      You have questions, hope this will help you, or contact us.
+    </p>
+    <div class="py-20 max-w-[760px] mx-auto">
+      <FaqList client:load />
+    </div>
+    <div class="space-y-6">
+      <p>If you have any questions, contact us through the feedback form</p>
+      <div>
+        <a
+          href="mailto:support@contentgenius.io"
+          class="px-8 py-2 rounded-full transition border border-gray-600 bg-gray-700 text-gray-400 hover:text-bg-gray-600 hover:border-gray-500 hover:text-gray-300"
+          >Contact us</a
+        >
+      </div>
+    </div>
+  </div>
+</section>

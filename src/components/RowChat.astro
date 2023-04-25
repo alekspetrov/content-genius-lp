@@ -4,42 +4,90 @@ import SystemPromptForm from "./SystemPromptForm";
 
 <section>
   <div class="py-20 bg-gray-900">
-    <div class="container text-center mb-24">
-      <div class="font-medium text-xl lg:text-3xl text-pink-500 mb-10">
+    <div class="container mb-32">
+      <div class="font-semibold text-xl lg:text-2xl text-pink-500 mb-8">
         GPT Chat
       </div>
       <h2 class="mb-4 font-bold text-5xl lg:text-6xl text-white">
-        100+ Assistants and Prompts
+        Meet your AI team
       </h2>
-      <p class="text-lg lg:text-xl mb-24 max-w-[760px] mx-auto">
-        Meet you team of perfectly shaped AI assistants. Don't loose the context
-        of conversations anymore.
+      <p class="text-xl lg:text-2xl mb-12 max-w-3xl">
+        Chat with robots made for humans. Stay inspired and productive, access
+        you history across your devices.
       </p>
-      <div class="relative max-w-[1280px] px-8 md:px-16 mx-auto">
-        <img
-          src="./chat-composition_1.png"
-          alt="Content Genius chat screenshot"
-        />
-        <img
-          class="hidden lg:block w-48 absolute top-12 right-6 shadow-xl"
-          src="./chat-composition_3.png"
-          alt="Content Genius menu screenshot"
-        />
+      <div class="xl:flex gap-20">
+        <div class="xl:w-4/5 shadow-xl rounded-md overflow-hidden">
+          <img
+            src="./chat-composition_1.png"
+            alt="Content Genius chat screenshot"
+          />
+        </div>
+        <div
+          class="xl:w-1/5 flex flex-col gap-8 md:gap-12 md:flex-row xl:flex-col py-8 md:py-12"
+        >
+          <section>
+            <h4 class="mb-2 font-semibold text-indigo-400 text-xl">
+              Contex-aware
+            </h4>
+            <p>
+              AI Chat Assistants are designed to maintain the context of your
+              conversations.
+            </p>
+          </section>
+          <section>
+            <h4 class="mb-2 font-semibold text-indigo-400 text-xl">
+              Anywhere access
+            </h4>
+            <p>
+              Create content on-the-go with web based application. Optimized for
+              mobiles.
+            </p>
+          </section>
+          <section>
+            <h4 class="mb-2 font-semibold text-indigo-400 text-xl">
+              Fast and Secure
+            </h4>
+            <p>
+              that keeps your content and data secure, protected by the latest
+              encryption technology.
+            </p>
+          </section>
+        </div>
       </div>
     </div>
     <div class="container text-center">
       <h3 class="mb-4 font-semibold text-3xl lg:text-5xl text-white">
         Personalize your experience
       </h3>
-      <p class="lg:text-lg max-w-[760px] mx-auto">
+      <p class="lg:text-lg max-w-6xl mx-auto">
         Create your assistants or tune-up existing for your personal needs
-        in&nbsp;seconds with a&nbsp;simple form.
+        in&nbsp;seconds.
       </p>
     </div>
-    <div class="mt-16">
-      <div class="container mt-10">
-        <div class="max-w-[976px] mx-auto px-8">
+    <div class="border border-transparent pt-12 pb-20">
+      <div class="container">
+        <div class="max-w-4xl mx-auto px-8">
           <SystemPromptForm client:load />
+          <div class="flex py-12">
+            <div class="flex-1 text-center">
+              <div class="font-semibold text-6xl mb-2 text-pink-600">120+</div>
+              <div class="text-lg leading-tight font-medium">
+                Assistatns created<br />to inspire you
+              </div>
+            </div>
+            <div class="flex-1 text-center">
+              <div class="font-semibold text-6xl mb-2 text-pink-600">560+</div>
+              <div class="text-lg leading-tight font-medium">
+                Prompts to help you<br />get the most for GPT
+              </div>
+            </div>
+            <div class="flex-1 text-center">
+              <div class="font-semibold text-6xl mb-2 text-pink-600">∞</div>
+              <div class="text-lg leading-tight font-medium">
+                Unlimited usecases
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

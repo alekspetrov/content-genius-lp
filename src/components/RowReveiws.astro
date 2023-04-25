@@ -1,0 +1,91 @@
+---
+const REVIEWS = [
+  {
+    id: 1,
+    content:
+      "I love to use Content Genius it empowers my creativity and helps with daily routine of building rockets.",
+    author: {
+      name: "Elon Mask",
+      avatar_url: "",
+      role: "SEO, SpaceX and Tesla",
+    },
+  },
+  {
+    id: 2,
+    content: "1",
+    author: {
+      name: "Elon Mask",
+      avatar_url: "",
+      role: "SEO, SpaceX and Tesla",
+    },
+  },
+  {
+    id: 3,
+    content: "1",
+    author: {
+      name: "Elon Mask",
+      avatar_url: "",
+      role: "SEO, SpaceX and Tesla",
+    },
+  },
+  {
+    id: 1,
+    content:
+      "I love to use Content Genius it empowers my creativity and helps with daily routine of building rockets.",
+    author: {
+      name: "Elon Mask",
+      avatar_url: "",
+      role: "SEO, SpaceX and Tesla",
+    },
+  },
+  {
+    id: 2,
+    content: "1",
+    author: {
+      name: "Elon Mask",
+      avatar_url: "",
+      role: "SEO, SpaceX and Tesla",
+    },
+  },
+  {
+    id: 3,
+    content: "1",
+    author: {
+      name: "Elon Mask",
+      avatar_url: "",
+      role: "SEO, SpaceX and Tesla",
+    },
+  },
+];
+---
+
+<div class="py-10 md:py-20 bg-gray-900">
+  <div class="container text-center">
+    <h2 class="mb-4 font-bold text-5xl lg:text-6xl text-white">
+      Hear from others
+    </h2>
+    <p class="text-lg lg:text-xl mb-24 max-w-[760px] mx-auto">
+      Content Genius helps people to get the success with content creation and
+      we are proud to empower them.
+    </p>
+  </div>
+  <div class="container grid md:grid-cols-3 gap-4">
+    {
+      REVIEWS.map((review) => (
+        <div class="bg-gray-600 rounded-md p-6 text-sm space-y-6 flex flex-col">
+          <div class="flex items-start gap-3 text-white flex-1">
+            <img src="./quote-icon.svg" />
+            <div>{review.content}</div>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="h-10 w-10 bg-gray-800 rounded-full" />
+            <div>
+              <div class="text-white">{review.author.name}</div>
+              <div class="">{review.author.role}</div>
+            </div>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</div>

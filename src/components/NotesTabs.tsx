@@ -6,17 +6,26 @@ const TABS_DATA = [
   {
     id: 1,
     title: "Devs",
-    content: "1",
+    image: {
+      src: "notes-composition_1.png",
+      alt: "AI Notes",
+    },
   },
   {
     id: 2,
     title: "Market",
-    content: "2",
+    image: {
+      src: "notes-composition_2.png",
+      alt: "AI Notes",
+    },
   },
   {
     id: 3,
     title: "Copy",
-    content: "3",
+    image: {
+      src: "notes-composition_3.png",
+      alt: "AI Notes",
+    },
   },
 ];
 
@@ -92,15 +101,12 @@ function Tab({ index, title }) {
   return (
     <button
       onClick={[setCurrentTabIndex, index]}
-      class="text-left rounded-md bg-gray-800 focus:bg-gray-700 border border-gray-600 text-white focus:outline-none focus:border-gray-500"
-      classList={{
-        "border-gray-500 bg-gray-700": isCurrent(),
-      }}
+      class={`flex-1 text-left rounded-md transition focus:bg-white focus:outline-none hover:bg-white ${
+        isCurrent() ? "bg-white" : "bg-gray-100"
+      }`}
     >
       <div class="flex-1 p-4">
-        <div class="flex items-center gap-2">
-          <div class="font-medium">{title}</div>
-        </div>
+        <div class="font-medium text-center">{title}</div>
       </div>
     </button>
   );
@@ -108,7 +114,7 @@ function Tab({ index, title }) {
 
 function Tabs(props) {
   return (
-    <div class="flex flex-col md:flex-row gap-1 md:gap-2">
+    <div class="flex flex-col w-full md:flex-row gap-1 md:gap-2">
       <For each={props.tabs}>
         {(tab) => <Tab index={tab.id} title={tab.title} />}
       </For>
@@ -116,27 +122,21 @@ function Tabs(props) {
   );
 }
 
-function TabContent(props) {
+function NotesTabs({ TabComponent }) {
   return (
-    <div class="pt-4 md:pt-8 rounded-md border border-gray-500 bg-gray-700">
-      {props.tab.id}
+    <div class="space-y-1 md:space-y-2">
+      <Tabs tabs={TABS_DATA} />
+      <For each={TABS_DATA}>
+        {(tab) => (
+          <img
+            classList={{ hidden: currentTabIndex() !== tab.id }}
+            src={`./${tab.image.src}`}
+            alt={tab.image.alt}
+          />
+        )}
+      </For>
     </div>
   );
 }
 
-export default function NotesTabs() {
-  return (
-    <div class="space-y-1 md:space-y-2">
-      <Tabs tabs={TABS_DATA} />
-      <Switch>
-        <For each={TABS_DATA}>
-          {(tab) => (
-            <Match when={currentTabIndex() === tab.id}>
-              <TabContent tab={tab} />
-            </Match>
-          )}
-        </For>
-      </Switch>
-    </div>
-  );
-}
+export default NotesTabs;

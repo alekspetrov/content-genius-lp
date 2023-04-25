@@ -108,29 +108,30 @@ const InfoIcon = () => (
   </svg>
 );
 
-function Tab(props) {
-  const [isCurrent, setIsCurrent] = createSignal();
+function Tab({ index, name, text }) {
+  const [isCurrent, setIsCurrent] = createSignal(false);
 
   createEffect(() => {
-    setIsCurrent(props.index === currentTabIndex());
+    setIsCurrent(index === currentTabIndex());
   });
 
   return (
     <button
-      onClick={[setCurrentTabIndex, props.index]}
-      class="text-left rounded-md bg-gray-800 focus:bg-gray-700 border border-gray-600 text-white focus:outline-none focus:border-gray-500"
-      classList={{
-        "border-gray-500 bg-gray-700": isCurrent(),
-      }}
+      onClick={[setCurrentTabIndex, index]}
+      class={`flex-1 text-left rounded-md  focus:bg-gray-700 border  text-white focus:outline-none focus:border-gray-500 ${
+        isCurrent()
+          ? "border-gray-500 bg-gray-700"
+          : "bg-gray-800 border-gray-600"
+      }`}
     >
       <div class="flex-1 p-4">
         <div class="flex items-center gap-2">
           <div class="text-indigo-500">
             <RobotIcon />
           </div>
-          <div class="font-medium">{props.name}</div>
+          <div class="font-medium">{name}</div>
         </div>
-        <div class="text-sm text-gray-400 hidden md:block">{props.text}</div>
+        {/* <div class="text-sm text-gray-400 hidden md:block">{text}</div> */}
       </div>
     </button>
   );
@@ -207,6 +208,7 @@ function PromptForm({ data }) {
 export default function SystemPromptForm() {
   return (
     <div class="space-y-1 md:space-y-2">
+      <Tabs />
       <Switch>
         <For each={TABS_DATA}>
           {(tab) => (
@@ -216,7 +218,6 @@ export default function SystemPromptForm() {
           )}
         </For>
       </Switch>
-      <Tabs />
     </div>
   );
 }

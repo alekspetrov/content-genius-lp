@@ -1,4 +1,5 @@
 ---
+import TabContent from "./NotesTabContent.jsx";
 import NotesTabs from "./NotesTabs.jsx";
 ---
 
@@ -15,66 +16,74 @@ import NotesTabs from "./NotesTabs.jsx";
       and publishing.
     </p>
   </div>
-
-  <div class="container mt-10">
+  <div class="container mb-20">
     <div class="max-w-[960px] mx-auto px-8">
-      <NotesTabs client:load />
+      <NotesTabs client:load TabComponent={TabContent} />
     </div>
   </div>
-
-  <div class="container">
+  <div class="container mb-20">
     <div class="text-center">
-      <h3 class="mb-4 font-semibold text-3xl lg:text-5xl text-gray-900">
-        Maximize your productivity
+      <h3
+        class="mb-20 font-bold text-3xl lg:text-5xl text-gray-900 tracking-tight"
+      >
+        Supercharge your productivity
       </h3>
-      <p class="lg:text-lg max-w-[760px] mx-auto">AI-Powered Note Options</p>
     </div>
-    <div>
-      <div>
-        <div>I</div>
+    <div
+      class="max-w-[1080px] mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-12 auto-rows-fr"
+    >
+      <div class="space-y-2">
+        <img src="./refresh.svg" alt="Rephrase" />
         <div>
-          <h4>Rephrase.</h4>Reframe your ideas in new and creative ways with our
-          AI-powered rephrasing tool.
+          <h4 class="font-bold text-gray-900 inline-block pr-1">
+            Rephrase.
+          </h4>Reframe your ideas in new and creative ways with our AI-powered
+          rephrasing tool.
         </div>
       </div>
-
-      <div>
-        <div>I</div>
+      <div class="space-y-2">
+        <img src="./tone.svg" alt="ChangeTone" />
         <div>
-          <h4>Change tone.</h4>Instantly adjust the tone of your notes to match
-          your brand voice or target audience.
+          <h4 class="font-bold text-gray-900 inline-block pr-1">
+            Change tone.
+          </h4>Instantly adjust the tone of your notes to match your brand voice
+          or target audience.
         </div>
       </div>
-
-      <div>
-        <div>I</div>
+      <div class="space-y-2">
+        <img src="./languages.svg" alt="Translate" />
         <div>
-          <h4>Translate.</h4>Break down language barriers and communicate with a
-          global audience with our translation feature.
+          <h4 class="font-bold text-gray-900 inline-block pr-1">
+            Translate.
+          </h4>Break down language barriers and communicate with a global
+          audience with our translation feature.
         </div>
       </div>
-
-      <div>
-        <div>I</div>
+      <div class="space-y-2">
+        <img src="./check-circle.svg" alt="Correct" />
         <div>
-          <h4>Correct.</h4>Ensure your notes are error-free with our AI-powered
-          correction tool.
+          <h4 class="font-bold text-gray-900 inline-block pr-1">
+            Correct.
+          </h4>Ensure your notes are error-free with our AI-powered correction
+          tool.
         </div>
       </div>
-
-      <div>
-        <div>I</div>
+      <div class="space-y-2">
+        <img src="./clipboard.svg" alt="Summarization" />
         <div>
-          <h4>Summarization.</h4>Use AI to create brief summaries of your notes,
-          making it easier to recall important information.
+          <h4 class="font-bold text-gray-900 inline-block pr-1">
+            Summarization.
+          </h4>Use AI to create brief summaries of your notes, making it easier
+          to recall important information.
         </div>
       </div>
-
-      <div>
-        <div>I</div>
+      <div class="space-y-2">
+        <img src="./lightbulb.svg" alt="Suggestions" />
         <div>
-          <h4>Suggestions.</h4>Let AI to suggest content ideas based on your
-          notes and other relevant information.
+          <h4 class="font-bold text-gray-900 inline-block pr-1">
+            Suggestions.
+          </h4>Let AI to suggest content ideas based on your notes and other
+          relevant information.
         </div>
       </div>
     </div>
