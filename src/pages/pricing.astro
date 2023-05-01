@@ -1,0 +1,117 @@
+---
+import { map } from "astro/zod";
+import Layout from "../layouts/Layout.astro";
+
+const PRICING = [
+  {
+    id: 1,
+    name: "Freelancer",
+    price: 14,
+    period: "/mo",
+    description: "Ideal for independent creators",
+    features: [
+      "20.000 Tokens",
+      "1GB Storage",
+      "50 Assistants",
+      "AI editing tools",
+      "Support with low priority",
+      "1 User",
+    ],
+    cta: "Start Free",
+    disabled: true,
+  },
+  {
+    id: 2,
+    name: "Influencer",
+    price: 36,
+    period: "/mo",
+    description: "Grow your brand and engage your audience",
+    features: [
+      "50.000 Tokens",
+      "4GB Storage",
+      "150+ Assistants",
+      "AI editing tools",
+      "Support with high priority",
+      "1 User",
+    ],
+    cta: "Start Free",
+    disabled: true,
+  },
+  {
+    id: 3,
+    name: "Business",
+    price: 99,
+    period: "/mo",
+    description: "Elevate your organization’s content strategy",
+    features: [
+      "120.000 Tokens",
+      "8GB Storage",
+      "150+ Assistants",
+      "AI editing tools",
+      "Support with highest priority",
+      "Up to 10 users",
+    ],
+    cta: "Not Awailable",
+    disabled: true,
+  },
+];
+---
+
+<Layout>
+  <main class="py-20">
+    <div class="container">
+      <div class="text-center mb-20">
+        <h2 class="text-white font-semibold text-3xl lg:text-5xl mb-6">
+          Unleash your <span class="text-pink-500">content genius</span>
+        </h2>
+        <p
+          class="text-gray-200 border bg-gray-700 border-gray-500 rounded-full inline-block px-4 py-2"
+        >
+          Early adopters program (-50%)
+        </p>
+      </div>
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 items-center"
+      >
+        {
+          PRICING.map((tier) => (
+            <div
+              class={`py-8 px-8 rounded-xl ${
+                tier.id === 2
+                  ? "border-indigo-500 border-2 xl:py-14"
+                  : "border-gray-700 border"
+              }`}
+            >
+              <div class="mb-8 pb-4 text-center border-b border-gray-700">
+                <h3 class="text-white font-semibold text-2xl">{tier.name}</h3>
+                <p class="mb-8 text-white font-semibold">{`$${tier.price}${tier.period}`}</p>
+                <p class="text-sm h-11">{tier.description}</p>
+              </div>
+              <ul class="mb-8 space-y-2 list-image-[url('./list-checkmark.svg')]">
+                {tier.features.map((feature) => (
+                  <li class="flex items-center gap-2">
+                    <span class="flex-shrink-0">
+                      <img src="./list-checkmark.svg" alt="" />
+                    </span>
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+              <div class="text-center">
+                <button
+                  class={`mb-2 text-white w-full py-3 rounded-md font-semibold ${
+                    tier.id === 2 ? "bg-indigo-500 " : "bg-gray-700 "
+                  }`}
+                  disabled={tier.disabled}
+                >
+                  {tier.cta}
+                </button>
+                <div class="text-gray-450 text-xs">7-day free trial period</div>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </main>
+</Layout>

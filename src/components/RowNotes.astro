@@ -3,34 +3,35 @@ import TabContent from "./NotesTabContent.jsx";
 import NotesTabs from "./NotesTabs.jsx";
 ---
 
-<section class="py-20 bg-gray-150 text-gray-450">
-  <div class="container text-center mb-20">
-    <div class="font-medium text-xl lg:text-3xl text-pink-500 mb-10">Notes</div>
-    <h2
-      class="mb-4 font-bold text-5xl lg:text-6xl text-gray-900 tracking-tight"
-    >
+<section class="py-10 lg:py-20 bg-gray-150 text-gray-450">
+  <div class="container">
+    <div class="font-semibold text-xl lg:text-2xl text-pink-500 mb-8">
+      Notes
+    </div>
+    <h2 <h2 class="mb-4 font-bold text-5xl lg:text-6xl text-gray-900">
       Keep ideas with notes
     </h2>
-    <p class="text-lg lg:text-xl mb-24 max-w-[760px] mx-auto">
-      Save valuable insights from the chat to your notes for future reference
-      and publishing.
+    <p class="text-xl font-medium lg:text-2xl mb-12 max-w-3xl">
+      Save insights from the chat to your notes for future reference and
+      publishing. Use notes to polish you content, conduct a research, or
+      organize messages by topics.
     </p>
   </div>
-  <div class="container mb-20">
-    <div class="max-w-[960px] mx-auto px-8">
+  <div class="container">
+    <div class="">
       <NotesTabs client:load TabComponent={TabContent} />
     </div>
   </div>
-  <div class="container mb-20">
+  <div class="container py-10 lg:py-20">
     <div class="text-center">
       <h3
-        class="mb-20 font-bold text-3xl lg:text-5xl text-gray-900 tracking-tight"
+        class="mb-10 lg:mb-20 font-bold text-3xl lg:text-5xl text-gray-900 tracking-tight"
       >
         Supercharge your productivity
       </h3>
     </div>
     <div
-      class="max-w-[1080px] mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-12 auto-rows-fr"
+      class="max-w-[1080px] mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-12 auto-rows-fr"
     >
       <div class="space-y-2">
         <img src="./refresh.svg" alt="Rephrase" />

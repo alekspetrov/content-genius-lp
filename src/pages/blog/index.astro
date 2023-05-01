@@ -1,0 +1,67 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+import { getCollection } from "astro:content";
+
+const allBlogPosts = await getCollection("blog", ({ data }) => {
+  return data;
+  // return data.isDraft !== true && data.isFeatured === true;
+});
+
+const posts = allBlogPosts.sort(
+  (a, b) =>
+    new Date(b.data.publishDate).valueOf() -
+    new Date(a.data.publishDate).valueOf()
+);
+
+import { dateToFormat } from "../../helpers/dateToFormat";
+---
+
+<Layout>
+  <main>
+    <div
+      class="container py-20 md:grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3"
+    >
+      {
+        allBlogPosts.map((post) => (
+          <a
+            href={`/blog/${post.slug}`}
+            class="flex flex-col lg:first:flex-row gap-2 col-span-1 lg:first:gap-12 first:col-span-3 first:pb-12 first:border-b first:border-gray-700"
+          >
+            <div class="h-88 flex-1 border border-gray-800 rounded">
+              <img
+                src={`./blog/${post.data.image?.src}`}
+                alt={post.data.image?.alt}
+                class="object-cover w-full h-full"
+              />
+            </div>
+            <div
+              class={`flex-1 flex flex-col w-full ${
+                post.data.isNew ? "py-8" : "py-4"
+              }`}
+            >
+              <div class="flex-1">
+                {post.data.isNew && (
+                  <div class="mb-4 text-xl text-pink-500 font-medium">
+                    New post
+                  </div>
+                )}
+                <h2
+                  class={`mb-2 text-white font-bold ${
+                    post.data.isNew ? "text-3xl lg:text-4xl" : "text-2xl"
+                  }`}
+                >
+                  {post.data.title}
+                </h2>
+                <p class={`${post.data.isNew ? "text-lg" : "mb-8"}`}>
+                  {post.data.description}
+                </p>
+              </div>
+              <div class="text-sm">{dateToFormat(post.data.publishDate)}</div>
+            </div>
+          </a>
+        ))
+      }
+    </div>
+  </main>
+</Layout>

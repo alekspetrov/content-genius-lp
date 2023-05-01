@@ -3,57 +3,61 @@ const REVIEWS = [
   {
     id: 1,
     content:
-      "I love to use Content Genius it empowers my creativity and helps with daily routine of building rockets.",
+      "Content Genius is a lifesaver! The AI chat assistants helped me brainstorm ideas in no time. It’s a must-have tool for content creators!",
     author: {
-      name: "Elon Mask",
-      avatar_url: "",
-      role: "SEO, SpaceX and Tesla",
+      name: "Alex",
+      avatar_url: "./alex.png",
+      role: "Alpha Tester",
     },
   },
   {
     id: 2,
-    content: "1",
-    author: {
-      name: "Elon Mask",
-      avatar_url: "",
-      role: "SEO, SpaceX and Tesla",
-    },
-  },
-  {
-    id: 3,
-    content: "1",
-    author: {
-      name: "Elon Mask",
-      avatar_url: "",
-      role: "SEO, SpaceX and Tesla",
-    },
-  },
-  {
-    id: 1,
     content:
-      "I love to use Content Genius it empowers my creativity and helps with daily routine of building rockets.",
+      "Overcoming writer’s block has never been easier, thanks to Content Genius. The AI-powered idea generation and note-taking features are fantastic!",
     author: {
-      name: "Elon Mask",
-      avatar_url: "",
-      role: "SEO, SpaceX and Tesla",
-    },
-  },
-  {
-    id: 2,
-    content: "1",
-    author: {
-      name: "Elon Mask",
-      avatar_url: "",
-      role: "SEO, SpaceX and Tesla",
+      name: "Taylor",
+      avatar_url: "./taylor.png",
+      role: "Alpha Tester",
     },
   },
   {
     id: 3,
-    content: "1",
+    content:
+      "Content Genius has streamlined my content creation process. The AI assistants and note-taking capabilities save me time and effort!",
     author: {
-      name: "Elon Mask",
-      avatar_url: "",
-      role: "SEO, SpaceX and Tesla",
+      name: "Jordan",
+      avatar_url: "./jordan.png",
+      role: "Alpha Tester",
+    },
+  },
+  {
+    id: 4,
+    content:
+      "I’ve never experienced such a user-friendly and effective content creation platform. Content Genius’s AI features have made a huge difference for me!",
+    author: {
+      name: "Casey",
+      avatar_url: "./casey.png",
+      role: "Alpha Tester",
+    },
+  },
+  {
+    id: 5,
+    content:
+      "With Content Genius, I can generate high-quality content ideas effortlessly. The AI chat assistants and notes feature are incredibly helpful!",
+    author: {
+      name: "Sam",
+      avatar_url: "./sam.png",
+      role: "Alpha Tester",
+    },
+  },
+  {
+    id: 6,
+    content:
+      "Content Genius is my go-to platform for content ideation. The AI-powered chat and note-taking features are game-changers for any content creator!",
+    author: {
+      name: "Jamie",
+      avatar_url: "./jamie.png",
+      role: "Alpha Tester",
     },
   },
 ];
@@ -62,26 +66,29 @@ const REVIEWS = [
 <div class="py-10 md:py-20 bg-gray-900">
   <div class="container text-center">
     <h2 class="mb-4 font-bold text-5xl lg:text-6xl text-white">
-      Hear from others
+      Here from early adopters
     </h2>
-    <p class="text-lg lg:text-xl mb-24 max-w-[760px] mx-auto">
+    <p class="text-lg lg:text-xl mb-12 max-w-[760px] mx-auto">
       Content Genius helps people to get the success with content creation and
       we are proud to empower them.
     </p>
   </div>
-  <div class="container grid md:grid-cols-3 gap-4">
+  <div class="container grid md:grid-cols-2 lg:grid-cols-3 gap-2 lg:gap-4">
     {
       REVIEWS.map((review) => (
         <div class="bg-gray-600 rounded-md p-6 text-sm space-y-6 flex flex-col">
-          <div class="flex items-start gap-3 text-white flex-1">
+          <div class="flex items-start gap-3 text-gray-200 flex-1">
             <img src="./quote-icon.svg" />
             <div>{review.content}</div>
           </div>
           <div class="flex items-center gap-3">
-            <div class="h-10 w-10 bg-gray-800 rounded-full" />
+            <img
+              class="h-10 w-10 rounded-full overflow-hidden"
+              src={review.author.avatar_url}
+            />
             <div>
-              <div class="text-white">{review.author.name}</div>
-              <div class="">{review.author.role}</div>
+              <div class="text-gray-200">{review.author.name}</div>
+              <div class="text-gray-450">{review.author.role}</div>
             </div>
           </div>
         </div>

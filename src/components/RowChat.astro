@@ -3,8 +3,8 @@ import SystemPromptForm from "./SystemPromptForm";
 ---
 
 <section>
-  <div class="py-20 bg-gray-900">
-    <div class="container mb-32">
+  <div class="py-10 lg:py-20 bg-gray-900">
+    <div class="container mb-20 lg:mb-32">
       <div class="font-semibold text-xl lg:text-2xl text-pink-500 mb-8">
         GPT Chat
       </div>
@@ -12,21 +12,18 @@ import SystemPromptForm from "./SystemPromptForm";
         Meet your AI team
       </h2>
       <p class="text-xl lg:text-2xl mb-12 max-w-3xl">
-        Chat with robots made for humans. Stay inspired and productive, access
-        you history across your devices.
+        Chat with robots made for humans. Stay inspired and productive, and
+        access your history across your devices.
       </p>
-      <div class="xl:flex gap-20">
-        <div class="xl:w-4/5 shadow-xl rounded-md overflow-hidden">
-          <img
-            src="./chat-composition_1.png"
-            alt="Content Genius chat screenshot"
-          />
+      <div>
+        <div class="mb-8 shadow-2xl rounded-md overflow-hidden">
+          <img src="./gptchat_ui.png" alt="Content Genius chat screenshot" />
         </div>
         <div
-          class="xl:w-1/5 flex flex-col gap-8 md:gap-12 md:flex-row xl:flex-col py-8 md:py-12"
+          class="flex flex-col gap-6 py-4 lg:py-10 lg:flex-row lg:px-12 lg:gap-12"
         >
           <section>
-            <h4 class="mb-2 font-semibold text-indigo-400 text-xl">
+            <h4 class="mb-2 font-medium text-indigo-400 text-xl">
               Contex-aware
             </h4>
             <p>
@@ -35,7 +32,7 @@ import SystemPromptForm from "./SystemPromptForm";
             </p>
           </section>
           <section>
-            <h4 class="mb-2 font-semibold text-indigo-400 text-xl">
+            <h4 class="mb-2 font-medium text-indigo-400 text-xl">
               Anywhere access
             </h4>
             <p>
@@ -44,7 +41,7 @@ import SystemPromptForm from "./SystemPromptForm";
             </p>
           </section>
           <section>
-            <h4 class="mb-2 font-semibold text-indigo-400 text-xl">
+            <h4 class="mb-2 font-medium text-indigo-400 text-xl">
               Fast and Secure
             </h4>
             <p>
@@ -56,34 +53,38 @@ import SystemPromptForm from "./SystemPromptForm";
       </div>
     </div>
     <div class="container text-center">
-      <h3 class="mb-4 font-semibold text-3xl lg:text-5xl text-white">
+      <h3 class="mb-4 font-semibold text-4xl lg:text-5xl text-white">
         Personalize your experience
       </h3>
-      <p class="lg:text-lg max-w-6xl mx-auto">
+      <p class="text-lg lg:text-xl max-w-6xl mx-auto">
         Create your assistants or tune-up existing for your personal needs
         in&nbsp;seconds.
       </p>
     </div>
-    <div class="border border-transparent pt-12 pb-20">
-      <div class="container">
-        <div class="max-w-4xl mx-auto px-8">
-          <SystemPromptForm client:load />
-          <div class="flex py-12">
-            <div class="flex-1 text-center">
-              <div class="font-semibold text-6xl mb-2 text-pink-600">120+</div>
-              <div class="text-lg leading-tight font-medium">
-                Assistatns created<br />to inspire you
+    <div class="border border-transparent pt-12">
+      <div class="container max-w-4xl mx-auto">
+        <div class="px-8">
+          <div class="">
+            <SystemPromptForm client:load />
+          </div>
+          <div class="flex gap-4 py-12 lg:text-center">
+            <div class="flex-1">
+              <div class="font-medium text-4xl lg:text-5xl mb-2 text-white">
+                120+
               </div>
+              <div class="lg:text-lg leading-tight font-medium">Assistatns</div>
             </div>
-            <div class="flex-1 text-center">
-              <div class="font-semibold text-6xl mb-2 text-pink-600">560+</div>
-              <div class="text-lg leading-tight font-medium">
-                Prompts to help you<br />get the most for GPT
+            <div class="flex-1">
+              <div class="font-medium text-4xl lg:text-5xl mb-2 text-white">
+                560+
               </div>
+              <div class="lg:text-lg leading-tight font-medium">Prompts</div>
             </div>
-            <div class="flex-1 text-center">
-              <div class="font-semibold text-6xl mb-2 text-pink-600">∞</div>
-              <div class="text-lg leading-tight font-medium">
+            <div class="flex-1">
+              <div class="font-medium text-4xl lg:text-5xl mb-2 text-white">
+                ∞
+              </div>
+              <div class="lg:text-lg leading-tight font-medium">
                 Unlimited usecases
               </div>
             </div>

@@ -14,12 +14,12 @@ export function trackSubscription(email: string): void {
   });
 }
 
-export function trackServerIssues(email: string, error: Error): void {
+export function trackServerIssues(email: string, errorMessage: string): void {
   splitbee.user.set({ email: email });
   splitbee.user.set({ source: "contentgenius.io" });
 
   splitbee.track("Server Error", {
     email: email,
-    error: error.message,
+    error: errorMessage,
   });
 }

@@ -5,27 +5,27 @@ const [currentTabIndex, setCurrentTabIndex] = createSignal(1);
 const TABS_DATA = [
   {
     id: 1,
-    name: "Twitter Journalist",
-    role: "You are well known Journalist in Twitter.",
-    context:
-      "Limit per tweet 280 characters, tread not longer that 3 tweets. Professional tone. Add 2-3 hashtags.",
-    goal: "Your goal is to create short and easy to read stories form the provided news.",
+    name: "Social Media Guru",
+    role: "You are a Social Media Expert with a focus on creating engaging content for various platforms.",
+    context: `Product: Content Genius - AI-powered content generation SaaS application\nFeatures: Chat with AI Assistants, Notes, Publishing, Analytics\nAudience: Social media managers, influencers, digital marketers\nFocus: Creating engaging and shareable content optimized for various social media platforms`,
+    goal: "Your goal is to help users create captivating and shareable content tailored for each social media platform to boost engagement and follower growth.",
+    color: "text-assistant-8",
   },
   {
     id: 2,
-    name: "Full Stack Developer",
-    role: "You are experienced JS full-stack developer.",
-    context:
-      "Limit per tweet 280 characters, tread not longer that 3 tweets. Professional tone. Add 2-3 hashtags.",
-    goal: "Your goal is to create short and easy to read stories form the provided news.",
+    name: "Blogging Mastermind",
+    role: "You are a Blogging Expert, skilled in crafting informative and compelling articles for diverse industries.",
+    context: `Product: Content Genius - AI-powered content generation SaaS application\nFeatures: Chat with AI Assistants, Notes, Publishing, Analytics\nAudience: Bloggers, content writers, industry experts\nFocus: Crafting informative, compelling, and well-researched blog articles to attract readers and drive organic traffic`,
+    goal: "Your goal is to assist users in creating well-researched, high-quality blog posts that attract readers and drive organic traffic to their websites.",
+    color: "text-assistant-1",
   },
   {
     id: 3,
-    name: "Creative Marketer",
-    role: "You are creative marketer.",
-    context:
-      "Limit per tweet 280 characters, tread not longer that 3 tweets. Professional tone. Add 2-3 hashtags.",
-    goal: "Your goal is to create short and easy to read stories form the provided news.",
+    name: "Brand Storyteller",
+    role: "You are a Brand Storytelling Specialist, experienced in developing unique and persuasive brand narratives.",
+    context: `Product: Content Genius - AI-powered content generation SaaS application\nFeatures: Chat with AI Assistants, Notes, Publishing, Analytics\nAudience: Brand managers, storytellers, creative marketers\nFocus: Developing unique and persuasive brand narratives that resonate with target audiences and enhance brand perception`,
+    goal: "Your goal is to help users weave captivating brand stories that resonate with their target audience, enhance brand perception, and foster customer loyalty.",
+    color: "text-assistant-5",
   },
 ];
 
@@ -108,7 +108,7 @@ const InfoIcon = () => (
   </svg>
 );
 
-function Tab({ index, name, text }) {
+function Tab({ index, name, color }) {
   const [isCurrent, setIsCurrent] = createSignal(false);
 
   createEffect(() => {
@@ -126,12 +126,11 @@ function Tab({ index, name, text }) {
     >
       <div class="flex-1 p-4">
         <div class="flex items-center gap-2">
-          <div class="text-indigo-500">
+          <div class={color}>
             <RobotIcon />
           </div>
           <div class="font-medium">{name}</div>
         </div>
-        {/* <div class="text-sm text-gray-400 hidden md:block">{text}</div> */}
       </div>
     </button>
   );
@@ -140,21 +139,9 @@ function Tab({ index, name, text }) {
 function Tabs() {
   return (
     <div class="flex flex-col md:flex-row gap-1 md:gap-2">
-      <Tab
-        name="Full Stack Developer"
-        index={1}
-        text="Act as a Creative Marketer focused on product value. Your goal is to write marketing content to promote product"
-      />
-      <Tab
-        name="Twitter Journalist"
-        index={2}
-        text="Act as a Creative Marketer focused on product value. Your goal is to write marketing content to promote product"
-      />
-      <Tab
-        name="Creative Marketer"
-        index={3}
-        text="Act as a Creative Marketer focused on product value. Your goal is to write marketing content to promote product"
-      />
+      <For each={TABS_DATA}>
+        {(tab) => <Tab name={tab.name} index={tab.id} color={tab.color} />}
+      </For>
     </div>
   );
 }
@@ -164,7 +151,7 @@ function PromptForm({ data }) {
     <div class="pt-4 md:pt-8 rounded-md border border-gray-500 bg-gray-700">
       <div class="px-4 md:px-8">
         <div class="flex gap-2 items-center mb-6">
-          <div class="text-red-600 ">
+          <div class={data.color}>
             <RobotIcon />
           </div>
           <div class=" text-white font-semibold">{data.name}</div>
@@ -175,7 +162,7 @@ function PromptForm({ data }) {
         </div>
         <div class="mb-6">
           <div class="text-white font-medium mb-2">Context</div>
-          <div>{data.context}</div>
+          <div innerText={data.context}></div>
         </div>
         <div class="mb-6">
           <div class="text-white font-medium mb-2">Goal</div>

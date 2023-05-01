@@ -3,16 +3,17 @@ import Logo from "./Logo.astro";
 ---
 
 <header>
-  <div class="container flex items-center justify-between py-6 text-white">
+  <div class="container flex items-center justify-between py-6">
     <Logo />
-    <div class="space-x-8 font-medium">
-      <a href="/product">Product</a>
-      <a href="/pricing">Pricing</a>
-      <a href="/blog">Blog</a>
-      <a href="/Roadmap">Roadmap</a>
-    </div>
+    <nav class="space-x-8 font-medium">
+      <a class="hover:text-white transition" href="/blog">Blog</a>
+      <a class="hover:text-white transition" href="/release-notes"
+        >Release Notes</a
+      >
+      <a class="hover:text-white transition" href="/pricing">Pricing</a>
+    </nav>
     <div class="space-x-4 font-medium">
-      <a href="/">Log in</a>
+      <a class="hover:text-white transition" href="/">Log in</a>
       <a href="/" class="bg-indigo-500 rounded-full text-white px-4 py-2"
         >Sign up</a
       >

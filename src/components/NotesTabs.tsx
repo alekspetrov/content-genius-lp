@@ -5,26 +5,34 @@ const [currentTabIndex, setCurrentTabIndex] = createSignal(1);
 const TABS_DATA = [
   {
     id: 1,
-    title: "Devs",
+    title: "Blogging",
     image: {
-      src: "notes-composition_1.png",
-      alt: "AI Notes",
+      src: "./blogging_notes.png",
+      alt: "Copywriting notes with AI",
     },
   },
   {
     id: 2,
-    title: "Market",
+    title: "Marketing",
     image: {
-      src: "notes-composition_2.png",
-      alt: "AI Notes",
+      src: "./marketing_notes.png",
+      alt: "Marketing notes with AI",
     },
   },
   {
     id: 3,
-    title: "Copy",
+    title: "Social media",
     image: {
-      src: "notes-composition_3.png",
-      alt: "AI Notes",
+      src: "./mediaplanning_notes.png",
+      alt: "Social media notes with AI",
+    },
+  },
+  {
+    id: 4,
+    title: "Educating",
+    image: {
+      src: "./educating_notes.png",
+      alt: "Education notes with AI",
     },
   },
 ];
@@ -101,20 +109,18 @@ function Tab({ index, title }) {
   return (
     <button
       onClick={[setCurrentTabIndex, index]}
-      class={`flex-1 text-left rounded-md transition focus:bg-white focus:outline-none hover:bg-white ${
-        isCurrent() ? "bg-white" : "bg-gray-100"
+      class={`text lg:text-xl font-semibold text-left transition-colors focus:outline-none  focus:text-gray-900 hover:text-gray-900 ${
+        isCurrent() ? "text-gray-900" : "text-gray-400"
       }`}
     >
-      <div class="flex-1 p-4">
-        <div class="font-medium text-center">{title}</div>
-      </div>
+      {title}
     </button>
   );
 }
 
 function Tabs(props) {
   return (
-    <div class="flex flex-col w-full md:flex-row gap-1 md:gap-2">
+    <div class="space-x-6 lg:space-x-12 py-4">
       <For each={props.tabs}>
         {(tab) => <Tab index={tab.id} title={tab.title} />}
       </For>

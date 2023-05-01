@@ -1,0 +1,55 @@
+---
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import BaseHead from "../components/BaseHead.astro";
+import { dateToFormat } from "../helpers/dateToFormat";
+
+export interface Props {
+  content: {
+    title: string;
+    description: string;
+    image: {
+      src: string;
+      alt: string;
+    };
+    openGraph: {
+      image: string;
+      description: string;
+    };
+    publishDate: string;
+  };
+}
+
+const {
+  content: { title, description, openGraph, publishDate, image },
+} = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <BaseHead />
+  </head>
+  <body class="font-sans bg-black text-gray-300 antialiased">
+    <Header />
+    <main class="py-20">
+      <article class="mx-auto">
+        <header class="container max-w-3xl mb-12">
+          <h1 class="mb-3 font-bold text-white text-[3.5rem]">{title}</h1>
+          <time class="mb-8 block text-sm" datetime={publishDate}
+            >{dateToFormat(publishDate)}</time
+          >
+          <img
+            src={image?.src}
+            alt={image.alt}
+            class="border border-gray-700 rounded w-full h-96 object-none mt-10"
+          />
+        </header>
+
+        <div class="container max-w-3xl blog-content">
+          <slot />
+        </div>
+      </article>
+    </main>
+    <Footer />
+  </body>
+</html>

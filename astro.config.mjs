@@ -1,3 +1,4 @@
+import { SITE_URL } from "./src/config";
 import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
 import sitemap from "@astrojs/sitemap";
@@ -9,9 +10,16 @@ import solidJs from "@astrojs/solid-js";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind({
-    config: {
-      applyBaseStyles: false
-    }
-  }), sitemap(), image(), mdx(), solidJs()]
+  site: SITE_URL,
+  integrations: [
+    tailwind({
+      config: {
+        applyBaseStyles: false,
+      },
+    }),
+    sitemap(),
+    image(),
+    mdx(),
+    solidJs(),
+  ],
 });

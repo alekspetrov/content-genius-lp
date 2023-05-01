@@ -37,6 +37,22 @@ module.exports = {
           warning: "#F5A623",
           alert: "#D74D00",
         },
+        assistant: {
+          1: "#7C00AC",
+          2: "#A0A0A0",
+          3: "#333333",
+          4: "#016C6D",
+          5: "#235016",
+          5: "#347190",
+          6: "#67067F",
+          7: "#9D3D39",
+          8: "#A3147B",
+          9: "#B2592D",
+          10: "#685347",
+          11: "#B99D4F",
+          12: "#D66664",
+          13: "#FF8544",
+        },
       },
       backgroundImage: {
         "gradient-radial-indigo":
