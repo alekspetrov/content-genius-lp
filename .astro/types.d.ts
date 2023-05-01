@@ -85,6 +85,22 @@ declare module 'astro:content' {
   data: InferEntrySchema<"blog">
 },
 },
+"releases": {
+"alpha.md": {
+  id: "alpha.md",
+  slug: "alpha",
+  body: string,
+  collection: "releases",
+  data: any
+},
+"beta.md": {
+  id: "beta.md",
+  slug: "beta",
+  body: string,
+  collection: "releases",
+  data: any
+},
+},
 
 	};
 

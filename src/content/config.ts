@@ -23,6 +23,19 @@ const blogCollection = defineCollection({
   }),
 });
 
+const releaseCollection = defineCollection({
+  schema: z.object({
+    layout: z.literal("../../layouts/BlogLayout.astro"),
+    title: z.string(),
+    description: z.string(),
+    image: z.object({
+      src: z.string(),
+      alt: z.string(),
+    }),
+  }),
+});
+
 export const collections = {
   blog: blogCollection,
+  release: releaseCollection,
 };

@@ -1,0 +1,63 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+import { getCollection } from "astro:content";
+
+const allReleases = await getCollection("releases", ({ data }) => {
+  return data;
+});
+
+const posts = allReleases.sort(
+  (a, b) =>
+    new Date(b.data.publishDate).valueOf() -
+    new Date(a.data.publishDate).valueOf()
+);
+
+import { dateToFormat } from "../../helpers/dateToFormat";
+---
+
+<Layout>
+  <main class="py-20">
+    <article class="container">
+      <header class="mb-12">
+        <h2 class="text-white font-semibold text-3xl lg:text-6xl mb-6">
+          Release notes
+        </h2>
+        <p class="text-gray-300 inline-block">
+          Latest updates and product imrpovements.
+        </p>
+      </header>
+      <div class="flex gap-16 min-h-full">
+        <div class="flex-1 w-1/3 border-l border-gray-700">
+          <div class="sticky top-4">
+            <div class="relative pl-6">
+              <div
+                class="absolute -left-2 top-[6px] w-4 h-4 rounded-full bg-gray-700 border border-gray-500"
+              >
+              </div>
+              <div class="text-lg text-gray-100">Alpha release May 2023</div>
+              <div>May 1, 2023</div>
+            </div>
+          </div>
+        </div>
+        <div class="w-2/3">
+          {
+            allReleases.map(({ data }) => (
+              <div class="[&:not(:first-child)]:mt-12">
+                <h3 class="text-white text-2xl font-semibold">{data.title}</h3>
+                <div class="h-96 my-4 border border-gray-700 rounded-lg overflow-hidden">
+                  <img
+                    class="w-full h-full object-cover"
+                    src={`./blog/${data.image.src}`}
+                    alt={data.image.alt}
+                  />
+                </div>
+                <div>{data.description}</div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </article>
+  </main>
+</Layout>
