@@ -70,9 +70,9 @@ declare module 'astro:content' {
   collection: "blog",
   data: InferEntrySchema<"blog">
 },
-"embracing-the-future-how-ai-is-transforming-content-creation.md": {
-  id: "embracing-the-future-how-ai-is-transforming-content-creation.md",
-  slug: "embracing-the-future-how-ai-is-transforming-content-creation",
+"how-ai-is-transforming-content-creation.md": {
+  id: "how-ai-is-transforming-content-creation.md",
+  slug: "how-ai-is-transforming-content-creation",
   body: string,
   collection: "blog",
   data: InferEntrySchema<"blog">

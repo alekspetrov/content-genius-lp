@@ -7,7 +7,7 @@ layout: "../../layouts/BlogLayout.astro"
 title: "How AI is Transforming Content Creation"
 subtitle: "How AI is Changing the Game"
 description: "Discover how AI is transforming the content creation landscape and how to stay competitive by embracing AI-powered tools."
-image: { src: "", alt: "" }
+image: { src: "post_1.png", alt: "Content Genius preview" }
 openGraph:
   image: ""
   description: "..."
