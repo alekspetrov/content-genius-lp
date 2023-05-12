@@ -4,7 +4,7 @@ isDraft: false
 isFeatured: false
 layout: "../../layouts/BlogLayout.astro"
 
-title: "Embracing the Future: How AI is Transforming Content Creation"
+title: "How AI is Transforming Content Creation"
 subtitle: "How AI is Changing the Game"
 description: "Discover how AI is transforming the content creation landscape and how to stay competitive by embracing AI-powered tools."
 image: { src: "", alt: "" }
