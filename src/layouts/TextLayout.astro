@@ -2,17 +2,23 @@
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import BaseHead from "../components/BaseHead.astro";
+
+const { title, supportText } = Astro.props;
 ---
 
 <html lang="en">
   <head>
     <BaseHead />
   </head>
-  <body class="bg-graphite-900 text-white font-sans">
+  <body class="font-sans bg-gray-900 text-gray-300 antialiased">
     <Header />
-    <div class="wrapper text-content">
+    <article class="container py-20 text-content">
+      <header class="mb-20">
+        <h1 class="mb-4 text-white text-3xl xl:text-6xl font-bold">{title}</h1>
+        <p>{supportText}</p>
+      </header>
       <slot />
-    </div>
+    </article>
     <Footer />
   </body>
 </html>

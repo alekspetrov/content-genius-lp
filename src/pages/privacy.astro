@@ -1,0 +1,11 @@
+---
+import { getEntryBySlug } from "astro:content";
+import TextLayout from "../layouts/TextLayout.astro";
+
+const entry = await getEntryBySlug("static", "privacy");
+const { Content } = await entry.render();
+---
+
+<TextLayout title={entry.data.title} supportText={entry.data.supportText}>
+  <Content />
+</TextLayout>

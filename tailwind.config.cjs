@@ -7,7 +7,6 @@ module.exports = {
         sans: ["Inter", "sans-serif"],
       },
       fontSize: {
-        // lg: ["1.5rem", "2rem"],
         "7xl": ["5rem", "100%"],
       },
       colors: {
@@ -75,5 +74,5 @@ module.exports = {
       center: true,
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/typography")],
 };

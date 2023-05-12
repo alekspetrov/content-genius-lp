@@ -29,23 +29,30 @@ const {
   <head>
     <BaseHead />
   </head>
-  <body class="font-sans bg-black text-gray-300 antialiased">
+  <body class="font-sans bg-gray-900 text-gray-300 antialiased">
     <Header />
-    <main class="py-20">
+    <main class="pt-20 py-32">
       <article class="mx-auto">
         <header class="container max-w-3xl mb-12">
-          <h1 class="mb-3 font-bold text-white text-[3.5rem]">{title}</h1>
+          <h1 class="mb-3 font-bold text-gray-200 text-5xl leading-[1.25]">
+            {title}
+          </h1>
           <time class="mb-8 block text-sm" datetime={publishDate}
             >{dateToFormat(publishDate)}</time
           >
-          <img
-            src={image?.src}
-            alt={image.alt}
-            class="border border-gray-700 rounded w-full h-96 object-none mt-10"
-          />
+          {
+            image.src && (
+              <img
+                src={image?.src}
+                alt={image.alt}
+                class="border border-gray-700 rounded w-full h-96 object-none mt-10"
+              />
+            )
+          }
         </header>
-
-        <div class="container max-w-3xl blog-content">
+        <div
+          class="container max-w-3xl prose xl:prose-lg prose-headings:text-gray-200 prose-a:text-gray-100 prose-ul:text-gray-300 prose-ol:text-gray-300 prose-strong:text-gray-200 prose-p:text-gray-300"
+        >
           <slot />
         </div>
       </article>

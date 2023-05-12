@@ -63,23 +63,16 @@ declare module 'astro:content' {
 
 	const entryMap: {
 		"blog": {
-"one-more-copy.md": {
-  id: "one-more-copy.md",
-  slug: "one-more-copy",
+"__blank.md": {
+  id: "__blank.md",
+  slug: "__blank",
   body: string,
   collection: "blog",
   data: InferEntrySchema<"blog">
 },
-"one-more.md": {
-  id: "one-more.md",
-  slug: "one-more",
-  body: string,
-  collection: "blog",
-  data: InferEntrySchema<"blog">
-},
-"write-better-gpt-prompts.md": {
-  id: "write-better-gpt-prompts.md",
-  slug: "write-better-gpt-prompts",
+"embracing-the-future-how-ai-is-transforming-content-creation.md": {
+  id: "embracing-the-future-how-ai-is-transforming-content-creation.md",
+  slug: "embracing-the-future-how-ai-is-transforming-content-creation",
   body: string,
   collection: "blog",
   data: InferEntrySchema<"blog">
@@ -93,11 +86,20 @@ declare module 'astro:content' {
   collection: "releases",
   data: any
 },
-"beta.md": {
-  id: "beta.md",
-  slug: "beta",
+},
+"static": {
+"privacy.md": {
+  id: "privacy.md",
+  slug: "privacy",
   body: string,
-  collection: "releases",
+  collection: "static",
+  data: any
+},
+"terms.md": {
+  id: "terms.md",
+  slug: "terms",
+  body: string,
+  collection: "static",
   data: any
 },
 },

@@ -8,7 +8,8 @@ const blogCollection = defineCollection({
     isFeatured: z.boolean(),
     layout: z.literal("../../layouts/BlogLayout.astro"),
     title: z.string(),
-    description: z.string(),
+    subtitle: z.string().optional(),
+    description: z.string().optional(),
     image: z
       .object({
         src: z.string(),

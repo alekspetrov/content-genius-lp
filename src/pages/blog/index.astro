@@ -4,8 +4,7 @@ import Layout from "../../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 
 const allBlogPosts = await getCollection("blog", ({ data }) => {
-  return data;
-  // return data.isDraft !== true && data.isFeatured === true;
+  return data.isDraft !== true;
 });
 
 const posts = allBlogPosts.sort(
@@ -28,7 +27,7 @@ import { dateToFormat } from "../../helpers/dateToFormat";
             href={`/blog/${post.slug}`}
             class="flex flex-col lg:first:flex-row gap-2 col-span-1 lg:first:gap-12 first:col-span-3 first:pb-12 first:border-b first:border-gray-700"
           >
-            <div class="h-88 flex-1 border border-gray-800 rounded">
+            <div class="h-96 flex-1 border border-gray-800 rounded">
               <img
                 src={`./blog/${post.data.image?.src}`}
                 alt={post.data.image?.alt}
@@ -53,9 +52,6 @@ import { dateToFormat } from "../../helpers/dateToFormat";
                 >
                   {post.data.title}
                 </h2>
-                <p class={`${post.data.isNew ? "text-lg" : "mb-8"}`}>
-                  {post.data.description}
-                </p>
               </div>
               <div class="text-sm">{dateToFormat(post.data.publishDate)}</div>
             </div>
