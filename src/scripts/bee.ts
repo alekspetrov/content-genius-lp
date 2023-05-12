@@ -1,6 +1,6 @@
 import splitbee from "@splitbee/web";
 
-splitbee.init({
+splitbee.default.init({
   scriptUrl: "/bee.js",
   apiUrl: "/_hive",
 });
