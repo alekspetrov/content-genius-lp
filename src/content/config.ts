@@ -38,5 +38,5 @@ const releaseCollection = defineCollection({
 
 export const collections = {
   blog: blogCollection,
-  release: releaseCollection,
+  releases: releaseCollection,
 };

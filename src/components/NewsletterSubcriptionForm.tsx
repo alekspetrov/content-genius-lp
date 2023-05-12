@@ -1,7 +1,7 @@
 import { createSignal, Show } from "solid-js";
 import { createClient } from "@supabase/supabase-js";
 import { SUPABASE_PUBLIC_KEY, SUPABASE_PUBLIC_URL } from "../config";
-import { trackServerIssues, trackSubscription } from "../scripts/bee";
+// import { trackServerIssues, trackSubscription } from "../scripts/bee";
 
 const supabase = createClient(SUPABASE_PUBLIC_URL, SUPABASE_PUBLIC_KEY);
 
