@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+User-agent: Yandex
+Allow: /
+Host: https://contentgenius.io/
+
+Sitemap:  https://contentgenius.io/sitemap-index.xml
