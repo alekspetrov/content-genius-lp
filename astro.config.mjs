@@ -9,17 +9,13 @@ import mdx from "@astrojs/mdx";
 import solidJs from "@astrojs/solid-js";
 
 // https://astro.build/config
+
+// https://astro.build/config
 export default defineConfig({
   site: SITE_URL,
-  integrations: [
-    tailwind({
-      config: {
-        applyBaseStyles: false,
-      },
-    }),
-    sitemap(),
-    image(),
-    mdx(),
-    solidJs(),
-  ],
+  integrations: [tailwind({
+    config: {
+      applyBaseStyles: false
+    }
+  }), sitemap(), image(), mdx(), solidJs()]
 });
