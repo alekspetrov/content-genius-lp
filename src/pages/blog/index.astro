@@ -3,15 +3,15 @@ import Layout from "../../layouts/Layout.astro";
 
 import { getCollection } from "astro:content";
 
-const allBlogPosts = await getCollection("blog", ({ data }) => {
-  return data.isDraft !== true;
-});
+const allBlogPosts = await getCollection("blog");
 
-const posts = allBlogPosts.sort(
-  (a, b) =>
-    new Date(b.data.publishDate).valueOf() -
-    new Date(a.data.publishDate).valueOf()
-);
+const posts = allBlogPosts
+  .sort(
+    (a, b) =>
+      new Date(b.data.publishDate).valueOf() -
+      new Date(a.data.publishDate).valueOf()
+  )
+  .filter((post) => !post.data.isDraft);
 
 import { dateToFormat } from "../../helpers/dateToFormat";
 ---
@@ -22,7 +22,7 @@ import { dateToFormat } from "../../helpers/dateToFormat";
       class="container py-20 md:grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3"
     >
       {
-        allBlogPosts.map((post) => (
+        posts.map((post) => (
           <a
             href={`/blog/${post.slug}/`}
             class="flex flex-col lg:first:flex-row gap-2 col-span-1 lg:first:gap-12 first:col-span-3 first:pb-12 first:border-b first:border-gray-700"

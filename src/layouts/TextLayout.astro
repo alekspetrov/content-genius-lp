@@ -13,11 +13,15 @@ const { title, supportText } = Astro.props;
   <body class="font-sans bg-gray-900 text-gray-300 antialiased">
     <Header />
     <article class="container py-20 text-content">
-      <header class="mb-20">
-        <h1 class="mb-4 text-white text-3xl xl:text-6xl font-bold">{title}</h1>
+      <header>
+        <h1 class="mb-4 text-white text-3xl xl:text-6xl font-bold">
+          {title}
+        </h1>
         <p>{supportText}</p>
       </header>
-      <slot />
+      <div class="mt-8 pt-8 border-t border-gray-500">
+        <slot />
+      </div>
     </article>
     <Footer />
   </body>

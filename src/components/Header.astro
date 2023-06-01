@@ -4,18 +4,26 @@ import Logo from "./Logo.astro";
 
 <header>
   <div class="container flex items-center justify-between py-6">
-    <Logo />
-    <nav class="hidden md:block space-x-8 font-medium">
+    <div class="flex gap-2 items-center md:w-1/4 whitespace-nowrap">
+      <Logo />
+      <div class="bg-gray-700 px-2 text-gray-450 rounded-sm">alpha</div>
+    </div>
+    <nav class="flex-1 text-center hidden lg:block space-x-8 font-medium">
       <a class="hover:text-white transition" href="/blog/">Blog</a>
-      <!-- <a class="hover:text-white transition" href="/release-notes"
+      <a class="hover:text-white transition" href="/release-notes/"
         >Release Notes</a
-      > -->
+      >
       <a class="hover:text-white transition" href="/pricing/">Pricing</a>
     </nav>
-    <div class="space-x-4 font-medium">
-      <a class="hover:text-white transition" href="/">Log in</a>
-      <a href="/" class="bg-indigo-500 rounded-full text-white px-4 py-2"
-        >Sign up</a
+    <div class="space-x-4 font-medium md:w-1/4 text-right">
+      <a
+        href="https://app.contentgenius.io/"
+        class="hover:text-white transition whitespace-nowrap">Log in</a
+      >
+      <a
+        href="https://app.contentgenius.io/"
+        class="bg-indigo-500 rounded-full text-white px-4 py-2 whitespace-nowrap"
+        >Try it Free</a
       >
     </div>
   </div>

@@ -5,14 +5,15 @@ import Layout from "../layouts/Layout.astro";
 <Layout>
   <div class="py-20">
     <div class="content max-w-3xl mx-auto">
-      <div class="text-white text-6xl font-semibold">Not Found</div>
+      <div class="text-white text-6xl font-semibold">Not found</div>
       <div class="text-lg">Sorry about that, but this page doesn't exist.</div>
-      <div class="my-10 bg-gray-800 p-8 rounded-md">
-        At the moment the website is under development.
+      <div class="mt-12">
+        <a
+          href="/"
+          class="border border-gray-500 bg-gray-600 px-4 py-2 rounded font-medium hover:text-white"
+          ><- Back home</a
+        >
       </div>
-      <a href="/" class="border border-gray-600 px-4 py-2 rounded font-medium"
-        >Home page</a
-      >
     </div>
   </div>
 </Layout>

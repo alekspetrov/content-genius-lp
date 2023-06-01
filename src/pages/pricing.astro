@@ -6,38 +6,48 @@ const PRICING = [
   {
     id: 1,
     name: "Freelancer",
-    price: 14,
+    price: 19,
     period: "/mo",
     description: "Ideal for independent creators",
     features: [
       "GPT-4",
-      "20.000 Tokens",
+      "50,000 Tokens (~37,500 Words)",
       "1GB Storage",
-      "50 Assistants",
-      "AI editing tools",
+      "10 AI Assistants",
+      "AI Editing tools",
       "Support with low priority",
       "1 User",
     ],
     cta: "Start Free",
-    disabled: true,
+    disabled: false,
+    product_id: "77513",
+    variants: {
+      monthly: "80315",
+      yearly: "80722",
+    },
   },
   {
     id: 2,
     name: "Influencer",
-    price: 36,
+    price: 49,
     period: "/mo",
     description: "Grow your brand and engage your audience",
     features: [
       "GPT-4",
-      "50.000 Tokens",
+      "100,000 Tokens (~75,000 Words)",
       "4GB Storage",
-      "150+ Assistants",
-      "AI editing tools",
+      "50+ Assistants",
+      "AI Editing tools",
       "Support with high priority",
       "1 User",
     ],
     cta: "Start Free",
-    disabled: true,
+    disabled: false,
+    product_id: "77844",
+    variants: {
+      monthly: "80725",
+      yearly: "80728",
+    },
   },
   {
     id: 3,
@@ -47,15 +57,20 @@ const PRICING = [
     description: "Elevate your organization’s content strategy",
     features: [
       "GPT-4",
-      "120.000 Tokens",
+      "200,000 Tokens (~150,000 Words)",
       "8GB Storage",
-      "150+ Assistants",
-      "AI editing tools",
+      "50+ Assistants",
+      "AI Editing tools",
       "Support with highest priority",
-      "Up to 10 users",
+      "Up to 10 users (not available in Alpha)",
     ],
-    cta: "Not Awailable",
-    disabled: true,
+    cta: "Start Free",
+    disabled: false,
+    product_id: "77846",
+    variants: {
+      monthly: "80729",
+      yearly: "80731",
+    },
   },
 ];
 ---
@@ -65,12 +80,12 @@ const PRICING = [
     <article class="container">
       <header class="text-center mb-20">
         <h2 class="text-white font-semibold text-3xl lg:text-5xl mb-6">
-          Unleash your <span class="text-pink-500">content genius</span>
+          Unleash Your <span class="text-pink-500">Content Genius</span>
         </h2>
         <p
           class="text-gray-200 border bg-gray-700 border-gray-500 rounded-full inline-block px-4 py-2"
         >
-          Early adopters program (-50%)
+          Early adopters program (-30%)
         </p>
       </header>
       <div
@@ -85,32 +100,39 @@ const PRICING = [
                   : "border-gray-700 border"
               }`}
             >
-              <div class="mb-8 pb-4 text-center border-b border-gray-700">
-                <h3 class="text-white font-semibold text-2xl">{tier.name}</h3>
-                <p class="mb-8 text-white font-semibold">{`$${tier.price}${tier.period}`}</p>
-                <p class="text-sm h-11">{tier.description}</p>
+              <div class="mb-8 text-center">
+                <h3 class="font-semibold text-xl text-pink-500 mb-2">
+                  {tier.name}
+                </h3>
+                <p class="mb-8 text-white font-semibold">
+                  <span class="text-2xl">
+                    ${`${Math.round((tier.price * 70) / 100)}`}
+                    <span class="text-sm">/mo</span>
+                  </span>
+                  <span class="line-through text-gray-400">${tier.price}</span>
+                </p>
               </div>
-              <ul class="mb-8 space-y-2 list-image-[url('./list-checkmark.svg')]">
+              <div class="text-center">
+                <a
+                  href="https://app.contentgenius.io/"
+                  class={`block mb-2 text-white w-full py-3 rounded-md font-semibold ${
+                    tier.id === 2 ? "bg-indigo-500 " : "bg-gray-700 "
+                  }`}
+                >
+                  {tier.cta}
+                </a>
+                <div class="text-gray-450 text-xs">5-day free trial period</div>
+              </div>
+              <ul class="my-8 space-y-2 list-image-[url('./list-checkmark.svg')]">
                 {tier.features.map((feature) => (
                   <li class="flex items-center gap-2">
                     <span class="flex-shrink-0">
-                      <img src="./list-checkmark.svg" alt="" />
+                      <img src="/list-checkmark.svg" />
                     </span>
                     <span>{feature}</span>
                   </li>
                 ))}
               </ul>
-              <div class="text-center">
-                <button
-                  class={`mb-2 text-white w-full py-3 rounded-md font-semibold ${
-                    tier.id === 2 ? "bg-indigo-500 " : "bg-gray-700 "
-                  }`}
-                  disabled={tier.disabled}
-                >
-                  {tier.cta}
-                </button>
-                <div class="text-gray-450 text-xs">7-day free trial period</div>
-              </div>
             </div>
           ))
         }

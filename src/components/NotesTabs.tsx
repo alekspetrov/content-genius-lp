@@ -29,7 +29,7 @@ const TABS_DATA = [
   },
   {
     id: 4,
-    title: "Educating",
+    title: "Engineering",
     image: {
       src: "./educating_notes.png",
       alt: "Education notes with AI",

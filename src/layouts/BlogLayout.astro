@@ -41,7 +41,7 @@ const {
             >{dateToFormat(publishDate)}</time
           >
           {
-            image.src && (
+            image?.src && (
               <img
                 src={image?.src}
                 alt={image.alt}
@@ -51,7 +51,7 @@ const {
           }
         </header>
         <div
-          class="container max-w-3xl prose xl:prose-lg prose-headings:text-gray-200 prose-a:text-gray-100 prose-ul:text-gray-300 prose-ol:text-gray-300 prose-strong:text-gray-200 prose-p:text-gray-300"
+          class="container max-w-3xl prose xl:prose-lg prose-headings:text-gray-100 prose-a:text-gray-100 prose-ul:text-gray-300 prose-ol:text-gray-300 prose-strong:text-gray-200 prose-p:text-gray-300"
         >
           <slot />
         </div>
