@@ -223,6 +223,13 @@ declare module 'astro:content' {
 } & { render(): Render[".md"] };
 };
 "static": {
+"early-adopters-discount.md": {
+	id: "early-adopters-discount.md";
+  slug: "early-adopters-discount";
+  body: string;
+  collection: "static";
+  data: any
+} & { render(): Render[".md"] };
 "privacy.md": {
 	id: "privacy.md";
   slug: "privacy";
