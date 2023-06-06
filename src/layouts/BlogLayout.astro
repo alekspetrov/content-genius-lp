@@ -37,7 +37,10 @@ const {
           <h1 class="mb-3 font-bold text-gray-200 text-5xl leading-[1.25]">
             {title}
           </h1>
-          <time class="mb-8 block text-sm" datetime={publishDate}
+          {description &&
+            (<p class="text-lg leading-8 mb-6">{description}</p>)
+          }
+          <time class="mb-8 block text-sm text-gray-400" datetime={publishDate}
             >{dateToFormat(publishDate)}</time
           >
           {
@@ -51,7 +54,7 @@ const {
           }
         </header>
         <div
-          class="container max-w-3xl prose xl:prose-lg prose-headings:text-gray-100 prose-a:text-gray-100 prose-ul:text-gray-300 prose-ol:text-gray-300 prose-strong:text-gray-200 prose-p:text-gray-300"
+          class="container max-w-3xl prose xl:prose-lg prose-headings:text-gray-100 prose-a:text-gray-100 prose-ul:text-gray-300 prose-ol:text-gray-300 prose-strong:text-gray-200 prose-p:text-gray-300 prose-hr:border-gray-600"
         >
           <slot />
         </div>
