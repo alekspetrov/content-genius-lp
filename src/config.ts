@@ -7,4 +7,4 @@ export const SITE_OG_IMAGE_URL =
   "https://contentgenius.io/og_default_image.png";
 export const CURRENT_LOCATION = "Central EU (GMT+1)";
 export const SITE_DESCRIPTION =
-  "Content Genius is an all-in-one modern platform for content creation and distribution.";
+  "AI-Powered Content Studio. For copywriters, marketers, social media managers and more.";
