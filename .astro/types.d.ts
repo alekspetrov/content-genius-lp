@@ -212,6 +212,13 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+"prompt-frameworks-unlock-the-full-power-of-chatgpt.md": {
+	id: "prompt-frameworks-unlock-the-full-power-of-chatgpt.md";
+  slug: "prompt-frameworks-unlock-the-full-power-of-chatgpt";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 };
 "releases": {
 "alpha.md": {
