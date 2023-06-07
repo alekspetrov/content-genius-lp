@@ -13,9 +13,23 @@ import Logo from "./Logo.astro";
     >
       <a class="hover:text-white transition" href="/blog/">Blog</a>
       <div class="group relative">
-        <a class="hover:text-white transition flex gap-2" href="/use-cases/"
-          >Use cases <img src="/icons/cheveron-down.svg" /></a
-        >
+        <a
+          class="hover:text-white transition flex items-center gap-2"
+          href="/use-cases/"
+          >Use cases <svg
+            width="12"
+            height="12"
+            viewBox="0 0 12 12"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M6 7.22222L2.88889 4.11111L2 5L6 9L10 5L9.11111 4.11111L6 7.22222Z"
+              fill="#BDBDBD"></path>
+          </svg>
+        </a>
         <div class="hidden group-hover:block pt-4 absolute top-6 left-0">
           <ul
             class="px-2 py-2 rounded-xl overflow-hidden w-[240px] text-left bg-gray-800 shadow-black shadow-lg z-50"
