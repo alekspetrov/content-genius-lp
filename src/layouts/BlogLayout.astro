@@ -34,12 +34,10 @@ const {
     <main class="pt-20 py-32">
       <article class="mx-auto">
         <header class="container max-w-3xl mb-12">
-          <h1 class="mb-3 font-bold text-gray-200 text-5xl leading-[1.25]">
+          <h1 class="mb-3 font-bold text-gray-100 text-5xl leading-[1.25]">
             {title}
           </h1>
-          {description &&
-            (<p class="text-lg leading-8 mb-6">{description}</p>)
-          }
+          {description && <p class="text-lg leading-8 mb-6">{description}</p>}
           <time class="mb-8 block text-sm text-gray-400" datetime={publishDate}
             >{dateToFormat(publishDate)}</time
           >

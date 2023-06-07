@@ -4,18 +4,62 @@ import Logo from "./Logo.astro";
 
 <header>
   <div class="container flex items-center justify-between py-6">
-    <div class="flex gap-2 items-center md:w-1/4 whitespace-nowrap">
+    <div class="flex gap-2 items-center md:w-1/5 whitespace-nowrap">
       <Logo />
       <div class="bg-gray-700 px-2 text-gray-450 rounded-sm">alpha</div>
     </div>
-    <nav class="flex-1 text-center hidden lg:block space-x-8 font-medium">
+    <nav
+      class="flex-1 text-center hidden md:flex gap-8 justify-center font-semibold"
+    >
       <a class="hover:text-white transition" href="/blog/">Blog</a>
+      <div class="group relative">
+        <a class="hover:text-white transition flex gap-2" href="/use-cases/"
+          >Use cases <img src="/icons/cheveron-down.svg" /></a
+        >
+        <div class="hidden group-hover:block pt-4 absolute top-6 left-0">
+          <ul
+            class="px-2 py-2 rounded-xl overflow-hidden w-[240px] text-left bg-gray-800 shadow-black shadow-lg z-50"
+          >
+            <li>
+              <a
+                class="px-3 py-2 hover:bg-gray-600 block transition rounded-md"
+                href="/use-cases/personal/">Personal</a
+              >
+            </li>
+            <!-- <li>
+              <a
+                class="px-3 py-2 hover:bg-gray-600 block transition rounded-md"
+                href="/use-cases/copywriting/">Copywriting</a
+              >
+            </li>
+            <li>
+              <a
+                class="px-3 py-2 hover:bg-gray-600 block transition rounded-md"
+                href="/use-cases/marketing/">Marketing</a
+              >
+            </li>
+            <li>
+              <a
+                class="px-3 py-2 hover:bg-gray-600 block transition rounded-md"
+                href="/use-cases/sales/">Sales</a
+              >
+            </li>
+            <li>
+              <a
+                class="px-3 py-2 hover:bg-gray-600 block transition rounded-md"
+                href="/use-cases/research/">Research</a
+              >
+            </li> -->
+          </ul>
+        </div>
+      </div>
+      <!-- <a class="hover:text-white transition" href="/blog/">Features</a> -->
       <a class="hover:text-white transition" href="/release-notes/"
         >Release Notes</a
       >
       <a class="hover:text-white transition" href="/pricing/">Pricing</a>
     </nav>
-    <div class="space-x-4 font-medium md:w-1/4 text-right">
+    <div class="space-x-4 font-medium md:w-1/5 text-right">
       <a
         href="https://app.contentgenius.io/"
         class="hover:text-white transition whitespace-nowrap">Log in</a

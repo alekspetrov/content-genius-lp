@@ -1,0 +1,35 @@
+---
+interface Props {
+  title: string;
+  text: string;
+  ctaText: string;
+  image: {
+    alt: string;
+    url: string;
+  };
+  imageFirst?: boolean;
+}
+
+const { title, text, ctaText, image, imageFirst } = Astro.props;
+---
+
+<div class="md:flex items-center text-center md:text-left">
+  <div
+    class={`md:w-1/2 flex justify-center mb-8 md:mb-0 ${
+      imageFirst && "md:order-1"
+    }`}
+  >
+    <img src={image.url} alt={image.alt} />
+  </div>
+  <div class="md:w-1/2">
+    <h3 class="mb-4 text-3xl lg:text-5xl text-white font-semibold">{title}</h3>
+    <p class="text-lg lg:text-xl mb-8">
+      {text}
+    </p>
+    <a
+      href="https://app.contentgenius.io/"
+      class="inline-block bg-pink-500 rounded-full text-white px-4 py-2 whitespace-nowrap font-medium"
+      >{ctaText}</a
+    >
+  </div>
+</div>

@@ -1,0 +1,63 @@
+---
+import RowDiscount from "../../components/RowDiscount.astro";
+import RowTextImage from "../../components/RowTextImage.astro";
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="Content Genius | Pricing">
+  <main class="py-20">
+    <article>
+      <header class="mb-24 container xl:w-1/2 text-center">
+        <h2
+          class="text-white font-semibold text-4xl lg:text-6xl lg:leading-[1.1] mb-4"
+        >
+          Improve your personal ChatGPT experience
+        </h2>
+        <p class="text-xl mb-12 text-gray-400">
+          Content Genoius supercharges your productivity when writing blog
+          articles, maintaining social media profiles, developing skills, and
+          more. Use specialized assistants, and create your team of specialists
+          to meet your unique cases.
+        </p>
+        <a
+          href="https://app.contentgenius.io/"
+          class="inline-block bg-indigo-500 rounded-full text-white px-6 py-3 whitespace-nowrap font-medium"
+          >Start free trial</a
+        >
+      </header>
+      <section class="bg-gray-900">
+        <div class="container py-12 space-y-8">
+          <RowTextImage
+            title="Boost your wring skills"
+            text="Enhance your writing skills with AI-generated suggestions specified for your blog topic, format, and audience."
+            ctaText="Create blog post"
+            image={{
+              alt: "Personal blogging assistatnt prompt",
+              url: "/blog/ai-use-case-personal-1.png",
+            }}
+          />
+          <RowTextImage
+            imageFirst={true}
+            title="Level up you social media game"
+            text="Unleash your imagination with our AI-powered storytelling assistant, generating captivating stories and social media blog posts."
+            ctaText="Write story"
+            image={{
+              alt: "Social media assistant prompt",
+              url: "/blog/ai-use-case-personal-2.png",
+            }}
+          />
+          <RowTextImage
+            title="Personalize Learning"
+            text="Customize your AI assistant to help you learn and grow in your desired areas, providing content and resources based on your interests and goals."
+            ctaText="Start learning"
+            image={{
+              alt: "Personalized lerning assistant prompt",
+              url: "/blog/ai-use-case-personal-3.png",
+            }}
+          />
+        </div>
+      </section>
+      <RowDiscount />
+    </article>
+  </main>
+</Layout>
