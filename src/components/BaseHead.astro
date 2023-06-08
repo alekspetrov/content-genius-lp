@@ -39,14 +39,14 @@ const {
 <meta name="url" property="og:url" content={SITE_URL} />
 <meta name="title" property="og:title" content={title} />
 <meta name="description" property="og:description" content={og_description} />
-<meta name="image" property="og:image" content={new URL(og_image, SITE_URL)} />
+<meta name="image" property="og:image" content={SITE_URL + og_image} />
 <meta />
 
 <!-- Twitter -->
+<meta property="twitter:title" content={title} />
 <meta property="twitter:card" content="summary" />
 <meta property="twitter:site" content="@contentgeniusio" />
 <meta property="twitter:description" content={og_description} />
-<meta property="twitter:image" content={new URL(og_image, SITE_URL)} />
 
 <!-- Analytics -->
 <script async data-api="/_hive" src="../scripts/bee.js"></script>
