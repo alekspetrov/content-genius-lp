@@ -4,62 +4,75 @@ import NewsletterSubcriptionForm from "./NewsletterSubcriptionForm";
 ---
 
 <footer class="py-10 md:py-20 space-y-12 border-t border-gray-800">
-  <div class="container grid grid-cols-3 xl:grid-cols-12 text-sm md:text-base">
-    <div class="col-span-3 xl:col-span-4 space-y-4 md:col-span-6 mb-8">
-      <Logo />
-      <div class="space-y-3">
-        <p class="text-sm">Content Genius - AI-Powered Content Creation.</p>
-        <p class="text-sm">
-          Streamline your content ideation process with our intelligent chat
-          assistants, efficient note-taking features, and analytics for
-          data-driven decisions. Transform the way you create and strategize
-          content!
-        </p>
+  <div class="container">
+    <div class="grid gap-8 grid-cols-4 lg:grid-cols-4 xl:grid-cols-12">
+      <div
+        class="flex mb-12 pb-8 border-b border-gray-700 col-span-4 xl:pb-0 xl:border-0 xl:col-span-4"
+      >
+        <div class="md:w-1/2 xl:w-full xl:pr-12 space-y-4">
+          <Logo />
+          <p class="text-sm">
+            Level up you content game with customizable, AI-powered assistants
+            and notes. Change you social media game, improve you writing skills,
+            make researches, develop you skills an more.
+          </p>
+        </div>
+      </div>
+      <div class="col-span-2 lg:col-span-1 xl:col-span-2">
+        <div class="text-white py-1 mb-4 font-semibold">Use cases</div>
+        <ul class="space-y-3">
+          <li class="hover:text-white transition">
+            <a href="/use-cases/personal/">Peronal</a>
+          </li>
+          <li class="hover:text-white transition">
+            <a href="/use-cases/copywriting/">Copywriting</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-span-2 lg:col-span-1 xl:col-span-2">
+        <div class="text-white py-1 mb-4 font-semibold">Resourses</div>
+        <ul class="space-y-3">
+          <li class="hover:text-white transition">
+            <a href="/release-notes/">Release notes</a>
+          </li>
+          <li class="hover:text-white transition">
+            <a href="https://discord.gg/eHNtdrdk52">Join community</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-span-2 lg:col-span-1 xl:col-span-2">
+        <div class="text-white py-1 mb-4 font-semibold">Learn</div>
+        <ul class="space-y-3">
+          <li class="hover:text-white transition"><a href="/blog/">Blog</a></li>
+          <li class="hover:text-white transition">
+            <a href="/usecases/">Use cases</a>
+          </li>
+          <li class="hover:text-white transition">
+            <a href="/pricing/">Pricing</a>
+          </li>
+          <li class="hover:text-white transition">
+            <a href="/refound/">Refound policy</a>
+          </li>
+          <!-- <li class="hover:text-white transition"><a href="/">Comparison</a></li> -->
+        </ul>
+      </div>
+      <div class="col-span-2 lg:col-span-1 xl:col-span-2">
+        <div class="text-white py-1 mb-4 font-semibold">Company</div>
+        <ul class="space-y-3">
+          <li class="hover:text-white transition">
+            <a href="/terms/">Terms</a>
+          </li>
+          <li class="hover:text-white transition">
+            <a href="/privacy/">Privacy</a>
+          </li>
+          <li class="hover:text-white transition">
+            <a href="mailto:hq@contentgenius.io?subject=Feedback">Contact us</a>
+          </li>
+        </ul>
       </div>
     </div>
-    <div class="col-span-1 xl:col-start-7 xl:col-span-2">
-      <div class="text-white py-1 mb-4 font-semibold md:text-lg">Resourses</div>
-      <ul class="space-y-4">
-        <li class="hover:text-white transition">
-          <a href="/release-notes/">Release notes</a>
-        </li>
-        <!-- <li class="hover:text-white transition">
-          <a href="/documentation/">Documentation</a>
-        </li> -->
-        <li class="hover:text-white transition">
-          <a href="https://discord.gg/eHNtdrdk52">Join community</a>
-        </li>
-      </ul>
-    </div>
-    <div class="col-span-1 xl:col-span-2">
-      <div class="text-white py-1 mb-4 font-semibold md:text-lg">Learn</div>
-      <ul class="space-y-4">
-        <li class="hover:text-white transition"><a href="/blog/">Blog</a></li>
-        <!-- <li class="hover:text-white transition">
-          <a href="/usecases/">Use cases</a>
-        </li> -->
-        <li class="hover:text-white transition">
-          <a href="/pricing/">Pricing</a>
-        </li>
-        <li class="hover:text-white transition">
-          <a href="/refound/">Refound policy</a>
-        </li>
-        <!-- <li class="hover:text-white transition"><a href="/">Comparison</a></li> -->
-      </ul>
-    </div>
-    <div class="col-span-1 xl:col-span-2">
-      <div class="text-white py-1 mb-4 font-semibold md:text-lg">Company</div>
-      <ul class="space-y-4">
-        <li class="hover:text-white transition"><a href="/terms/">Terms</a></li>
-        <li class="hover:text-white transition">
-          <a href="/privacy/">Privacy</a>
-        </li>
-        <li class="hover:text-white transition">
-          <a href="mailto:hq@contentgenius.io?subject=Feedback">Contact us</a>
-        </li>
-      </ul>
-    </div>
   </div>
+
   <div class="container">
     <div
       class="flex flex-col md:flex-row md:items-start justify-between bg-gray-700 px-8 md:px-12 pt-6 pb-12 md:py-8 rounded-md"
