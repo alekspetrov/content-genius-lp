@@ -5,10 +5,12 @@ import sitemap from "@astrojs/sitemap";
 import image from "@astrojs/image";
 import mdx from "@astrojs/mdx";
 
-// https://astro.build/config
 import solidJs from "@astrojs/solid-js";
 
 // https://astro.build/config
+
+// https://astro.build/config
+import partytown from "@astrojs/partytown";
 
 // https://astro.build/config
 export default defineConfig({
@@ -17,5 +19,5 @@ export default defineConfig({
     config: {
       applyBaseStyles: false
     }
-  }), sitemap(), image(), mdx(), solidJs()]
+  }), sitemap(), image(), mdx(), solidJs(), partytown()]
 });

@@ -9,6 +9,7 @@ import {
   SITE_DESCRIPTION,
   SITE_OG_IMAGE_URL,
 } from "../config";
+import GoogleAnalitics from "./GoogleAnalitics.astro";
 
 export interface Props {
   title?: string;
@@ -22,6 +23,9 @@ const {
   og_image = SITE_OG_IMAGE_URL,
 } = Astro.props;
 ---
+
+<!-- Goggle Analytics -->
+<GoogleAnalitics />
 
 <!-- Global Metadata -->
 <meta charset="utf-8" />
