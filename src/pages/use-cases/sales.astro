@@ -1,0 +1,63 @@
+---
+import RowDiscount from "../../components/RowDiscount.astro";
+import RowTextImage from "../../components/RowTextImage.astro";
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="Content Genius | Sales use cases">
+  <main class="py-20">
+    <article>
+      <header class="mb-24 container xl:w-1/2 text-center">
+        <h2
+          class="text-white font-semibold text-4xl lg:text-6xl lg:leading-[1.1] mb-4"
+        >
+          Boost Conversions with Content Genius
+        </h2>
+        <p class="text-xl mb-12 text-gray-400">
+          Enhance your sales performance with Content Genius, the ultimate
+          AI-powered content generation studio. Create persuasive pitches,
+          streamline outreach, and craft high-quality sales collateral in mere
+          minutes!
+        </p>
+        <a
+          href="https://app.contentgenius.io/"
+          class="inline-block bg-indigo-500 rounded-full text-white px-6 py-3 whitespace-nowrap font-medium"
+          >Start free trial</a
+        >
+      </header>
+      <section class="bg-gray-900">
+        <div class="container py-12 space-y-8">
+          <RowTextImage
+            title="Supercharge Your Sales Pitches"
+            text="Let Content Genius create compelling, persuasive sales pitches tailored for your audience. Our AI will help you craft the perfect message to close deals faster."
+            ctaText="Create winning pitches"
+            image={{
+              alt: "Sales pitches assistatnt prompt",
+              url: "/blog/ai-use-case-sales-1.png",
+            }}
+          />
+          <RowTextImage
+            imageFirst={true}
+            title=" Boost Your Outreach Game"
+            text="Streamline your email and LinkedIn outreach campaigns with Content Genius. Our AI will help you craft personalized, engaging messages that resonate with your prospects."
+            ctaText="Enhance your outreach"
+            image={{
+              alt: "Sales outreach assistant prompt",
+              url: "/blog/ai-use-case-sales-2.png",
+            }}
+          />
+          <RowTextImage
+            title="Sales Collateral Made Easy"
+            text="Content Genius is your secret weapon for creating professional sales materials. From product presentations to case studies, our AI has you covered."
+            ctaText="Upgrade sales content"
+            image={{
+              alt: "Sales content assistant prompt",
+              url: "/blog/ai-use-case-sales-3.png",
+            }}
+          />
+        </div>
+      </section>
+      <RowDiscount />
+    </article>
+  </main>
+</Layout>
