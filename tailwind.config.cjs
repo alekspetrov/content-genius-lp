@@ -55,7 +55,7 @@ module.exports = {
       },
       backgroundImage: {
         "gradient-radial-indigo":
-          "radial-gradient(50% 50% at 50% 50%, #7c00ac 0%, #090809 100%)",
+          "radial-gradient(50% 50% at 50% 50%, #7c00ac 0%, transparent 100%)",
       },
       backgroundSize: {
         "50%": "50% 50%",

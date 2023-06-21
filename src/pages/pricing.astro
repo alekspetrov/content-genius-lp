@@ -6,17 +6,15 @@ const PRICING = [
   {
     id: 1,
     name: "Freelancer",
-    price: 19,
+    price: 14,
     period: "/mo",
     description: "Ideal for independent creators",
     features: [
-      "GPT-4",
-      "50,000 Tokens (~37,500 Words)",
-      "1GB Storage",
+      "GPT 4",
+      "50,000 Tokens (~66,500 Words)",
       "10 AI Assistants",
       "AI Editing tools",
       "Support with low priority",
-      "1 User",
     ],
     cta: "Start Free",
     disabled: false,
@@ -29,17 +27,15 @@ const PRICING = [
   {
     id: 2,
     name: "Influencer",
-    price: 49,
+    price: 28,
     period: "/mo",
     description: "Grow your brand and engage your audience",
     features: [
       "GPT-4",
-      "100,000 Tokens (~75,000 Words)",
-      "4GB Storage",
-      "50+ Assistants",
+      "200,000 Tokens (~266,000 Words)",
+      "20 AI Assistants",
       "AI Editing tools",
       "Support with high priority",
-      "1 User",
     ],
     cta: "Start Free",
     disabled: false,
@@ -57,12 +53,10 @@ const PRICING = [
     description: "Elevate your organization’s content strategy",
     features: [
       "GPT-4",
-      "200,000 Tokens (~150,000 Words)",
-      "8GB Storage",
-      "50+ Assistants",
+      "500,000 Tokens (~665,000 Words)",
+      "Unlimited Assistants",
       "AI Editing tools",
       "Support with highest priority",
-      "Up to 10 users (not available in Alpha)",
     ],
     cta: "Start Free",
     disabled: false,
@@ -82,12 +76,25 @@ const PRICING = [
         <h2 class="text-white font-semibold text-3xl lg:text-5xl mb-6">
           Unleash Your <span class="text-pink-500">Content Genius</span>
         </h2>
-        <a
-          href="/early-adopters-discount/"
-          class="text-gray-200 border bg-gray-700 border-gray-500 rounded-full inline-block px-4 py-2"
+        <div
+          class="inline-flex items-center gap-3 itext-gray-200 border bg-gray-700 border-gray-500 rounded-full px-6 py-2"
         >
-          Early adopters program (-30%)
-        </a>
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="text-gray-450 fill-current"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M0 21.2132L1.98804 19.2252C1.38124 18.6762 1 17.8825 1 16.9998V9.99982V6.99982C1 5.34297 2.34315 3.99982 4 3.99982H17.2134L21.2132 0L22.6274 1.41421L1.41415 22.6274L0 21.2132ZM6.87011 19.9998H20C21.6569 19.9998 23 18.6567 23 16.9998V9.99982V6.99982C23 6.13836 22.6369 5.3617 22.0554 4.81455L20.6392 6.23074C20.8597 6.41417 21 6.69061 21 6.99982V8.99982H17.8701L15.8701 10.9998H21V16.9998C21 17.5521 20.5523 17.9998 20 17.9998H8.87011L6.87011 19.9998ZM3.40763 17.8056L10.2134 10.9998H3V16.9998C3 17.3304 3.16041 17.6235 3.40763 17.8056ZM12.2134 8.99982L15.2134 5.99982H4C3.44772 5.99982 3 6.44754 3 6.99982V8.99982H12.2134Z"
+            ></path>
+          </svg>
+          <span>No card required</span>
+        </div>
       </header>
       <div
         class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 items-center"
@@ -107,10 +114,9 @@ const PRICING = [
                 </h3>
                 <p class="mb-8 text-white font-semibold">
                   <span class="text-2xl">
-                    ${`${Math.round((tier.price * 70) / 100)}`}
-                    <span class="text-sm">/mo</span>
+                    ${tier.price}
+                    <span class="text-sm text-gray-400">/mo</span>
                   </span>
-                  <span class="line-through text-gray-400">${tier.price}</span>
                 </p>
               </div>
               <div class="text-center">
@@ -122,7 +128,6 @@ const PRICING = [
                 >
                   {tier.cta}
                 </a>
-                <div class="text-gray-450 text-xs">5-day free trial period</div>
               </div>
               <ul class="my-8 space-y-2 list-image-[url('./list-checkmark.svg')]">
                 {tier.features.map((feature) => (
