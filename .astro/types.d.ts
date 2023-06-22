@@ -205,6 +205,13 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+"boost-your-chatgpt-results.mdx": {
+	id: "boost-your-chatgpt-results.mdx";
+  slug: "boost-your-chatgpt-results";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".mdx"] };
 "how-ai-is-transforming-content-creation.md": {
 	id: "how-ai-is-transforming-content-creation.md";
   slug: "how-ai-is-transforming-content-creation";

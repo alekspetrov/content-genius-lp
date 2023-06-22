@@ -41,18 +41,20 @@ const {
           <time class="mb-8 block text-sm text-gray-400" datetime={publishDate}
             >{dateToFormat(publishDate)}</time
           >
-          {
-            image?.src && (
-              <img
-                src={image?.src}
-                alt={image.alt}
-                class="border border-gray-700 rounded w-full h-96 object-cover mt-10"
-              />
-            )
-          }
+          <div class="md:-mx-12 xl:-mx-24">
+            {
+              image?.src && (
+                <img
+                  src={image?.src}
+                  alt={image.alt}
+                  class="w-full min-h-96 object-cover mt-10"
+                />
+              )
+            }
+          </div>
         </header>
         <div
-          class="container max-w-3xl prose xl:prose-lg prose-headings:text-gray-100 prose-a:text-gray-100 prose-ul:text-gray-300 prose-ol:text-gray-300 prose-strong:text-gray-200 prose-p:text-gray-300 prose-hr:border-gray-600"
+          class="container max-w-3xl prose xl:prose-lg prose-headings:text-gray-200 prose-a:text-gray-100 prose-ul:text-gray-300 prose-ol:text-gray-300 prose-strong:text-gray-200 prose-p:text-gray-400 prose-hr:border-gray-600"
         >
           <slot />
         </div>

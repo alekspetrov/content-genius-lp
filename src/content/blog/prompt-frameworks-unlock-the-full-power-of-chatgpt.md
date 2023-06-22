@@ -1,5 +1,5 @@
 ---
-isNew: true
+isNew: false
 isDraft: false
 isFeatured: false
 layout: "../../layouts/BlogLayout.astro"
