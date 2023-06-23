@@ -219,13 +219,13 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
-"prompt-frameworks-unlock-the-full-power-of-chatgpt.md": {
-	id: "prompt-frameworks-unlock-the-full-power-of-chatgpt.md";
-  slug: "prompt-frameworks-unlock-the-full-power-of-chatgpt";
+"prompt-frameworks-vs-prompts-collection.mdx": {
+	id: "prompt-frameworks-vs-prompts-collection.mdx";
+  slug: "prompt-frameworks-vs-prompts-collection";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] };
+} & { render(): Render[".mdx"] };
 };
 "releases": {
 "alpha.md": {
