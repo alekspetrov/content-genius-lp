@@ -9,12 +9,12 @@ subtitle: "How AI is Changing the Game"
 description: "Discover how AI is transforming the content creation landscape and how to stay competitive by embracing AI-powered tools."
 image:
   {
-    src: "/blog/how-ai-is-transforming-content-creation.png",
+    src: "/blog/how-ai-is-transforming-content-creation/cover.png",
     alt: "Content Genius preview",
   }
 openGraph:
-  image: ""
-  description: "..."
+  image: "blog/how-ai-is-transforming-content-creation/og_image.png"
+  description: "AI-Empowers creators illustration"
 publishDate: 2023-05-08 12:50:12
 ---
 
