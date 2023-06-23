@@ -6,4 +6,4 @@ export const SITE_TITLE = "Content Genius";
 export const SITE_OG_IMAGE_URL = "og_default_img.png";
 export const CURRENT_LOCATION = "Central EU (GMT+1)";
 export const SITE_DESCRIPTION =
-  "AI-Powered Content Studio. For copywriters, marketers, social media managers and more.";
+  "Get a better ChatGPT experience. Perfect for copywriters, marketers, social media managers, and professionals from various fields. No specific expertise is necessary.";
