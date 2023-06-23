@@ -9,12 +9,12 @@ const FAQ_DATA = [
   {
     question: "How does Content Genius work?",
     answer:
-      "Users can chat with AI assistants to find ideas and create notes to collect messages and change note content with AI assistance. They can then publish notes as posts to LinkedIn, convert and post as Twitter threads, or even get by API. Analytics are also available to measure the impact of the content.",
+      "Users can chat with context-aware AI assistants to find ideas and create notes to collect messages and change note content with AI assistance.",
   },
   {
     question: "Who can benefit from Content Genius?",
     answer:
-      "Content creators, marketers, and social media managers who need to generate high-quality content quickly and efficiently can benefit from Content Genius.",
+      "Content creators, marketers, social media managers and any kind of professionals who need to generate high-quality content quickly and efficiently can benefit from Content Genius.",
   },
   {
     question: "How can I get started with Content Genius?",
@@ -30,11 +30,6 @@ const FAQ_DATA = [
     question: "Can Content Genius help me come up with new content ideas?",
     answer:
       "Yes, the AI-powered chat assistants can help you generate new content ideas by suggesting topics and providing inspiration.",
-  },
-  {
-    question: "Can I use Content Genius to publish my content on social media?",
-    answer:
-      "Yes, you can publish your content directly from Content Genius to LinkedIn and Twitter. The platform also provides analytics to help you measure the impact of your content.",
   },
   {
     question: "Is my content safe on Content Genius?",
