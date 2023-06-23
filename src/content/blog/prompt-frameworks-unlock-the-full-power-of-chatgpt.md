@@ -9,7 +9,7 @@ subtitle: ""
 description: "Tired of paying for prompt collections and getting poor GPT answers? Use Prompt Framework to create context-aware assistants that exactly match your task and harness the true potential of AI content generation."
 image:
   {
-    src: "/blog/prompt-framework-unlock-the-full-power-of-chatgpt.png",
+    src: "blog/prompt-framework-unlock-the-full-power-of-chatgpt.png",
     alt: "Content Genius preview",
   }
 openGraph:

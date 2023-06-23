@@ -27,7 +27,11 @@ const {
 
 <html lang="en">
   <head>
-    <BaseHead title={title} og_image={image.src} og_description={description} />
+    <BaseHead
+      title={title}
+      og_image={openGraph.image}
+      og_description={description}
+    />
   </head>
   <body class="font-sans bg-gray-900 text-gray-300 antialiased">
     <Header />
