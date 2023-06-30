@@ -1,7 +1,8 @@
 import { createSignal, Show } from "solid-js";
+import { createStore } from "solid-js/store";
 import { createClient } from "@supabase/supabase-js";
 import { SUPABASE_PUBLIC_KEY, SUPABASE_PUBLIC_URL } from "../config";
-// import { trackServerIssues, trackSubscription } from "../scripts/bee";
+import { trackServerIssues, trackSubscription } from "../scripts/bee";
 
 const supabase = createClient(SUPABASE_PUBLIC_URL, SUPABASE_PUBLIC_KEY);
 
@@ -13,25 +14,45 @@ const isValidEmail = (email: string) => {
   return emailRegex.test(email);
 };
 
+const ERROR_MESSAGES = {
+  exists: "Seems like you already subscribed!",
+  unexpected: "Ops, something goes wrong, check email and try again.",
+  invalidEmail: "Please check and correct the email address.",
+};
+
 function NewsletterSubscriptionForm() {
   const [email, setEmail] = createSignal("");
-  const [status, setStatus] = createSignal();
+  const [status, setStatus] = createStore<{
+    errorMessage: null | string;
+    email: string;
+    success: boolean;
+  }>({
+    errorMessage: null,
+    email: "",
+    success: false,
+  });
 
   async function submitEmail() {
-    const { error, status } = await supabase.from("subscribers").insert([
+    setStatus("errorMessage", null);
+    setStatus("success", false);
+    const { error } = await supabase.from("subscribers").insert([
       {
         email: email(),
       },
     ]);
 
-    if (!status || error) {
-      trackServerIssues(email(), error.message);
-      setStatus("error");
+    if (error) {
+      trackServerIssues(email(), error.details);
+
+      if (error.code === "23505")
+        setStatus("errorMessage", ERROR_MESSAGES.exists);
+      else setStatus("errorMessage", ERROR_MESSAGES.unexpected);
+
       return;
     }
 
     trackSubscription(email());
-    setStatus("success");
+    setStatus("success", true);
   }
 
   async function handleSubmit(e: Event) {
@@ -42,31 +63,34 @@ function NewsletterSubscriptionForm() {
     if (isValidEmail(email())) {
       submitEmail();
     } else {
-      setStatus("error");
+      setStatus("errorMessage", ERROR_MESSAGES.invalidEmail);
     }
   }
 
   return (
-    <div class="relative ">
-      <form class="flex gap-2" onSubmit={handleSubmit}>
+    <div class="text-sm flex-1">
+      <form class="md:flex gap-2 justify-end" onSubmit={handleSubmit}>
         <input
-          class="w-full px-4 py-2 bg-gray-500 rounded focus:outline-none"
+          class="w-full lg:w-[240px] px-4 py-2 mb-4 md:mb-0 bg-gray-500 rounded focus:outline-none"
           type="email"
+          name="email"
+          id="email"
           placeholder="Enter your email..."
           onChange={(e) => setEmail(e.target.value)}
         />
         <button
-          class={`min-w-[120px] py-2 rounded font-medium text-white ${
-            status() === "success" ? "bg-gray-700" : "bg-indigo-500"
+          class={`min-w-[120px] py-2 rounded font-medium w-full md:w-auto text-white ${
+            status.success ? "bg-teal-600" : "bg-indigo-500"
           }`}
+          disabled={status.success}
         >
-          {status() === "success" ? "Welcome" : "Subscribe"}
+          {status.success ? "Subscribed" : "Subscribe"}
         </button>
       </form>
 
-      <Show when={status() === "error"}>
-        <div class="absolute mt-1 w-full left-0">
-          Something goes wrong! Please try again.
+      <Show when={status.errorMessage}>
+        <div class="absolute mt-1 w-full left-0 text-sm">
+          {status.errorMessage}
         </div>
       </Show>
     </div>
