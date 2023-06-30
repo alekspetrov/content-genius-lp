@@ -1,14 +1,4 @@
 [[redirects]]
-  from = "/bee.js"
-  to = "https://cdn.splitbee.io/sb.js"
-  status = 200
-
-[[redirects]]
-  from = "/_hive/*"
-  to = "https://hive.splitbee.io/:splat"
-  status = 200
-
-[[redirects]]
   from = "/blog/prompt-frameworks-unlock-the-full-power-of-chatgpt/"
   to = "/blog/prompt-frameworks-vs-prompts-collection/"
   status = 301

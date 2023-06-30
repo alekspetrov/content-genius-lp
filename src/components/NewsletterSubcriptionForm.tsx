@@ -2,7 +2,6 @@ import { createSignal, Show } from "solid-js";
 import { createStore } from "solid-js/store";
 import { createClient } from "@supabase/supabase-js";
 import { SUPABASE_PUBLIC_KEY, SUPABASE_PUBLIC_URL } from "../config";
-import { trackServerIssues, trackSubscription } from "../scripts/bee";
 
 const supabase = createClient(SUPABASE_PUBLIC_URL, SUPABASE_PUBLIC_KEY);
 
@@ -42,8 +41,6 @@ function NewsletterSubscriptionForm() {
     ]);
 
     if (error) {
-      trackServerIssues(email(), error.details);
-
       if (error.code === "23505")
         setStatus("errorMessage", ERROR_MESSAGES.exists);
       else setStatus("errorMessage", ERROR_MESSAGES.unexpected);
@@ -51,7 +48,6 @@ function NewsletterSubscriptionForm() {
       return;
     }
 
-    trackSubscription(email());
     setStatus("success", true);
   }
 
