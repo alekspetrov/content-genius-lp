@@ -64,7 +64,7 @@ function NewsletterSubscriptionForm() {
   }
 
   return (
-    <div class="text-sm flex-1">
+    <div class="text-sm relative">
       <form class="md:flex gap-2 justify-end" onSubmit={handleSubmit}>
         <input
           class="w-full lg:w-[240px] px-4 py-2 mb-4 md:mb-0 bg-gray-500 rounded focus:outline-none"
