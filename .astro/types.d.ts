@@ -198,13 +198,6 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"blog": {
-"blank.md": {
-	id: "blank.md";
-  slug: "blank";
-  body: string;
-  collection: "blog";
-  data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] };
 "boost-your-chatgpt-results.mdx": {
 	id: "boost-your-chatgpt-results.mdx";
   slug: "boost-your-chatgpt-results";
