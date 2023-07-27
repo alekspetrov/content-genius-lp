@@ -1,5 +1,5 @@
 ---
-title: "Refound Policy"
+title: "Refund Policy"
 supportText: "Last update June 1, 2023"
 ---
 

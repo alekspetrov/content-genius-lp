@@ -244,9 +244,9 @@ declare module 'astro:content' {
   collection: "static";
   data: any
 } & { render(): Render[".md"] };
-"refound.md": {
-	id: "refound.md";
-  slug: "refound";
+"refund.md": {
+	id: "refund.md";
+  slug: "refund";
   body: string;
   collection: "static";
   data: any
