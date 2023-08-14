@@ -2,7 +2,8 @@
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
 import "../assets/index.pcss";
-import GoogleAnalitics from "./GoogleAnalitics.astro";
+// import GoogleAnalitics from "./GoogleAnalitics.astro";
+import GoogleTagManager from "./GoogleTagManager.astro";
 
 import {
   SITE_TITLE,
@@ -30,9 +31,6 @@ const {
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <meta name="generator" content={Astro.generator} />
 
-<!-- Goggle Analytics -->
-<GoogleAnalitics />
-
 <!-- Primary Meta Tags -->
 <title>{title}</title>
 <meta name="title" content={title} />
@@ -51,6 +49,8 @@ const {
 <meta name="twitter:site" content="@contentgeniusio" />
 <meta name="twitter:description" content={og_description} />
 <meta name="twitter:image" content={SITE_URL + og_image} />
+
+<GoogleTagManager id="GTM-M5ZNS2FF" />
 
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
