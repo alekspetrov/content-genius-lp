@@ -9,7 +9,7 @@ const FAQ_DATA = [
   {
     question: "How does Content Genius work?",
     answer:
-      "Users can chat with context-aware AI assistants to find ideas and create notes to collect messages and change note content with AI assistance.",
+      "Users can chat with context-aware AI assistants to find ideas. Create notes to collect messages and change note content with AI assistance.",
   },
   {
     question: "Who can benefit from Content Genius?",
@@ -19,7 +19,7 @@ const FAQ_DATA = [
   {
     question: "How can I get started with Content Genius?",
     answer:
-      "You can sign up for a free trial on the Content Genius website. Once you create an account, you can start using the platform right away.",
+      "You can sign up for free and get 10.000 tokens for free, no credit card required. Once you create an account, you can start using the platform right away.",
   },
   {
     question: "Is Content Genius easy to use?",

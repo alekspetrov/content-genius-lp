@@ -16,7 +16,7 @@ const PRICING = [
       "Unlimited Notes",
       "Support with low priority",
     ],
-    cta: "Start Free",
+    cta: "Start for free",
     disabled: false,
     product_id: "77513",
     variants: {
@@ -37,7 +37,7 @@ const PRICING = [
       "Unlimited Notes",
       "Support with high priority",
     ],
-    cta: "Start Free",
+    cta: "Start for free",
     disabled: false,
     product_id: "77844",
     variants: {
@@ -58,7 +58,7 @@ const PRICING = [
       "Unlimited Notes",
       "Support with highest priority",
     ],
-    cta: "Start Free",
+    cta: "Start for free",
     disabled: false,
     product_id: "77846",
     variants: {
@@ -73,11 +73,11 @@ const PRICING = [
   <main class="py-20">
     <article class="container">
       <header class="text-center mb-20">
-        <h2 class="text-white font-semibold text-3xl lg:text-5xl mb-6">
+        <h2 class="text-gray-900 font-semibold text-3xl lg:text-5xl mb-6">
           Unleash Your <span class="text-pink-500">Content Genius</span>
         </h2>
         <div
-          class="inline-flex items-center gap-3 itext-gray-200 border bg-gray-700 border-gray-500 rounded-full px-6 py-2"
+          class="inline-flex items-center gap-3 itext-gray-200 border bg-gray-50 border-gray-200 rounded-full px-6 py-2"
         >
           <svg
             width="20"
@@ -104,15 +104,15 @@ const PRICING = [
             <div
               class={`py-8 px-8 rounded-xl ${
                 tier.id === 2
-                  ? "border-indigo-500 border-2 xl:py-14"
-                  : "border-gray-700 border"
+                  ? "border-pink-500 border-2 xl:py-14"
+                  : "border-gray-300 border"
               }`}
             >
               <div class="mb-8 text-center">
-                <h3 class="font-semibold text-xl text-pink-500 mb-2">
+                <h3 class="font-semibold text-xl text-gray-900 mb-2">
                   {tier.name}
                 </h3>
-                <p class="mb-8 text-white font-semibold">
+                <p class="mb-8 text-gray-900 font-semibold">
                   <span class="text-2xl">
                     ${tier.price}
                     <span class="text-sm text-gray-400">/mo</span>
@@ -123,8 +123,8 @@ const PRICING = [
               <div class="text-center">
                 <a
                   href="https://app.contentgenius.io/"
-                  class={`block mb-2 text-white w-full py-3 rounded-md font-semibold ${
-                    tier.id === 2 ? "bg-indigo-500 " : "bg-gray-700 "
+                  class={`block mb-2 text-gray-100 w-full py-3 rounded-full font-semibold ${
+                    tier.id === 2 ? "bg-pink-500" : "bg-gray-900 "
                   }`}
                 >
                   {tier.cta}
