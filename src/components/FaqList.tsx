@@ -67,10 +67,10 @@ function FaqListItem(props) {
   return (
     <button
       onClick={[handleOpenItem, props.index]}
-      class="pl-8 pr-4 py-4 space-y-4 bg-gray-600 text-left block w-full rounded-md"
+      class="border border-gray-200 pl-8 pr-4 py-4 space-y-4 bg-white text-left block w-full rounded-md"
     >
-      <div class="flex justify-between w-full ">
-        <div class="text-lg font-semibold text-gray-150">
+      <div class="flex items-center justify-between w-full">
+        <div class="md:text-lg font-semibold text-gray-150">
           {props.item.question}
         </div>
         <div class="text-gray-450">
@@ -78,7 +78,7 @@ function FaqListItem(props) {
         </div>
       </div>
       <Show when={openItemIndex() === props.index}>
-        <div class="">{props.item.answer}</div>
+        <div>{props.item.answer}</div>
       </Show>
     </button>
   );

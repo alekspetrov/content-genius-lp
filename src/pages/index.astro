@@ -1,22 +1,242 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import RowBanner from "../components/RowBanner.astro";
-import RowChat from "../components/RowChat.astro";
-import RowNotes from "../components/RowNotes.astro";
 import RowFAQ from "../components/RowFAQ.astro";
-import RowDiscount from "../components/RowDiscount.astro";
-import RowReveiws from "../components/RowReveiws.astro";
-import RowDelivery from "../components/RowDelivery.astro";
+import Assistants from "../components/Assitatnts.astro";
+import Frameworks from "../components/Frameworks.astro";
 ---
 
 <Layout>
   <main>
     <RowBanner />
-    <RowChat />
-    <RowNotes />
-    <!-- <RowDelivery /> -->
-    <RowReveiws />
+    <div
+      class="py-12 md:py-24 border-t border-dashed bg-gradient-to-b to-fuchsia-50 from-white"
+    >
+      <div class="container">
+        <article>
+          <!-- Section header -->
+          <div class="space-y-4 text-center max-w-4xl mx-auto mb-12">
+            <div class="md:text-xl font-medium text-pink-600">
+              Tailored to You
+            </div>
+            <h3 class="text-3xl md:text-5xl font-bold text-gray-900">
+              Customize your GPT experience
+            </h3>
+            <p class="md:text-xl mb-8">
+              Start with assistant templates and smoothly adopt assitants to
+              your needs.
+            </p>
+          </div>
+          <!-- Assistatns body -->
+          <div
+            class="mx-auto lg:grid lg:grid-cols-2 gap-4 md:gap-8 space-y-3 lg:space-y-0"
+          >
+            <!-- Block 1 -->
+            <div
+              class="bg-white col-span-1 p-8 pr-0 md:pr-8 border border-gray-150 rounded-lg bg-[url('/bg-dots-1.png')] bg-no-repeat bg-bottom bg-cover"
+            >
+              <h3 class="font-medium text-gray-600 text-2xl mb-2">
+                140+ Curated assistants
+              </h3>
+              <p>
+                Seventeen diverse categories, effortless search capability, and
+                consistent, timely updates.
+              </p>
+              <div class="mt-6 overflow-hidden">
+                <Assistants />
+              </div>
+            </div>
+            <!-- Block 2 -->
+            <div
+              class="bg-white col-span-1 p-8 border border-gray-150 rounded-lg bg-[url('/bg-dots-1.png')] bg-no-repeat bg-bottom bg-cover"
+            >
+              <h3 class="font-medium text-gray-600 text-2xl mb-2">
+                Personalize your experience
+              </h3>
+              <p>
+                AI-powered, context-aware assistants that retain context
+                seamlessly, ensuring smooth, efficient, and insightful
+                interactions.
+              </p>
+              <div class="mt-6 flex justify-center">
+                <Frameworks />
+              </div>
+            </div>
+            <!-- Block 3 -->
+            <div class="bg-white col-span-2 border border-gray-150 rounded-lg">
+              <div class="p-8">
+                <h3 class="font-medium text-gray-600 text-2xl mb-2">
+                  Easy-to-use
+                </h3>
+                <p>
+                  Easy-to-use prompt framework. The set role, context, and goal,
+                  of the model will use to fine-tune responses for your personal
+                  needs.
+                </p>
+              </div>
+              <div
+                class="-mx-4 px-8 md:pt-8 bg-[url('/bg-grid-1.png')] bg-cover bg-repeat-none bg-center overflow-hidden"
+              >
+                <img
+                  src="/assistant-form-1.png"
+                  class="border border-b-0 border-gray-150 rounded-t-xl shadow-lg"
+                />
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+    <div
+      class="py-12 mg:py-24 border-t border-dashed border-fuchsia-200 bg-gradient-to-b from-fuchsia-50 to-white"
+    >
+      <div class="container">
+        <article class="lg:flex gap-12">
+          <!-- Section header -->
+          <div class="flex-1 space-y-4 max-w-4xl mx-auto lg:mt-8">
+            <div
+              class="text-lg font-medium text-pink-600 text-center lg:text-left"
+            >
+              AI-powered notes
+            </div>
+            <h3
+              class="text-3xl md:text-4xl font-bold text-gray-900 text-center lg:text-left"
+            >
+              Enhance Your Workflow with<br />AI-Powered Notes
+            </h3>
+            <p class="md:text-lg mb-8 text-center lg:text-left">
+              Transfer your ideas and insights from chat to notes with just one
+              click. Overcome creative blocks with the help of AI writer and
+              structure your thoughts with a non-destructive markdown editor.
+              Transform your ideas into social media posts, Twitter threads, and
+              more, with prompt input.
+            </p>
+            <ul class="py-4">
+              <li class="flex items-center gap-3">
+                <img src="/checkmark.svg" alt="checkmark" />
+                <div>
+                  Ask an AI assistant to summarise, edit, translate, and more.
+                </div>
+              </li>
+              <li class="flex items-center gap-3">
+                <img src="/checkmark.svg" alt="checkmark" />
+                <div>
+                  Organize your notes into collections, and select favorites.
+                </div>
+              </li>
+              <li class="flex items-center gap-3">
+                <img src="/checkmark.svg" alt="checkmark" />
+                <div>Convert notes into SEO-optimized blog posts.</div>
+              </li>
+              <li class="flex items-center gap-3">
+                <img src="/checkmark.svg" alt="checkmark" />
+                <div>See the length of the generated content.</div>
+              </li>
+            </ul>
+          </div>
+          <div class="flex-1">
+            <img src="/notes-1.png" alt="AI-Powered Notes" />
+          </div>
+        </article>
+      </div>
+    </div>
+    <div
+      class="py-12 md:py-24 border-t border-dashed bg-gradient-to-t to-white from-indigo-50"
+    >
+      <div class="container">
+        <article>
+          <!-- Section header -->
+          <div class="flex-1 space-y-4 max-w-4xl mx-auto text-center">
+            <div class="md:text-xl font-medium text-indigo-600">Use cases</div>
+            <h3 class="text-3xl md:text-4xl font-bold text-gray-900">
+              Experience the full power of GPT-4
+            </h3>
+            <p class="md:text-xl mb-8">
+              Designed to cater both personal and professional needs, seamlessly
+              transitioning between tasks, ensuring efficiency and convenience
+              in all aspects of your life.
+            </p>
+          </div>
+          <ul class="lg:grid lg:grid-cols-2 gap-8 mt-12 space-y-3 lg:space-y-0">
+            <li class="col-span-1 border rounded-xl bg-white p-8">
+              <h4 class="text-gray-800 font-medium text-2xl mb-6">Marketing</h4>
+              <ul class="list-checkmark">
+                <li>Generate SEO-optimized blog content to drive traffic</li>
+                <li>Create compelling social media posts to engage audience</li>
+                <li>Craft persuasive product descriptions that sell</li>
+                <li>Develop effective marketing strategies with AI insights</li>
+              </ul>
+            </li>
+            <li class="col-span-1 border rounded-xl bg-white p-8">
+              <h4 class="text-gray-800 font-medium text-2xl mb-6">
+                Copywriting
+              </h4>
+              <ul class="list-checkmark">
+                <li>Write compelling sales copy that converts</li>
+                <li>Generate creative ad scripts tailored to your audience</li>
+                <li>Edit and improve existing copy with AI suggestions</li>
+                <li>
+                  Translate your copy into multiple languages for global reach
+                </li>
+              </ul>
+            </li>
+            <li class="col-span-1 border rounded-xl bg-white p-8">
+              <h4 class="text-gray-800 font-medium text-2xl mb-6">Sales</h4>
+              <ul class="list-checkmark">
+                <li>
+                  Develop personalized sales pitches that resonate with
+                  prospects
+                </li>
+                <li>Create engaging email sequences to nurture leads</li>
+                <li>Draft persuasive proposals to close deals faster</li>
+                <li>
+                  Translate your copy into multiple languages for global reach
+                </li>
+              </ul>
+            </li>
+            <li class="col-span-1 border rounded-xl bg-white p-8">
+              <h4 class="text-gray-800 font-medium text-2xl mb-6">
+                Entrepreneurship
+              </h4>
+              <ul class="list-checkmark">
+                <li>Craft compelling business plans to secure funding</li>
+                <li>
+                  Craft engaging brand stories that resonate with your audience
+                </li>
+                <li>Generate business ideas and evaluate them with AI</li>
+                <li>
+                  Develop effective marketing strategies to grow your business
+                </li>
+              </ul>
+            </li>
+            <li class="col-span-1 border rounded-xl bg-white p-8">
+              <h4 class="text-gray-800 font-medium text-2xl mb-6">
+                Freelancing
+              </h4>
+              <ul class="list-checkmark">
+                <li>Write persuasive proposals to win more projects</li>
+                <li>Draft professional invoices and contracts in seconds</li>
+                <li>Create engaging content that attract more clients</li>
+                <li>
+                  Manage your workflow and stay organized with AI-powered notes
+                </li>
+              </ul>
+            </li>
+            <li class="col-span-1 border rounded-xl bg-white p-8">
+              <h4 class="text-gray-800 font-medium text-2xl mb-6">Learning</h4>
+              <ul class="list-checkmark">
+                <li>Summarize complex materials for easier understanding</li>
+                <li>Translate texts for multilingual learning</li>
+                <li>Generate quizzes and flashcards for effective revision</li>
+                <li>
+                  Develop personalized learning strategies with AI insights
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </article>
+      </div>
+    </div>
     <RowFAQ />
-    <!-- <RowDiscount /> -->
   </main>
 </Layout>

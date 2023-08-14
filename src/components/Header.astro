@@ -2,18 +2,15 @@
 import Logo from "./Logo.astro";
 ---
 
-<header>
-  <div class="container flex items-center justify-between py-6">
-    <div class="flex gap-2 items-center md:w-1/5 whitespace-nowrap">
-      <Logo />
-    </div>
+<header class="py-4">
+  <div class="container flex items-center justify-between">
+    <Logo isDark />
     <nav
-      class="flex-1 text-center hidden lg:flex gap-8 justify-center font-semibold"
+      class="text-gray-450 flex-1 hidden lg:flex gap-8 font-medium justify-end mr-10"
     >
-      <a class="hover:text-white transition" href="/blog/">Blog</a>
       <div class="group relative">
         <span
-          class="cursor-pointer hover:text-white transition flex items-center gap-2"
+          class="cursor-pointer transition hover:text-gray-600 flex items-center gap-2"
           >Use cases <svg
             width="12"
             height="12"
@@ -28,46 +25,44 @@ import Logo from "./Logo.astro";
               fill="#BDBDBD"></path>
           </svg>
         </span>
-        <div class="hidden group-hover:block pt-4 absolute top-6 left-0">
+        <div class="hidden group-hover:block pt-4 absolute top-6 left-0 z-50">
           <ul
-            class="px-2 py-2 rounded-xl overflow-hidden w-[240px] text-left bg-gray-800 shadow-black shadow-lg z-50"
+            class="text-gray-400 px-2 py-2 rounded-xl overflow-hidden w-[240px] text-left bg-gray-800 shadow-lg shadow-gray-450 z-50"
           >
             <li>
               <a
-                class="px-3 py-2 hover:bg-gray-600 block transition rounded-md"
+                class="px-3 py-2 hover:bg-gray-600 hover:text-gray-100 block transition rounded-md"
                 href="/use-cases/personal/">Personal</a
               >
             </li>
             <li>
               <a
-                class="px-3 py-2 hover:bg-gray-600 block transition rounded-md"
+                class="px-3 py-2 hover:bg-gray-600 hover:text-gray-100 block transition rounded-md"
                 href="/use-cases/copywriting/">Copywriting</a
               >
             </li>
             <li>
               <a
-                class="px-3 py-2 hover:bg-gray-600 block transition rounded-md"
+                class="px-3 py-2 hover:bg-gray-600 hover:text-gray-100 block transition rounded-md"
                 href="/use-cases/marketing/">Marketing</a
               >
             </li>
             <li>
               <a
-                class="px-3 py-2 hover:bg-gray-600 block transition rounded-md"
+                class="px-3 py-2 hover:bg-gray-600 hover:text-gray-100 block transition rounded-md"
                 href="/use-cases/sales/">Sales</a
               >
             </li>
           </ul>
         </div>
       </div>
-      <!-- <a class="hover:text-white transition" href="/blog/">Features</a> -->
-      <a class="hover:text-white transition" href="/pricing/">Pricing</a>
+      <a class="transition hover:text-gray-600" href="/blog/">Blog</a>
+      <a class="transition hover:text-gray-600" href="/pricing/">Pricing</a>
     </nav>
-    <div class="space-x-4 font-medium lg:w-1/5 text-right">
-      <a
-        href="https://app.contentgenius.io/"
-        class="bg-indigo-500 rounded-full text-white px-5 py-2 whitespace-nowrap text-sm"
-        >Get Started</a
-      >
-    </div>
+    <a
+      href="https://app.contentgenius.io/"
+      class="bg-pink-500 rounded-full text-white px-4 py-2 whitespace-nowrap font-medium"
+      >Get Started</a
+    >
   </div>
 </header>

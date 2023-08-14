@@ -25,13 +25,15 @@ import { dateToFormat } from "../../helpers/dateToFormat";
         posts.map((post) => (
           <a
             href={`/blog/${post.slug}/`}
-            class="flex flex-col lg:first:flex-row gap-2 col-span-1 lg:first:gap-12 first:col-span-3 first:pb-12 first:border-b first:border-gray-700"
+            class="flex flex-col lg:first:flex-row gap-2 col-span-1 lg:first:gap-12 first:col-span-3 first:pb-12 first:border-b first:border-gray-200"
           >
-            <div class="h-96 flex-1 border border-gray-800 rounded">
+            <div class="flex-1 ">
               <img
                 src={`${post.data.image?.src}`}
                 alt={post.data.image?.alt}
-                class={`object-cover w-full ${!post.data.isNew && "h-[260px]"}`}
+                class={`object-cover w-full h-full rounded-lg ${
+                  !post.data.isNew && "h-[280px]"
+                }`}
               />
             </div>
             <div
@@ -45,13 +47,13 @@ import { dateToFormat } from "../../helpers/dateToFormat";
                     New post
                   </div>
                 )}
-                <h2
-                  class={`mb-2 text-white font-bold ${
+                <h3
+                  class={`mb-2 text-gray-900 font-bold ${
                     post.data.isNew ? "text-3xl lg:text-4xl" : "text-2xl"
                   }`}
                 >
                   {post.data.title}
-                </h2>
+                </h3>
                 {post.data.isNew && (
                   <p class="mt-4 text-lg text-gray-450">
                     {post.data.description}

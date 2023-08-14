@@ -6,25 +6,33 @@ import Layout from "../../layouts/Layout.astro";
 
 <Layout title="Content Genius for marketers">
   <main class="py-20">
-    <article>
-      <header class="mb-24 container xl:w-1/2 text-center">
+    <article class="container">
+      <header class="relative mb-24">
         <h2
-          class="text-white font-semibold text-4xl lg:text-6xl lg:leading-[1.1] mb-4"
+          class="text-gray-900 font-semibold text-4xl lg:text-5xl lg:leading-[1.1] mb-4 max-w-[25ch]"
         >
           Supercharge marketing campaigns
         </h2>
-        <p class="text-xl mb-12 text-gray-400">
+        <p class="max-w-[65ch] text-lg lg:text-xl leading-8 mb-8 md:mb-12">
           Content Genious can boost your marketing campaigns with powerful ideas
           generated based on your audience and product features. Let specialized
           assistants do your routine job.
         </p>
         <a
           href="https://app.contentgenius.io/"
-          class="inline-block bg-indigo-500 rounded-full text-white px-6 py-3 whitespace-nowrap font-medium"
+          class="inline-block bg-pink-500 rounded-full text-white px-6 py-3 whitespace-nowrap font-medium"
           >Start free trial</a
         >
+        <div
+          class="absolute -z-10 -top-24 -left-24 w-[18rem] h-[18rem] bg-gradient-to-tr from-fuchsia-50 to-white rounded-full"
+        >
+        </div>
+        <div
+          class="absolute -z-10 -bottom-0 right-0 w-[18rem] h-[18rem] bg-gradient-to-tr from-indigo-50 to-white rounded-full"
+        >
+        </div>
       </header>
-      <section class="bg-gray-900">
+      <section>
         <div class="container py-12 space-y-8">
           <RowTextImage
             title="Content Creation & Optimization"
@@ -56,7 +64,6 @@ import Layout from "../../layouts/Layout.astro";
           />
         </div>
       </section>
-      <!-- <RowDiscount /> -->
     </article>
   </main>
 </Layout>
