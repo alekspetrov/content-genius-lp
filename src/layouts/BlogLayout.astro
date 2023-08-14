@@ -36,19 +36,30 @@ const {
   <body class="font-sans text-zinc-600 antialiased">
     <Header />
     <main class="pt-20 py-32">
-      <article class="mx-auto">
+      <article
+        class="mx-auto"
+        itemscope
+        itemtype="https://schema.org/BlogPosting"
+      >
         <header class="container max-w-3xl mb-12">
-          <h1 class="mb-3 font-bold text-gray-900 text-5xl leading-[1.25]">
+          <h1
+            class="mb-3 font-bold text-gray-900 text-5xl leading-[1.25]"
+            itemprop="headline"
+          >
             {title}
           </h1>
           {description && <p class="text-lg leading-8 mb-6">{description}</p>}
-          <time class="mb-8 block text-sm text-gray-400" datetime={publishDate}
-            >{dateToFormat(publishDate)}</time
+          <time
+            class="mb-8 block text-sm text-gray-400"
+            datetime={publishDate}
+            itemprop="datePublished"
+            content={publishDate}>{dateToFormat(publishDate)}</time
           >
           <div class="md:-mx-12 xl:-mx-24">
             {
               image?.src && (
                 <img
+                  itemprop="image"
                   src={image?.src}
                   alt={image.alt}
                   class="w-full min-h-96 object-cover mt-10"
@@ -59,6 +70,7 @@ const {
         </header>
         <div
           class="container max-w-3xl prose xl:prose-lg prose-headings:text-zinc-900 prose-a:text-zinc-600 prose-ul:text-zinc-600 prose-ol:text-zinc-600 prose-strong:text-zinc-600 prose-p:text-zinc-600 prose-hr:border-zinc-600"
+          itemprop="articleBody"
         >
           <slot />
         </div>

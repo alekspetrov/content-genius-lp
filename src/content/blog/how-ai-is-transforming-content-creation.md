@@ -15,7 +15,7 @@ image:
 openGraph:
   image: "blog/how-ai-is-transforming-content-creation/og_image.png"
   description: "AI-Empowers creators illustration"
-publishDate: 2023-05-08 12:50:12
+publishDate: 2023-05-08T12:50:12+00:00
 ---
 
 In the ever-changing world of content creation, it is so important to stay up-to-date with the latest technologies and trends. One such groundbreaking development is the rise of AI-powered content generation. As artificial intelligence becomes more integrated into content production, it has become increasingly essential for creators to adapt and evolve alongside it.

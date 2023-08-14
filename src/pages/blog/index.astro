@@ -9,7 +9,7 @@ const posts = allBlogPosts
   .sort(
     (a, b) =>
       new Date(b.data.publishDate).valueOf() -
-      new Date(a.data.publishDate).valueOf()
+      new Date(a.data.publishDate).valueOf(),
   )
   .filter((post) => !post.data.isDraft);
 
@@ -23,46 +23,63 @@ import { dateToFormat } from "../../helpers/dateToFormat";
     >
       {
         posts.map((post) => (
-          <a
-            href={`/blog/${post.slug}/`}
-            class="flex flex-col lg:first:flex-row gap-2 col-span-1 lg:first:gap-12 first:col-span-3 first:pb-12 first:border-b first:border-gray-200"
+          <article
+            itemprop="blogPost"
+            itemscope
+            itemtype="http://schema.org/BlogPosting"
+            class="flex flex-col lg:first:flex-row col-span-1 first:col-span-3 lg:first:[&>a]:gap-12 first:pb-12 first:border-b first:border-gray-200"
           >
-            <div class="flex-1 ">
-              <img
-                src={`${post.data.image?.src}`}
-                alt={post.data.image?.alt}
-                class={`object-cover w-full h-full rounded-lg ${
-                  !post.data.isNew && "h-[280px]"
-                }`}
-              />
-            </div>
-            <div
-              class={`flex-1 flex flex-col w-full ${
-                post.data.isNew ? "py-8" : "py-4"
-              }`}
+            <a
+              href={`/blog/${post.slug}/`}
+              class="flex gap-2"
+              style="flex-direction: inherit;"
+              itemprop="url"
             >
-              <div class="flex-1">
-                {post.data.isNew && (
-                  <div class="mb-4 text-xl text-pink-500 font-medium">
-                    New post
-                  </div>
-                )}
-                <h3
-                  class={`mb-2 text-gray-900 font-bold ${
-                    post.data.isNew ? "text-3xl lg:text-4xl" : "text-2xl"
+              <div class="flex-1 flex-col">
+                <img
+                  src={`${post.data.image?.src}`}
+                  alt={post.data.image?.alt}
+                  itemprop="image"
+                  class={`object-cover w-full h-full rounded-lg ${
+                    !post.data.isNew && "h-[280px]"
                   }`}
-                >
-                  {post.data.title}
-                </h3>
-                {post.data.isNew && (
-                  <p class="mt-4 text-lg text-gray-450">
-                    {post.data.description}
-                  </p>
-                )}
+                />
               </div>
-              <div class="text-sm">{dateToFormat(post.data.publishDate)}</div>
-            </div>
-          </a>
+              <div
+                class={`flex-1 flex flex-col w-full ${
+                  post.data.isNew ? "py-8" : "py-4"
+                }`}
+              >
+                <div class="flex-1">
+                  {post.data.isNew && (
+                    <div class="mb-4 text-xl text-pink-500 font-medium">
+                      New post
+                    </div>
+                  )}
+                  <h3
+                    itemprop="headline"
+                    class={`mb-2 text-gray-900 font-bold ${
+                      post.data.isNew ? "text-3xl lg:text-4xl" : "text-2xl"
+                    }`}
+                  >
+                    {post.data.title}
+                  </h3>
+                  {post.data.isNew && (
+                    <p class="mt-4 text-lg text-gray-450" itemprop="abstract">
+                      {post.data.description}
+                    </p>
+                  )}
+                </div>
+                <div
+                  class="text-sm"
+                  itemprop="datePublished"
+                  content={post.data.publishDate}
+                >
+                  {dateToFormat(post.data.publishDate)}
+                </div>
+              </div>
+            </a>
+          </article>
         ))
       }
     </div>

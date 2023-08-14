@@ -2,7 +2,7 @@
 layout: "../../layouts/BlogLayout.astro"
 title: "Alpha release"
 # image: { src: "hello-world.png", alt: "Hello World" }
-publishDate: 2023-06-01T11:25:24
+publishDate: 2023-06-01T11:25:24+00:00
 ---
 
 We're excited to announce the Alpha release of Content Genius, a cutting-edge AI-powered content generation platform. This release marks the beginning of our journey to revolutionize the way you create content and save time.
