@@ -3,6 +3,86 @@
   to = "/blog/prompt-frameworks-vs-prompts-collection/"
   status = 301
 
+[[redirects]]
+  from = "/refound/"
+  to = "/refund/"
+  status = 301
+
+[[redirects]]
+  from = "/blog/blank/"
+  to = "/blog/"
+  status = 301
+
+[[redirects]]
+  from = "/release-notes/"
+  to = "/blog/how-ai-is-transforming-content-creation/"
+  status = 301
+
+[[redirects]]
+  from = "/release-notes"
+  to = "/blog/how-ai-is-transforming-content-creation/"
+  status = 301
+
+[[redirects]]
+  from = "/privacy-policy/"
+  to = "/privacy/"
+  status = 301
+
+[[redirects]]
+  from = "/privacy-policy"
+  to = "/privacy/"
+  status = 301
+
+[[redirects]]
+  from = "/terms-of-service/"
+  to = "/terms/"
+  status = 301
+
+[[redirects]]
+  from = "/terms-of-service"
+  to = "/terms/"
+  status = 301
+
+[[redirects]]
+  from = "/features/"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/features"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/~partytown/"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/usecases/"
+  to = "/"
+  status = 302
+
+[[redirects]]
+  from = "/documentation/"
+  to = "/blog/"
+  status = 302
+
+[[redirects]]
+  from = "/documentation"
+  to = "/blog/"
+  status = 302
+
+[[redirects]]
+  from = "/contacts/"
+  to = "/"
+  status = 302
+
+[[redirects]]
+  from = "/contacts"
+  to = "/"
+  status = 302
+
 [[plugins]]
   package = "netlify-plugin-cloudinary"
 
