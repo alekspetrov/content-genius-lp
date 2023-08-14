@@ -19,7 +19,7 @@ Don't miss out on this exclusive offer, valid only until the end of June, 2023.
 
 ### How to claim your 30% discount?
 
-1. Register for [Content Genius](http://app.contentgenius.io/)
+1. Register for [Content Genius](https://app.contentgenius.io/)
 2. Choose your preferred plan
 3. The promo code already included on the checkout page!
 4. Start writing!

@@ -87,7 +87,7 @@ Below is a list of our third-party service providers, along with a brief descrip
 2. Supabase: Supabase is a cloud-based database and authentication service, used by Content Genius to securely store user data, handle user authentication, and manage access controls.
 3. OAuth 2.0: OAuth 2.0 is an open standard for secure authorization, used by Content Genius to enable users to sign in to our service using their existing accounts with third-party platforms like Google or Facebook, without sharing their login credentials.
 4. Analytics Provider: Our analytics provider helps us understand user behavior on our platform by collecting and analyzing aggregated usage data. This information helps us optimize and improve our services.
-5. Payment Processor (e.g., [Lemon Squeezy](https://app.lemonsqueezy.com/)): Our payment processor manages the processing of user payments for premium features or subscriptions. They handle sensitive financial information in a secure manner and in compliance with applicable regulations.
+5. Payment Processor (e.g., Lemon Squeezy): Our payment processor manages the processing of user payments for premium features or subscriptions. They handle sensitive financial information in a secure manner and in compliance with applicable regulations.
 
 Content Genius remains responsible for the protection of user data when shared with third-party service providers. We carefully select our service providers, ensuring they have appropriate data protection measures in place and comply with relevant privacy regulations.
 

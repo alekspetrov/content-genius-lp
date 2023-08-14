@@ -106,7 +106,7 @@ Content Genius utilizes various third-party services and APIs to provide you wit
 
 You have the right to access, correct, or delete your personal information held by Content Genius. To exercise these rights, please contact us at [hq@contentgenius.io](mailto:hq@contentgenius.io). We will respond to your request within a reasonable timeframe and in accordance with applicable laws.
 
-By using the Services, you confirm that you have read, understood, and agree to the collection, use, storage, and disclosure of your personal information as described in this Privacy Policy. For more information about our privacy practices, please review our full [Privacy Policy](/privacy).
+By using the Services, you confirm that you have read, understood, and agree to the collection, use, storage, and disclosure of your personal information as described in this Privacy Policy. For more information about our privacy practices, please review our full [Privacy Policy](/privacy/).
 
 ## 9. Disclaimer of Warranties and Limitation of Liability
 
