@@ -16,7 +16,7 @@ const posts = allBlogPosts
 import { dateToFormat } from "../../helpers/dateToFormat";
 ---
 
-<Layout title="Content Genius | Blog">
+<Layout title="Blog">
   <main>
     <div
       class="container py-20 md:grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3"
@@ -26,7 +26,7 @@ import { dateToFormat } from "../../helpers/dateToFormat";
           <article
             itemprop="blogPost"
             itemscope
-            itemtype="http://schema.org/BlogPosting"
+            itemtype="https://schema.org/BlogPosting"
             class="flex flex-col lg:first:flex-row col-span-1 first:col-span-3 lg:first:[&>a]:gap-12 first:pb-12 first:border-b first:border-gray-200"
           >
             <a
