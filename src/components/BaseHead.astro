@@ -40,7 +40,7 @@ const canonicalURL = new URL(Astro.url.pathname, SITE_URL);
 
 <!-- Open Graph / Facebook / LinkedIn -->
 <meta property="og:type" content="website" />
-<meta property="og:url" content={SITE_URL} />
+<meta property="og:url" content={canonicalURL} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={og_description} />
 <meta property="og:image" content={SITE_URL + og_image} />
