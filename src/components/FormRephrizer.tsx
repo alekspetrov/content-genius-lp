@@ -78,7 +78,7 @@ const FormParaphrase = () => {
   });
 
   function submit() {
-    const url = `http://localhost:3000/tools/paraphrasing/?content=${content()}&tone=${
+    const url = `https://app.contentgenius.io/tools/paraphrasing/?content=${content()}&tone=${
       tone().value
     }&targetUrl=${TARGET_URL}`;
 
