@@ -4,7 +4,7 @@ import tailwind from "@astrojs/tailwind";
 import sitemap from "@astrojs/sitemap";
 import image from "@astrojs/image";
 import mdx from "@astrojs/mdx";
-import robotsTxt from 'astro-robots-txt';
+import robotsTxt from "astro-robots-txt";
 
 import solidJs from "@astrojs/solid-js";
 
@@ -23,21 +23,20 @@ export default defineConfig({
       },
     }),
     sitemap({
-      filter: (page) =>
-        page !== `${SITE_URL}early-adopters-discount/`,
+      filter: (page) => page !== `${SITE_URL}early-adopters-discount/`,
       serialize(item) {
         if (item.url === `${SITE_URL}`) {
           item.priority = 1;
-          return item
+          return item;
         }
         if (item.url === `${SITE_URL}blog/`) {
           item.priority = 1;
-          return item
+          return item;
         }
         item.priority = 0.8;
-        return item
+        return item;
       },
-      changefreq: 'hourly',
+      changefreq: "hourly",
     }),
     image(),
     mdx(),

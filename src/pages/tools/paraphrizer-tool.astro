@@ -1,0 +1,38 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import FormParaphrase from "../../components/FormRephrizer";
+---
+
+<Layout title="Paraphrasing tool">
+  <main class="py-20">
+    <article class="container">
+      <div class="lg:grid lg:grid-cols-5 gap-24 font-['system-ui']">
+        <header class="col-span-2 flex flex-col justify-center">
+          <h1
+            class="text-gray-900 font-semibold text-4xl lg:text-5xl lg:leading-[1.1] mb-8"
+          >
+            Paraphrasing tool
+          </h1>
+          <div class="space-y-4 text-lg">
+            <p>
+              The Paraphraser tool is a powerful feature that utilizes advanced
+              AI technology to rephrase your text, ensuring it maintains its
+              original meaning while adopting a fresh and unique style. Perfect
+              for revamping old content, avoiding plagiarism, simplifying
+              complex text, or just adding a different flavor to your words.
+            </p>
+            <p class="font-bold">Use cases</p>
+            <ul class="marker:text-pink-500 list-inside list-disc">
+              <li>Rewrite old blog posts</li>
+              <li>Avoid plagiarism</li>
+              <li>Change the tone</li>
+            </ul>
+          </div>
+        </header>
+        <div class="col-span-3">
+          <FormParaphrase client:load />
+        </div>
+      </div>
+    </article>
+  </main>
+</Layout>

@@ -1,0 +1,37 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="AI Tools">
+  <main class="py-20">
+    <article class="container">
+      <header>
+        <h1
+          class="text-gray-900 font-semibold text-4xl lg:text-5xl lg:leading-[1.1] mb-4 max-w-[25ch]"
+        >
+          GPT writing tools
+        </h1>
+        <p class="max-w-[65ch] text-lg lg:text-xl leading-8 mb-8 md:mb-12">
+          Use chatGPT to create, rewrite and transform your content.
+        </p>
+      </header>
+      <div>
+        <ul class="grid grid-cols-1 gap-4">
+          <li class="">
+            <article>
+              <a
+                href="/tools/paraphrizer-tool"
+                class="border rounded-md hover:border-gray-300 block text-gray-900 py-8 px-8"
+              >
+                <h2 class="font-bold text-xl">Paraphrizing</h2>
+                <p class="text-gray-600">
+                  Generate new content based on existant.
+                </p>
+              </a>
+            </article>
+          </li>
+        </ul>
+      </div>
+    </article>
+  </main>
+</Layout>
