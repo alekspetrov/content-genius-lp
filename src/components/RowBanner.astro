@@ -12,6 +12,21 @@ async function getCountries() {
 }
 
 const customersCounter = await getCountries();
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org/",
+  "@type": "Review",
+  reviewRating: {
+    "@type": "Rating",
+    ratingValue: "5",
+    bestRating: "5",
+  },
+  name: "Best AI Chat GPT content tool",
+  publisher: {
+    "@type": "Organization",
+    name: "Content Genius",
+  },
+});
 ---
 
 <section role="banner">
@@ -63,22 +78,7 @@ const customersCounter = await getCountries();
           </svg>
           <div class="font-medium text-gray-600 text-sm md:text-lg">
             Trusted by {getCountries()}+ customers
-            <script type="application/ld+json" is:inline>
-              {
-                "@context": "https://schema.org/",
-                "@type": "Review",
-                "reviewRating": {
-                  "@type": "Rating",
-                  "ratingValue": "5",
-                  "bestRating": "5"
-                },
-                "name": "Best AI Chat GPT content tool",
-                "publisher": {
-                  "@type": "Organization",
-                  "name": "Content Genius"
-                }
-              }
-              </script>
+            <script type="application/ld+json" set:html={schema}></script>
           </div>
         </div>
       </div>
