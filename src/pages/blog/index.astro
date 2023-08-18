@@ -22,7 +22,7 @@ import { dateToFormat } from "../../helpers/dateToFormat";
       class="container py-20 md:grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3"
     >
       {
-        posts.map((post) => (
+        posts.map((post, index) => (
           <article
             itemprop="blogPost"
             itemscope
@@ -51,14 +51,25 @@ import { dateToFormat } from "../../helpers/dateToFormat";
                       New post
                     </div>
                   )}
-                  <h3
-                    itemprop="headline"
-                    class={`mb-2 text-gray-900 font-bold ${
-                      post.data.isNew ? "text-3xl lg:text-4xl" : "text-2xl"
-                    }`}
-                  >
-                    {post.data.title}
-                  </h3>
+                  {index == 0 ? (
+                    <h1
+                      itemprop="headline"
+                      class={`mb-2 text-gray-900 font-bold ${
+                        post.data.isNew ? "text-3xl lg:text-4xl" : "text-2xl"
+                      }`}
+                    >
+                      {post.data.title}
+                    </h1>
+                  ) : (
+                    <h2
+                      itemprop="headline"
+                      class={`mb-2 text-gray-900 font-bold ${
+                        post.data.isNew ? "text-3xl lg:text-4xl" : "text-2xl"
+                      }`}
+                    >
+                      {post.data.title}
+                    </h2>
+                  )}
                   {post.data.isNew && (
                     <p class="mt-4 text-lg text-gray-450" itemprop="abstract">
                       {post.data.description}
