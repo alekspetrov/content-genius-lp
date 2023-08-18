@@ -1,0 +1,131 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const ContentData = {
+  description:
+    "Effortlessly compose professional cover letters, resignation letters, recommendations, and personal letters with AI-powered Letter Writer tool.",
+  header: {
+    title: "Letter Writer",
+    text: "Our Letter Writer tool, powered by advanced AI technology, is your perfect ally for composing a variety of context-aware letters. Whether it’s a cover letter, resignation letter, recommendation letter, or a personal love letter, this tool ensures your message is effectively conveyed.",
+    list: [
+      "Create cover letters",
+      "Compose resignation letters",
+      "Draft recommendation letters",
+    ],
+  },
+  body: {
+    title: "Powering Up Your Correspondence with AI",
+    text: "Unleash the power of AI with our Letter Writer tool at Content Genius. This innovative tool is designed to cater to all your letter writing needs, providing you with a unique blend of contextual understanding and creative text generation.",
+    cards: [
+      {
+        imageUrl: "",
+        title: "Create cover letters",
+        text: "Landing your dream job starts with making a strong first impression. Our Letter Writer tool guides you in crafting professional, impactful cover letters that grab the attention of recruiters.",
+        cta: "Create Cover Letter",
+        link: "https://app.contentgenius.io/",
+      },
+      {
+        imageUrl: "",
+        title: "Compose resignation letters",
+        text: "Transitioning to a new job? Our tool helps you craft a respectful resignation letter, ensuring your departure is handled with utmost professionalism.",
+        cta: "Compose Resignation Letter",
+        link: "https://app.contentgenius.io/",
+      },
+      {
+        imageUrl: "",
+        title: "Draft recommendation letters",
+        text: "Whether you’re an employer, professor, or friend, our Letter Writer tool assists you in drafting compelling recommendation letters that truly highlight an individual’s strengths and potential.",
+        cta: "Draft Recommendation Letter",
+        link: "https://app.contentgenius.io/",
+      },
+    ],
+  },
+};
+---
+
+<Layout title={ContentData.header} description={ContentData.header.title}>
+  <main class="py-20">
+    <article itemscope itemtype="https://schema.org/TechArticle">
+      <div class="container">
+        <div class="lg:grid lg:grid-cols-5 gap-24 font-['system-ui']">
+          <header
+            class="relative col-span-2 flex flex-col justify-center mb-12 lg:mb-0"
+          >
+            <h1
+              class="text-gray-900 font-semibold text-4xl lg:text-5xl lg:leading-[1.1] mb-8"
+              itemprop="headline"
+            >
+              {ContentData.header.title}
+            </h1>
+            <div class="space-y-4 text-lg" itemprop="articleBody">
+              <p>
+                {ContentData.header.text}
+              </p>
+              <ul
+                class="decoration-slate-400 list-inside list-image-[url(/checkmark-sm.svg)] space-y-2"
+              >
+                {
+                  ContentData.header.list.map((item, index) => (
+                    <li class="hover:text-[#8B5CF6] transition">
+                      <a href={`#card-${index}`}>{item}</a>
+                    </li>
+                  ))
+                }
+              </ul>
+            </div>
+            <div
+              class="absolute -z-10 -top-24 -left-24 w-[18rem] h-[18rem] bg-gradient-to-tr from-fuchsia-50 to-white rounded-full"
+            >
+            </div>
+          </header>
+          <div class="col-span-3">
+            <!-- <FormParaphrase client:load /> -->
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-gray-200 mt-24 py-12">
+        <div class="container">
+          <section class="space-y-4 max-w-4xl mb-12">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900">
+              {ContentData.body.title}
+            </h2>
+            <p class="md:text-lg mb-12">
+              {ContentData.body.text}
+            </p>
+          </section>
+          <div
+            class="mx-auto lg:grid lg:grid-cols-3 gap-4 md:gap-8 space-y-3 lg:space-y-0"
+          >
+            {
+              ContentData.body.cards.map((item, index) => (
+                <section class="border border-gray-200 bg-white col-span-1 p-8 md:pr-8 border-gray-150 rounded-lg bg-[url('/bg-dots-1.png')] bg-no-repeat bg-bottom">
+                  <div class="flex flex-col h-full">
+                    <h2
+                      id={`card-${index}`}
+                      class="font-medium text-gray-900 text-xl mb-2"
+                    >
+                      {item.title}
+                    </h2>
+                    <p class="text-sm flex-1">{item.text}</p>
+                    <div class="mt-2">
+                      <a
+                        href="https://app.contentgenius.io/tools/paraphrasing"
+                        class="text-white bg-pink-500 px-6 py-2 rounded-full mt-4 font-medium inline-block"
+                      >
+                        {item.cta}
+                      </a>
+                    </div>
+                  </div>
+                </section>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+    </article>
+  </main>
+</Layout>
+
+// <!-- <picture class="block mb-4">
+//               <img src="/blog/ai-use-case-copywriting-1.png" alt="" />
+//             </picture> -->
