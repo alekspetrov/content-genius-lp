@@ -5,37 +5,150 @@ import FormParaphrase from "../../components/FormRephrizer";
 
 <Layout title="Paraphrasing tool">
   <main class="py-20">
-    <article
-      class="container"
-      itemscope
-      itemtype="https://schema.org/TechArticle"
-    >
-      <div class="lg:grid lg:grid-cols-5 gap-24 font-['system-ui']">
-        <header class="col-span-2 flex flex-col justify-center">
-          <h1
-            class="text-gray-900 font-semibold text-4xl lg:text-5xl lg:leading-[1.1] mb-8"
-            itemprop="headline"
+    <article itemscope itemtype="https://schema.org/TechArticle">
+      <div class="container">
+        <div class="lg:grid lg:grid-cols-5 gap-24 font-['system-ui']">
+          <header
+            class="relative col-span-2 flex flex-col justify-center mb-12 lg:mb-0"
           >
-            Paraphrasing tool
-          </h1>
-          <div class="space-y-4 text-lg" itemprop="articleBody">
-            <p>
-              The Paraphraser tool is a powerful feature that utilizes advanced
-              AI technology to rephrase your text, ensuring it maintains its
-              original meaning while adopting a fresh and unique style. Perfect
-              for revamping old content, avoiding plagiarism, simplifying
-              complex text, or just adding a different flavor to your words.
-            </p>
-            <p class="font-bold">Use cases</p>
-            <ul class="marker:text-pink-500 list-inside list-disc">
-              <li>Rewrite old blog posts</li>
-              <li>Avoid plagiarism</li>
-              <li>Change the tone</li>
-            </ul>
+            <h1
+              class="text-gray-900 font-semibold text-4xl lg:text-5xl lg:leading-[1.1] mb-8"
+              itemprop="headline"
+            >
+              Paraphrasing tool
+            </h1>
+            <div class="space-y-4 text-lg" itemprop="articleBody">
+              <p>
+                The Paraphraser tool is a powerful feature that utilizes
+                advanced AI technology to rephrase your text, ensuring it
+                maintains its original meaning while adopting a fresh and unique
+                style. Perfect for revamping old content, avoiding plagiarism,
+                simplifying complex text, or just adding a different flavor to
+                your words.
+              </p>
+              <ul
+                class="decoration-slate-400 list-inside list-image-[url(/checkmark-sm.svg)] space-y-2"
+              >
+                <li class="hover:text-[#8B5CF6] transition">
+                  <a href="#rewrite-old-posts">Rewrite old blog posts</a>
+                </li>
+                <li class="hover:text-[#8B5CF6] transition">
+                  <a href="#avoid-plagiarism">Avoid plagiarism</a>
+                </li>
+                <li class="hover:text-[#8B5CF6] transition">
+                  <a href="#change-the-tone">Change the tone</a>
+                </li>
+              </ul>
+            </div>
+            <div
+              class="absolute -z-10 -top-24 -left-24 w-[18rem] h-[18rem] bg-gradient-to-tr from-fuchsia-50 to-white rounded-full"
+            >
+            </div>
+          </header>
+          <div class="col-span-3">
+            <FormParaphrase client:load />
           </div>
-        </header>
-        <div class="col-span-3">
-          <FormParaphrase client:load />
+        </div>
+      </div>
+      <div class="border-t border-gray-200 mt-24 py-12">
+        <div class="container">
+          <section class="space-y-4 max-w-4xl mb-12">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900">
+              Paraphrising tool use cases
+            </h2>
+            <p class="md:text-lg mb-12">
+              Unleash the potential of AI-driven content creation with our free
+              online Paraphraser tool at Content Genius. This cutting-edge tool
+              is designed to cater to all your paraphrasing needs, offering a
+              unique combination of context understanding and creative text
+              reproduction.
+            </p>
+          </section>
+          <div
+            class="mx-auto lg:grid lg:grid-cols-3 gap-4 md:gap-8 space-y-3 lg:space-y-0"
+          >
+            <section
+              class="border border-gray-200 bg-white col-span-1 p-8 pr-0 md:pr-8 border-gray-150 rounded-lg bg-[url('/bg-dots-1.png')] bg-no-repeat bg-bottom"
+            >
+              <!-- <picture class="block mb-4">
+                <img src="/blog/ai-use-case-copywriting-1.png" alt="" />
+              </picture> -->
+              <div class="flex flex-col h-full">
+                <h2
+                  id="rewrite-old-posts"
+                  class="font-medium text-gray-600 text-2xl mb-2"
+                >
+                  Rewrite old blog posts
+                </h2>
+                <p class="text-sm">
+                  Are your old blog posts feeling stale? Our Paraphraser tool
+                  can breathe new life into them. By rephrasing your content, it
+                  ensures that your posts remain fresh, relevant, and engaging,
+                  all while preserving the original message.
+                </p>
+                <div>
+                  <button
+                    class="text-white bg-pink-500 px-6 py-2 rounded-full mt-4"
+                    >Rewrite post</button
+                  >
+                </div>
+              </div>
+            </section>
+            <section
+              class="border border-gray-200 bg-white col-span-1 p-8 pr-0 md:pr-8 border-gray-150 rounded-lg bg-[url('/bg-dots-1.png')] bg-no-repeat bg-bottom"
+            >
+              <div class="flex flex-col h-full">
+                <!-- <picture class="block mb-4">
+                  <img src="/blog/ai-use-case-copywriting-1.png" alt="" />
+                </picture> -->
+                <h2
+                  id="avoid-plagiarism"
+                  class="font-medium text-gray-600 text-2xl mb-2"
+                >
+                  Avoid plagiarism
+                </h2>
+                <p class="text-sm">
+                  Whether you’re a student, academic, or content creator,
+                  avoiding plagiarism is crucial. Our Paraphraser tool rewords
+                  your content, ensuring that it’s unique and plagiarism-free,
+                  while maintaining the original concept and style.
+                </p>
+                <div>
+                  <button
+                    class="text-white bg-pink-500 px-6 py-2 rounded-full mt-4"
+                    >Avoid plagiarism</button
+                  >
+                </div>
+              </div>
+            </section>
+            <section
+              class="border border-gray-200 bg-white col-span-1 p-8 pr-0 md:pr-8 border-gray-150 rounded-lg bg-[url('/bg-dots-1.png')] bg-no-repeat bg-bottom"
+            >
+              <!-- <picture class="flex-1">
+                <img src="/blog/ai-use-case-copywriting-1.png" alt="" />
+              </picture> -->
+              <div class="flex flex-col h-full">
+                <h2
+                  id="change-the-tone"
+                  class="font-medium text-gray-600 text-2xl mb-2"
+                >
+                  Change the tone
+                </h2>
+                <p class="text-sm flex-1">
+                  Need to make your content sound more formal, or perhaps more
+                  casual? No problem. The Paraphraser tool can adjust the tone
+                  of your text, making it suitable for any target audience or
+                  context.
+                </p>
+                <div>
+                  <button
+                    class="text-white bg-pink-500 px-6 py-2 rounded-full mt-4"
+                    >Change the tone</button
+                  >
+                </div>
+              </div>
+            </section>
+          </div>
         </div>
       </div>
     </article>

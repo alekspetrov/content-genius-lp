@@ -53,6 +53,7 @@ module.exports = {
           13: "#FF8544",
         },
       },
+      listStyleImage: {},
     },
     container: {
       screens: {

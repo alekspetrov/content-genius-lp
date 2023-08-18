@@ -123,7 +123,8 @@ const FormParaphrase = () => {
             setContent((e.target as HTMLInputElement).value)
           }
           placeholder="Place original content..."
-        ></textarea>
+          maxLength={1000}
+        />
         <div class="text-right">
           <span class="text-pink-500 text-sm font-medium">
             {content().length}/1000
