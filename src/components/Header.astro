@@ -7,6 +7,9 @@ import Logo from "./Logo.astro";
     <Logo isDark />
     <nav
       class="text-gray-450 flex-1 hidden lg:flex gap-8 font-medium justify-end mr-10"
+      itemscope
+      itemtype="https://schema.org/SiteNavigationElement"
+      role="menu"
     >
       <div class="group relative">
         <span
@@ -29,26 +32,34 @@ import Logo from "./Logo.astro";
           <ul
             class="text-gray-400 px-2 py-2 rounded-xl overflow-hidden w-[240px] text-left bg-gray-800 shadow-lg shadow-gray-450 z-50"
           >
-            <li>
+            <li itemprop="name">
               <a
+                itemprop="url"
+                role="menuitem"
                 class="px-3 py-2 hover:bg-gray-600 hover:text-gray-100 block transition rounded-md"
                 href="/use-cases/personal/">Personal</a
               >
             </li>
-            <li>
+            <li itemprop="name">
               <a
+                itemprop="url"
+                role="menuitem"
                 class="px-3 py-2 hover:bg-gray-600 hover:text-gray-100 block transition rounded-md"
                 href="/use-cases/copywriting/">Copywriting</a
               >
             </li>
-            <li>
+            <li itemprop="name">
               <a
+                itemprop="url"
+                role="menuitem"
                 class="px-3 py-2 hover:bg-gray-600 hover:text-gray-100 block transition rounded-md"
                 href="/use-cases/marketing/">Marketing</a
               >
             </li>
-            <li>
+            <li itemprop="name">
               <a
+                itemprop="url"
+                role="menuitem"
                 class="px-3 py-2 hover:bg-gray-600 hover:text-gray-100 block transition rounded-md"
                 href="/use-cases/sales/">Sales</a
               >
@@ -56,9 +67,30 @@ import Logo from "./Logo.astro";
           </ul>
         </div>
       </div>
-      <a class="transition hover:text-gray-600" href="/tools/">Tools</a>
-      <a class="transition hover:text-gray-600" href="/blog/">Blog</a>
-      <a class="transition hover:text-gray-600" href="/pricing/">Pricing</a>
+      <span class="transition" itemprop="name"
+        ><a
+          itemprop="url"
+          role="menuitem"
+          class="hover:text-gray-600"
+          href="/tools/">Tools</a
+        ></span
+      >
+      <span class="transition" itemprop="name"
+        ><a
+          itemprop="url"
+          role="menuitem"
+          class="hover:text-gray-600"
+          href="/blog/">Blog</a
+        ></span
+      >
+      <span class="transition" itemprop="name"
+        ><a
+          itemprop="url"
+          role="menuitem"
+          class="hover:text-gray-600"
+          href="/pricing/">Pricing</a
+        ></span
+      >
     </nav>
     <a
       href="https://app.contentgenius.io/"
