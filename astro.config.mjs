@@ -33,6 +33,18 @@ export default defineConfig({
           item.priority = 1;
           return item;
         }
+        if (item.url === `${SITE_URL}tools/`) {
+          item.priority = 1;
+          return item;
+        }
+        if (item.url === `${SITE_URL}terms/`) {
+          item.priority = 0.5;
+          return item;
+        }
+        if (item.url === `${SITE_URL}privacy/`) {
+          item.priority = 0.5;
+          return item;
+        }
         item.priority = 0.8;
         return item;
       },
