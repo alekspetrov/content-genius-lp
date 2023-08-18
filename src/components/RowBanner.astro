@@ -16,12 +16,20 @@ const customersCounter = await getCountries();
 const schema = JSON.stringify({
   "@context": "https://schema.org/",
   "@type": "Review",
+  itemReviewed: {
+    "@type": "Website",
+    name: "Content Genius",
+  },
   reviewRating: {
     "@type": "Rating",
     ratingValue: "5",
     bestRating: "5",
   },
   name: "Best AI Chat GPT content tool",
+  author: {
+    "@type": "Person",
+    name: "Bob Smith",
+  },
   publisher: {
     "@type": "Organization",
     name: "Content Genius",
