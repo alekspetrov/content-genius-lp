@@ -5,15 +5,20 @@ import FormParaphrase from "../../components/FormRephrizer";
 
 <Layout title="Paraphrasing tool">
   <main class="py-20">
-    <article class="container">
+    <article
+      class="container"
+      itemscope
+      itemtype="https://schema.org/TechArticle"
+    >
       <div class="lg:grid lg:grid-cols-5 gap-24 font-['system-ui']">
         <header class="col-span-2 flex flex-col justify-center">
           <h1
             class="text-gray-900 font-semibold text-4xl lg:text-5xl lg:leading-[1.1] mb-8"
+            itemprop="headline"
           >
             Paraphrasing tool
           </h1>
-          <div class="space-y-4 text-lg">
+          <div class="space-y-4 text-lg" itemprop="articleBody">
             <p>
               The Paraphraser tool is a powerful feature that utilizes advanced
               AI technology to rephrase your text, ensuring it maintains its
