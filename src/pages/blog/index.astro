@@ -29,7 +29,11 @@ import { dateToFormat } from "../../helpers/dateToFormat";
             itemtype="https://schema.org/BlogPosting"
             class="flex flex-col lg:first:flex-row col-span-1 first:col-span-3 lg:first:[&>a]:gap-12 first:pb-12 first:border-b first:border-gray-200"
           >
-            <a href={`/blog/${post.slug}/`} class="gap-2" itemprop="url">
+            <a
+              href={`/blog/${post.slug}/`}
+              class={`gap-2 ${post.data.isNew && "lg:flex"}`}
+              itemprop="url"
+            >
               <div class="flex-1 flex-col">
                 <img
                   src={`${post.data.image?.src}`}
