@@ -1,0 +1,100 @@
+---
+import { SITE_URL } from "../config";
+interface BreadcrumbsProps {
+  indexText?: string;
+}
+
+interface BreadcrumbItem {
+  text: string;
+  href: string;
+  "aria-current"?: string;
+}
+
+interface Page {
+  title: string;
+  url: URL;
+}
+
+function getSubPages(url: URL, sub_pages: any): Page[] {
+  let pages: Page[] = [];
+  sub_pages.forEach((item) => {
+    const subst = Object.keys(item.params)[0];
+    url.pathname = url.pathname.replace(`[${subst}]`, item.params[subst]);
+    pages.push({
+      title: item.props.entry.data.title,
+      url,
+    });
+  });
+  return pages;
+}
+
+async function fetchPages(): Promise<Page[]> {
+  const results = import.meta.glob<Record<string, any>>(
+    ["/src/pages/**/*.md", "/src/pages/**/*.mdx", "/src/pages/**/*.astro"],
+    { eager: true }
+  );
+  let pages: Page[] = [];
+  for (const item of Object.values(results)) {
+    let url = new URL(item.url, SITE_URL);
+    if (item.url !== "/" && item.url !== "") {
+      url.pathname += "/";
+    }
+    if (item.getStaticPaths) {
+      const sub_pages = await item.getStaticPaths();
+      pages = [...pages, ...getSubPages(url, sub_pages)];
+    } else {
+      pages.push({
+        title: item.frontmatter ? item.frontmatter.title : null,
+        url,
+      });
+    }
+  }
+  return pages;
+}
+
+const pages = await fetchPages();
+
+const { indexText = "Home" } = Astro.props as BreadcrumbsProps;
+
+let parts: Array<BreadcrumbItem> = [
+  {
+    text: indexText,
+    href: "/",
+  },
+];
+
+const paths = Astro.url.pathname.split("/").filter((crumb: any) => crumb);
+console.log("URL: ", Astro.url.pathname);
+paths.forEach((text: string, index: number) => {
+  let href = `/${paths.slice(0, index + 1).join("/")}`;
+  if (href !== "/") {
+    href += "/";
+  }
+  const page = pages.find((item) => item.url.pathname === href);
+  if (page !== undefined) {
+    parts.push({
+      text: page.title,
+      href: page.url.toString(),
+    });
+  }
+});
+
+const schemaJson = JSON.stringify(
+  (() => {
+    return {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: parts.map((part, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        item: {
+          "@id": part.href,
+          name: part.text,
+        },
+      })),
+    };
+  })()
+);
+---
+
+<script type="application/ld+json" set:html={schemaJson}></script>

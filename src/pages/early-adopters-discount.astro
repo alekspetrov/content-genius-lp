@@ -4,6 +4,10 @@ import TextLayout from "../layouts/TextLayout.astro";
 
 const entry = await getEntryBySlug("static", "early-adopters-discount");
 const { Content } = await entry.render();
+
+export const frontmatter = {
+  title: "Early Adopters Discount",
+}
 ---
 
 <TextLayout title={entry.data.title} supportText={entry.data.supportText}>
