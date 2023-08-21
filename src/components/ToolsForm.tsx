@@ -1,11 +1,7 @@
-// get data from the form
-// make requst to api
-
 import { For, createEffect, createSignal, onCleanup } from "solid-js";
 import { Dynamic } from "solid-js/web";
 import { clickOutside } from "../helpers/dom";
 import { createStore } from "solid-js/store";
-import { log } from "astro/dist/core/logger/core";
 
 const clickOut = clickOutside;
 
@@ -148,8 +144,8 @@ const ToolsForm = (props: Props) => {
 
     if (!optionContent?.value) return;
 
-    // const appUrl = "https://app.contentgenius.io/";
-    const appUrl = "http://localhost:3000";
+    const appUrl = "https://app.contentgenius.io";
+    // const appUrl = "http://localhost:3000";
     const targetUrl = `tools/${props.tool_name}`;
     let fields: any = [];
 
