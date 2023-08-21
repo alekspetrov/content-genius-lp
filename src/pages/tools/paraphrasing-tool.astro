@@ -1,11 +1,11 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import FormParaphrase from "../../components/FormRephrizer";
+import ToolsForm from "../../components/ToolsForm";
 
 export const frontmatter = {
-  title: "Paraphrasing tool"
-}
-
+  title: "Paraphrasing tool",
+};
 ---
 
 <Layout
@@ -25,7 +25,7 @@ export const frontmatter = {
             >
               Paraphrasing tool
             </h1>
-            <div class="space-y-4 text-lg" itemprop="articleBody">
+            <div class="space-y-8 text-lg" itemprop="articleBody">
               <p>
                 The Paraphraser tool is a powerful feature that utilizes
                 advanced AI technology to rephrase your text, ensuring it
@@ -54,111 +54,174 @@ export const frontmatter = {
             </div>
           </header>
           <div class="col-span-3">
-            <FormParaphrase client:load />
+            <ToolsForm
+              client:load
+              title="Paraphrasing"
+              tool_name="paraphrasing"
+              cta="Paraphrase"
+              fields={[
+                {
+                  value: "",
+                  type: "textarea",
+                  label: "What content you need to check?",
+                  limit: 1000,
+                  optionName: "content",
+                  placeholder: "Place your content here...",
+                },
+                {
+                  value: "friendly",
+                  type: "select",
+                  label: "Choose a tone",
+                  optionName: "tone",
+                  options: [
+                    {
+                      value: "friendly",
+                      text: "Friendly",
+                    },
+                    {
+                      value: "authoritative",
+                      text: "Authoritative",
+                    },
+                    {
+                      value: "professional",
+                      text: "Professional",
+                    },
+                    {
+                      value: "inspirational",
+                      text: "Inspirational",
+                    },
+                    {
+                      value: "sarcastic",
+                      text: "Sarcastic",
+                    },
+                    {
+                      value: "humorous",
+                      text: "Humorous",
+                    },
+                    {
+                      value: "persuasive",
+                      text: "Persuasive",
+                    },
+                    {
+                      value: "informative",
+                      text: "Informative",
+                    },
+                    {
+                      value: "casual",
+                      text: "Casual",
+                    },
+                    {
+                      value: "sympathetic",
+                      text: "Sympathetic",
+                    },
+                  ],
+                },
+              ]}
+            />
           </div>
         </div>
-      </div>
-      <div class="border-t border-gray-200 mt-24 py-12">
-        <div class="container">
-          <section class="space-y-4 max-w-4xl mb-12">
-            <h2 class="text-2xl md:text-3xl font-bold text-gray-900">
-              Paraphrising tool use cases
-            </h2>
-            <p class="md:text-lg mb-12">
-              Unleash the potential of AI-driven content creation with our free
-              online Paraphraser tool at Content Genius. This cutting-edge tool
-              is designed to cater to all your paraphrasing needs, offering a
-              unique combination of context understanding and creative text
-              reproduction.
-            </p>
-          </section>
-          <div
-            class="mx-auto lg:grid lg:grid-cols-3 gap-4 md:gap-8 space-y-3 lg:space-y-0"
-          >
-            <section
-              class="border border-gray-200 bg-white col-span-1 p-8 md:pr-8 border-gray-150 rounded-lg bg-[url('/bg-dots-1.png')] bg-no-repeat bg-bottom"
+        <div class="border-t border-gray-200 mt-24 py-12">
+          <div class="container">
+            <section class="space-y-4 max-w-4xl mb-12">
+              <h2 class="text-2xl md:text-3xl font-bold text-gray-900">
+                Paraphrising tool use cases
+              </h2>
+              <p class="md:text-lg mb-12">
+                Unleash the potential of AI-driven content creation with our
+                free online Paraphraser tool at Content Genius. This
+                cutting-edge tool is designed to cater to all your paraphrasing
+                needs, offering a unique combination of context understanding
+                and creative text reproduction.
+              </p>
+            </section>
+            <div
+              class="mx-auto lg:grid lg:grid-cols-3 gap-4 md:gap-8 space-y-3 lg:space-y-0"
             >
-              <!-- <picture class="block mb-4">
+              <section
+                class="border border-gray-200 bg-white col-span-1 p-8 md:pr-8 border-gray-150 rounded-lg bg-[url('/bg-dots-1.png')] bg-no-repeat bg-bottom"
+              >
+                <!-- <picture class="block mb-4">
                 <img src="/blog/ai-use-case-copywriting-1.png" alt="" />
               </picture> -->
-              <div class="flex flex-col h-full">
-                <h2
-                  id="rewrite-old-posts"
-                  class="font-medium text-gray-900 text-xl mb-2"
-                >
-                  Rewrite old blog posts
-                </h2>
-                <p class="text-sm">
-                  Are your old blog posts feeling stale? Our Paraphraser tool
-                  can breathe new life into them. By rephrasing your content, it
-                  ensures that your posts remain fresh, relevant, and engaging,
-                  all while preserving the original message.
-                </p>
-                <div class="mt-2">
-                  <a
-                    href="https://app.contentgenius.io/tools/paraphrasing"
-                    class="text-white bg-pink-500 px-6 py-2 rounded-full mt-4 font-medium inline-block"
-                    >Rewrite post</a
+                <div class="flex flex-col h-full">
+                  <h2
+                    id="rewrite-old-posts"
+                    class="font-medium text-gray-900 text-xl mb-2"
                   >
+                    Rewrite old blog posts
+                  </h2>
+                  <p class="text-sm">
+                    Are your old blog posts feeling stale? Our Paraphraser tool
+                    can breathe new life into them. By rephrasing your content,
+                    it ensures that your posts remain fresh, relevant, and
+                    engaging, all while preserving the original message.
+                  </p>
+                  <div class="mt-2">
+                    <a
+                      href="https://app.contentgenius.io/tools/paraphrasing"
+                      class="text-white bg-pink-500 px-6 py-2 rounded-full mt-4 font-medium inline-block"
+                      >Rewrite post</a
+                    >
+                  </div>
                 </div>
-              </div>
-            </section>
-            <section
-              class="border border-gray-200 bg-white col-span-1 p-8 md:pr-8 border-gray-150 rounded-lg bg-[url('/bg-dots-1.png')] bg-no-repeat bg-bottom"
-            >
-              <div class="flex flex-col h-full">
-                <!-- <picture class="block mb-4">
+              </section>
+              <section
+                class="border border-gray-200 bg-white col-span-1 p-8 md:pr-8 border-gray-150 rounded-lg bg-[url('/bg-dots-1.png')] bg-no-repeat bg-bottom"
+              >
+                <div class="flex flex-col h-full">
+                  <!-- <picture class="block mb-4">
                   <img src="/blog/ai-use-case-copywriting-1.png" alt="" />
                 </picture> -->
-                <h2
-                  id="avoid-plagiarism"
-                  class="font-medium text-gray-900 text-2xl mb-2"
-                >
-                  Avoid plagiarism
-                </h2>
-                <p class="text-sm">
-                  Whether you’re a student, academic, or content creator,
-                  avoiding plagiarism is crucial. Our Paraphraser tool rewords
-                  your content, ensuring that it’s unique and plagiarism-free,
-                  while maintaining the original concept and style.
-                </p>
-                <div class="mt-2">
-                  <a
-                    href="https://app.contentgenius.io/tools/paraphrasing/"
-                    class="text-white bg-pink-500 px-6 py-2 rounded-full mt-4 font-medium inline-block"
-                    >Avoid plagiarism
-                  </a>
+                  <h2
+                    id="avoid-plagiarism"
+                    class="font-medium text-gray-900 text-2xl mb-2"
+                  >
+                    Avoid plagiarism
+                  </h2>
+                  <p class="text-sm">
+                    Whether you’re a student, academic, or content creator,
+                    avoiding plagiarism is crucial. Our Paraphraser tool rewords
+                    your content, ensuring that it’s unique and plagiarism-free,
+                    while maintaining the original concept and style.
+                  </p>
+                  <div class="mt-2">
+                    <a
+                      href="https://app.contentgenius.io/tools/paraphrasing/"
+                      class="text-white bg-pink-500 px-6 py-2 rounded-full mt-4 font-medium inline-block"
+                      >Avoid plagiarism
+                    </a>
+                  </div>
                 </div>
-              </div>
-            </section>
-            <section
-              class="border border-gray-200 bg-white col-span-1 p-8 md:pr-8 border-gray-150 rounded-lg bg-[url('/bg-dots-1.png')] bg-no-repeat bg-bottom"
-            >
-              <!-- <picture class="flex-1">
+              </section>
+              <section
+                class="border border-gray-200 bg-white col-span-1 p-8 md:pr-8 border-gray-150 rounded-lg bg-[url('/bg-dots-1.png')] bg-no-repeat bg-bottom"
+              >
+                <!-- <picture class="flex-1">
                 <img src="/blog/ai-use-case-copywriting-1.png" alt="" />
               </picture> -->
-              <div class="flex flex-col h-full">
-                <h2
-                  id="change-the-tone"
-                  class="font-medium text-gray-900 text-2xl mb-2"
-                >
-                  Change the tone
-                </h2>
-                <p class="text-sm flex-1">
-                  Need to make your content sound more formal, or perhaps more
-                  casual? No problem. The Paraphraser tool can adjust the tone
-                  of your text, making it suitable for any target audience or
-                  context.
-                </p>
-                <div class="mt-2">
-                  <a
-                    href="https://app.contentgenius.io/tools/paraphrasing/"
-                    class="text-white bg-pink-500 px-6 py-2 rounded-full mt-4 font-medium inline-block"
-                    >Change the tone</a
+                <div class="flex flex-col h-full">
+                  <h2
+                    id="change-the-tone"
+                    class="font-medium text-gray-900 text-2xl mb-2"
                   >
+                    Change the tone
+                  </h2>
+                  <p class="text-sm flex-1">
+                    Need to make your content sound more formal, or perhaps more
+                    casual? No problem. The Paraphraser tool can adjust the tone
+                    of your text, making it suitable for any target audience or
+                    context.
+                  </p>
+                  <div class="mt-2">
+                    <a
+                      href="https://app.contentgenius.io/tools/paraphrasing/"
+                      class="text-white bg-pink-500 px-6 py-2 rounded-full mt-4 font-medium inline-block"
+                      >Change the tone</a
+                    >
+                  </div>
                 </div>
-              </div>
-            </section>
+              </section>
+            </div>
           </div>
         </div>
       </div>

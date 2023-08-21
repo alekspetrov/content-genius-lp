@@ -64,7 +64,6 @@ let parts: Array<BreadcrumbItem> = [
 ];
 
 const paths = Astro.url.pathname.split("/").filter((crumb: any) => crumb);
-console.log("URL: ", Astro.url.pathname);
 paths.forEach((text: string, index: number) => {
   let href = `/${paths.slice(0, index + 1).join("/")}`;
   if (href !== "/") {

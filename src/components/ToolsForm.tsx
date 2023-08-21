@@ -5,6 +5,7 @@ import { For, createEffect, createSignal, onCleanup } from "solid-js";
 import { Dynamic } from "solid-js/web";
 import { clickOutside } from "../helpers/dom";
 import { createStore } from "solid-js/store";
+import { log } from "astro/dist/core/logger/core";
 
 const clickOut = clickOutside;
 
@@ -148,20 +149,19 @@ const ToolsForm = (props: Props) => {
     if (!optionContent?.value) return;
 
     // const appUrl = "https://app.contentgenius.io/";
-    const appUrl = "http://localhost:3000/";
-    const targetUrl = "tools/" + props.tool_name;
-    const content = "/?content=" + optionContent.value;
-    let options: any = [];
+    const appUrl = "http://localhost:3000";
+    const targetUrl = `tools/${props.tool_name}`;
+    let fields: any = [];
 
     fieldsStore.fields.forEach((field) => {
-      console.log(field.value);
-      if (field.type === "select") {
-        options.push(`&${field.optionName}=${field.value}`);
-      }
+      // Expected link on the app <path>/?fields=[{ <field_name>: <data> }]&target_url="/tools/hello"
+      fields.push({ [field.optionName as string]: field.value });
     });
 
-    const redirectUrl =
-      appUrl + targetUrl + content + options + `&targetUrl=${targetUrl}`;
+    const redirectUrl = `${appUrl}/${targetUrl}/?fields=${JSON.stringify(
+      fields
+    )}&targetUrl=${targetUrl}`;
+
     window.location.href = redirectUrl;
   }
 
@@ -188,7 +188,7 @@ const ToolsForm = (props: Props) => {
             <path d="M11 10v4h4"></path>
           </svg>
         </div>
-        <div class="text-xl font-semibold text-gray-900">{props.tool_name}</div>
+        <div class="text-xl font-semibold text-gray-900">{props.title}</div>
       </div>
       {fieldsStore.fields.map((field: Field, index: number) => (
         <Dynamic
