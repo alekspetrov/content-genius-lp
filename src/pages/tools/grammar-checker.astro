@@ -1,9 +1,11 @@
 ---
+import FormParaphrase from "../../components/FormRephrizer";
+import ToolsForm from "../../components/ToolsForm";
 import Layout from "../../layouts/Layout.astro";
 
 export const frontmatter = {
-  title: "Grammar checker"
-}
+  title: "Grammar checker",
+};
 
 const ContentData = {
   description:
@@ -83,7 +85,58 @@ const ContentData = {
             </div>
           </header>
           <div class="col-span-3">
-            <!-- <FormParaphrase client:load /> -->
+            <ToolsForm
+              client:load
+              title="Grammar checker"
+              tool_name="grammar-checker"
+              cta="Check grammar"
+              fields={[
+                {
+                  value: "",
+                  type: "textarea",
+                  label: "What content you need to check?",
+                  limit: 1000,
+                  optionName: "content",
+                  placeholder: "Place your content here...",
+                },
+                {
+                  value: "autodetect",
+                  type: "select",
+                  label: "Choose language",
+                  optionName: "language",
+                  options: [
+                    {
+                      value: "autodetect",
+                      text: "Autodetect",
+                    },
+                    {
+                      value: "english",
+                      text: "English",
+                    },
+                    {
+                      value: "spanish",
+                      text: "Spanish",
+                    },
+                    {
+                      value: "german",
+                      text: "German",
+                    },
+                    {
+                      value: "french",
+                      text: "French",
+                    },
+                    {
+                      value: "german",
+                      text: "German",
+                    },
+                    {
+                      value: "spain",
+                      text: "Spain",
+                    },
+                  ],
+                },
+              ]}
+            />
           </div>
         </div>
       </div>
