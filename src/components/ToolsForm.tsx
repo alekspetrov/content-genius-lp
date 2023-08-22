@@ -106,7 +106,7 @@ const Textarea = (props) => {
       <textarea
         id="content"
         name="content"
-        class="border px-4 py-4 rounded-md "
+        class="border px-4 py-4 rounded-md resize-none h-32"
         value={props.value}
         onInput={(e: Event) =>
           handleSetValue((e.target as HTMLInputElement).value)
@@ -142,7 +142,8 @@ const ToolsForm = (props: Props) => {
       (field) => field.optionName === "content"
     );
 
-    if (!optionContent?.value) return;
+    // Uncomment to prevent sending of empty form
+    // if (!optionContent?.value) return;
 
     const appUrl = "https://app.contentgenius.io";
     // const appUrl = "http://localhost:3000";
@@ -162,7 +163,7 @@ const ToolsForm = (props: Props) => {
   }
 
   return (
-    <div class="p-8 bg-white border border-gray-200 rounded-md shadow-lg">
+    <div class="p-8 bg-white border border-gray-200 rounded-md shadow-lg font-['system-ui']">
       <div class="flex items-center gap-4 mb-8">
         <div class="w-12 h-12 flex items-center justify-center bg-gray-100 rounded-full text-pink-500">
           <svg
@@ -201,7 +202,7 @@ const ToolsForm = (props: Props) => {
       <div>
         <button
           onClick={submit}
-          class="inline-block bg-[#D7009B] text-fuchsia-50 px-4 py-2 md:px-6 md:py-3 font-medium rounded-full whitespace-nowrap"
+          class="w-full lg:w-auto bg-[#D7009B] text-fuchsia-50 px-4 py-3 md:px-6 md:py-3 font-medium rounded-full whitespace-nowrap"
         >
           {props.cta}
         </button>

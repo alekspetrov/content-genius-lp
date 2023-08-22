@@ -1,6 +1,5 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import FormParaphrase from "../../components/FormRephrizer";
 import ToolsForm from "../../components/ToolsForm";
 
 export const frontmatter = {
@@ -12,58 +11,31 @@ export const frontmatter = {
   title="Paraphrasing tool"
   description="Rewrite content with AI Paraphrasing free online tool. Renew old blogs, avoid plagiarism, and change the tone. Transform your content while retaining essence."
 >
-  <main class="py-20">
+  <main class="py-8 lg:py-20">
     <article itemscope itemtype="https://schema.org/TechArticle">
       <div class="container">
-        <div class="lg:grid lg:grid-cols-5 gap-24 font-['system-ui']">
-          <header
-            class="relative col-span-2 flex flex-col justify-center mb-12 lg:mb-0"
+        <header class="relative lg:mb-48">
+          <!-- Title -->
+          <h1
+            class="lg:w-1/2 lg:pr-1 text-gray-900 font-semibold text-4xl lg:text-5xl lg:leading-[1.1] mb-8"
+            itemprop="headline"
           >
-            <h1
-              class="text-gray-900 font-semibold text-4xl lg:text-5xl lg:leading-[1.1] mb-8"
-              itemprop="headline"
-            >
-              Paraphrasing tool
-            </h1>
-            <div class="space-y-8 text-lg" itemprop="articleBody">
-              <p>
-                The Paraphraser tool is a powerful feature that utilizes
-                advanced AI technology to rephrase your text, ensuring it
-                maintains its original meaning while adopting a fresh and unique
-                style. Perfect for revamping old content, avoiding plagiarism,
-                simplifying complex text, or just adding a different flavor to
-                your words.
-              </p>
-              <ul
-                class="decoration-slate-400 list-inside list-image-[url(/checkmark-sm.svg)] space-y-2"
-              >
-                <li class="hover:text-[#8B5CF6] transition">
-                  <a href="#rewrite-old-posts">Rewrite old blog posts</a>
-                </li>
-                <li class="hover:text-[#8B5CF6] transition">
-                  <a href="#avoid-plagiarism">Avoid plagiarism</a>
-                </li>
-                <li class="hover:text-[#8B5CF6] transition">
-                  <a href="#change-the-tone">Change the tone</a>
-                </li>
-              </ul>
-            </div>
-            <div
-              class="absolute -z-10 -top-24 -left-24 w-[18rem] h-[18rem] bg-gradient-to-tr from-fuchsia-50 to-white rounded-full"
-            >
-            </div>
-          </header>
-          <div class="col-span-3">
+            Paraphrasing tool
+          </h1>
+          <!-- Form -->
+          <div
+            class="lg:w-1/2 lg:absolute lg:-top-4 lg:right-0 col-span-1 row-span-2 mb-8 lg:mb-0"
+          >
             <ToolsForm
               client:load
-              title="Paraphrasing"
+              title="Paraphrasing tool"
               tool_name="paraphrasing"
               cta="Paraphrase"
               fields={[
                 {
                   value: "",
                   type: "textarea",
-                  label: "What content you need to check?",
+                  label: "What content do you need to paraphrise?",
                   limit: 1000,
                   optionName: "content",
                   placeholder: "Place your content here...",
@@ -119,8 +91,39 @@ export const frontmatter = {
               ]}
             />
           </div>
-        </div>
-        <div class="border-t border-gray-200 mt-24 py-12">
+          <!-- Text -->
+          <div
+            class="lg:w-1/2 lg:pr-12 space-y-4 col-span-1 lg:space-y-8 text-lg"
+            itemprop="articleBody"
+          >
+            <p>
+              The Paraphraser tool is a powerful feature that utilizes advanced
+              AI technology to rephrase your text, ensuring it maintains its
+              original meaning while adopting a fresh and unique style. Perfect
+              for revamping old content, avoiding plagiarism, simplifying
+              complex text, or just adding a different flavor to your words.
+            </p>
+            <ul
+              class="decoration-slate-400 list-inside list-image-[url(/checkmark-sm.svg)] space-y-2"
+            >
+              <li class="hover:text-[#8B5CF6] transition">
+                <a href="#rewrite-old-posts">Rewrite old blog posts</a>
+              </li>
+              <li class="hover:text-[#8B5CF6] transition">
+                <a href="#avoid-plagiarism">Avoid plagiarism</a>
+              </li>
+              <li class="hover:text-[#8B5CF6] transition">
+                <a href="#change-the-tone">Change the tone</a>
+              </li>
+            </ul>
+          </div>
+          <!-- Bubble -->
+          <div
+            class="absolute -z-10 -top-24 -left-24 w-[18rem] h-[18rem] bg-gradient-to-tr from-fuchsia-50 to-white rounded-full"
+          >
+          </div>
+        </header>
+        <div class="border-t border-gray-200 py-12">
           <div class="container">
             <section class="space-y-4 max-w-4xl mb-12">
               <h2 class="text-2xl md:text-3xl font-bold text-gray-900">

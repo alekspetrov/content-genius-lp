@@ -1,4 +1,5 @@
 ---
+import ToolsForm from "../../components/ToolsForm";
 import Layout from "../../layouts/Layout.astro";
 
 export const frontmatter = {
@@ -51,41 +52,97 @@ const ContentData = {
   <main class="py-20">
     <article itemscope itemtype="https://schema.org/TechArticle">
       <div class="container">
-        <div class="lg:grid lg:grid-cols-5 gap-24 font-['system-ui']">
-          <header
-            class="relative col-span-2 flex flex-col justify-center mb-12 lg:mb-0"
+        <header class="relative lg:mb-48">
+          <!-- Title -->
+          <h1
+            class="lg:w-1/2 lg:pr-1 text-gray-900 font-semibold text-4xl lg:text-5xl lg:leading-[1.1] mb-8"
+            itemprop="headline"
           >
-            <h1
-              class="text-gray-900 font-semibold text-4xl lg:text-5xl lg:leading-[1.1] mb-8"
-              itemprop="headline"
-            >
-              {ContentData.header.title}
-            </h1>
-            <div class="space-y-8 text-lg" itemprop="articleBody">
-              <p>
-                {ContentData.header.text}
-              </p>
-              <ul
-                class="decoration-slate-400 list-inside list-image-[url(/checkmark-sm.svg)] space-y-2"
-              >
+            {ContentData.header.title}
+          </h1>
+          <!-- Form -->
+          <div
+            class="lg:w-1/2 lg:absolute lg:-top-4 lg:right-0 col-span-1 row-span-2 mb-8 lg:mb-0"
+          >
+            <ToolsForm
+              client:load
+              title="Letter writer"
+              tool_name="letter-writer"
+              cta="Write a letter"
+              fields={[
                 {
-                  ContentData.header.list.map((item, index) => (
-                    <li class="hover:text-[#8B5CF6] transition">
-                      <a href={`#card-${index}`}>{item}</a>
-                    </li>
-                  ))
-                }
-              </ul>
-            </div>
-            <div
-              class="absolute -z-10 -top-24 -left-24 w-[18rem] h-[18rem] bg-gradient-to-tr from-fuchsia-50 to-white rounded-full"
-            >
-            </div>
-          </header>
-          <div class="col-span-3">
-            <!-- <FormParaphrase client:load /> -->
+                  value: "",
+                  type: "textarea",
+                  label: "Write a brief summary of the letter",
+                  limit: 1000,
+                  optionName: "content",
+                  placeholder: "Write your breif here...",
+                },
+                {
+                  value: "friendly",
+                  type: "select",
+                  label: "Choose a tone",
+                  optionName: "tone",
+                  options: [
+                    {
+                      value: "friendly",
+                      text: "Friendly",
+                    },
+                    {
+                      value: "formal",
+                      text: "Formal",
+                    },
+                    {
+                      value: "informal",
+                      text: "Informal",
+                    },
+                    {
+                      value: "persuasive",
+                      text: "Persuasive",
+                    },
+                    {
+                      value: "neutral",
+                      text: "Neutral",
+                    },
+                    {
+                      value: "apologetic",
+                      text: "Apologetic",
+                    },
+                    {
+                      value: "appreciative",
+                      text: "Appreciative",
+                    },
+                  ],
+                },
+              ]}
+            />
           </div>
-        </div>
+          <!-- Text -->
+          <div
+            class="lg:w-1/2 lg:pr-12 space-y-4 col-span-1 lg:space-y-8 text-lg"
+            itemprop="articleBody"
+          >
+            <p>
+              {ContentData.header.text}
+            </p>
+            <ul
+              class="decoration-slate-400 list-inside list-image-[url(/checkmark-sm.svg)] space-y-2"
+            >
+              {
+                ContentData.header.list.map((item, index) => (
+                  <li class="hover:text-[#8B5CF6] transition">
+                    <a href={`#card-${index}`}>{item}</a>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+          <!-- Bubble -->
+          <div
+            class="absolute -z-10 -top-24 -left-24 w-[18rem] h-[18rem] bg-gradient-to-tr from-fuchsia-50 to-white rounded-full"
+          >
+          </div>
+        </header>
       </div>
       <div class="border-t border-gray-200 mt-24 py-12">
         <div class="container">
