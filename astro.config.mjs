@@ -16,6 +16,7 @@ import partytown from "@astrojs/partytown";
 // https://astro.build/config
 export default defineConfig({
   site: SITE_URL,
+  trailingSlash: "always",
   integrations: [
     tailwind({
       config: {

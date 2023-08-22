@@ -1,5 +1,7 @@
 ---
 import { SITE_URL } from "../config";
+// import Config from "../../astro.config.mjs";
+
 interface BreadcrumbsProps {
   indexText?: string;
 }
@@ -19,10 +21,11 @@ function getSubPages(url: URL, sub_pages: any): Page[] {
   let pages: Page[] = [];
   sub_pages.forEach((item) => {
     const subst = Object.keys(item.params)[0];
-    url.pathname = url.pathname.replace(`[${subst}]`, item.params[subst]);
+    const suburl = new URL(url);
+    suburl.pathname = url.pathname.replace(`[${subst}]`, item.params[subst]);
     pages.push({
       title: item.props.entry.data.title,
-      url,
+      url: suburl,
     });
   });
   return pages;
@@ -36,9 +39,6 @@ async function fetchPages(): Promise<Page[]> {
   let pages: Page[] = [];
   for (const item of Object.values(results)) {
     let url = new URL(item.url, SITE_URL);
-    if (item.url !== "/" && item.url !== "") {
-      url.pathname += "/";
-    }
     if (item.getStaticPaths) {
       const sub_pages = await item.getStaticPaths();
       pages = [...pages, ...getSubPages(url, sub_pages)];
@@ -66,9 +66,11 @@ let parts: Array<BreadcrumbItem> = [
 const paths = Astro.url.pathname.split("/").filter((crumb: any) => crumb);
 paths.forEach((text: string, index: number) => {
   let href = `/${paths.slice(0, index + 1).join("/")}`;
-  if (href !== "/") {
-    href += "/";
-  }
+  // if (Config.trailingSlash === "always") {
+    if (href !== "/") {
+      href += "/";
+    }
+  // }
   const page = pages.find((item) => item.url.pathname === href);
   if (page !== undefined) {
     parts.push({
