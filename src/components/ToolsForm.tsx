@@ -145,9 +145,9 @@ const ToolsForm = (props: Props) => {
     // Uncomment to prevent sending of empty form
     // if (!optionContent?.value) return;
 
-    const appUrl = "https://app.contentgenius.io";
-    // const appUrl = "http://localhost:3000";
-    const targetUrl = `tools/${props.tool_name}`;
+    // const appUrl = "https://app.contentgenius.io";
+    const appUrl = "http://localhost:3000";
+    const targetUrl = `/tools/${props.tool_name}`;
     let fields: any = [];
 
     fieldsStore.fields.forEach((field) => {
@@ -155,7 +155,7 @@ const ToolsForm = (props: Props) => {
       fields.push({ [field.optionName as string]: field.value });
     });
 
-    const redirectUrl = `${appUrl}/${targetUrl}/?fields=${JSON.stringify(
+    const redirectUrl = `${appUrl}${targetUrl}/?fields=${JSON.stringify(
       fields
     )}&targetUrl=${targetUrl}`;
 
