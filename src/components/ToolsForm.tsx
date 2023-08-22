@@ -145,8 +145,8 @@ const ToolsForm = (props: Props) => {
     // Uncomment to prevent sending of empty form
     // if (!optionContent?.value) return;
 
-    // const appUrl = "https://app.contentgenius.io";
-    const appUrl = "http://localhost:3000";
+    const appUrl = "https://app.contentgenius.io";
+    // const appUrl = "http://localhost:3000";
     const targetUrl = `/tools/${props.tool_name}`;
     let fields: any = [];
 
