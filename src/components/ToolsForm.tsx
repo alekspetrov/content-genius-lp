@@ -4,36 +4,22 @@ import { clickOutside } from "../helpers/dom";
 import { createStore } from "solid-js/store";
 
 const clickOut = clickOutside;
+const isDev = import.meta.env.MODE === "development";
 
 type Option = {
   text: string;
   value: string;
 };
 
-type Field = {
+export type Field = {
   value: string;
-  type: "textarea" | "select";
+  type: "textarea" | "select" | "input";
   label: string;
   limit?: number;
   placeholder?: string;
   optionName?: string;
   options?: Option[];
 };
-
-const OPTIONS = [
-  {
-    text: "Friendly",
-    value: "friendly",
-  },
-  {
-    text: "Authoritative",
-    value: "authoritative",
-  },
-  {
-    text: "Professional",
-    value: "professional",
-  },
-];
 
 interface Props {
   title: string;
@@ -93,6 +79,36 @@ const Select = (props) => {
   );
 };
 
+const Input = (props) => {
+  function handleSetValue(value: string) {
+    props.setValue(value);
+  }
+
+  return (
+    <div class="flex flex-col">
+      <label for="content" class="font-medium mb-2">
+        {props.label}
+      </label>
+      <input
+        id="content"
+        name="content"
+        class="border px-4 py-4 rounded-md resize-none"
+        value={props.value}
+        onInput={(e: Event) =>
+          handleSetValue((e.target as HTMLInputElement).value)
+        }
+        placeholder={props.placeholder}
+        maxLength={props.limit}
+      />
+      <div class="text-right">
+        <span class="text-pink-500 text-sm font-medium">
+          {props.value.length}/{props.limit}
+        </span>
+      </div>
+    </div>
+  );
+};
+
 const Textarea = (props) => {
   function handleSetValue(value: string) {
     props.setValue(value);
@@ -111,12 +127,12 @@ const Textarea = (props) => {
         onInput={(e: Event) =>
           handleSetValue((e.target as HTMLInputElement).value)
         }
-        placeholder="Place original content..."
-        maxLength={1000}
+        placeholder={props.placeholder}
+        maxLength={props.limit}
       />
       <div class="text-right">
         <span class="text-pink-500 text-sm font-medium">
-          {props.value.length}/1000
+          {props.value.length}/{props.limit}
         </span>
       </div>
     </div>
@@ -126,6 +142,7 @@ const Textarea = (props) => {
 const FIELDS_MAP = {
   textarea: Textarea,
   select: Select,
+  input: Input,
 };
 
 const ToolsForm = (props: Props) => {
@@ -145,8 +162,9 @@ const ToolsForm = (props: Props) => {
     // Uncomment to prevent sending of empty form
     // if (!optionContent?.value) return;
 
-    const appUrl = "https://app.contentgenius.io";
-    // const appUrl = "http://localhost:3000";
+    const appUrl = isDev
+      ? "http://localhost:3000"
+      : "https://app.contentgenius.io";
     const targetUrl = `/tools/${props.tool_name}`;
     let fields: any = [];
 
@@ -197,6 +215,7 @@ const ToolsForm = (props: Props) => {
             setFieldsStore("fields", index, { value })
           }
           options={field.options}
+          limit={field.limit}
         />
       ))}
       <div>
