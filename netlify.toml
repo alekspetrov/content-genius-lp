@@ -59,6 +59,11 @@
   status = 301
 
 [[redirects]]
+  from = "/tools/letter-writer-tool/"
+  to = "/tools/letter-writer/"
+  status = 301
+
+[[redirects]]
   from = "/usecases/"
   to = "/"
   status = 302
