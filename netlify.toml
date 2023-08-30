@@ -64,6 +64,11 @@
   status = 301
 
 [[redirects]]
+  from = "/tools/paraphrizer-tool"
+  to = "/tools/paraphrasing-tool/"
+  status = 301
+
+[[redirects]]
   from = "/usecases/"
   to = "/"
   status = 302
