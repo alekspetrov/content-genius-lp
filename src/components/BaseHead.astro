@@ -30,9 +30,6 @@ const canonicalURL = new URL(Astro.url.pathname, SITE_URL);
 <!-- Global Metadata -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<link rel="apple-touch-icon" sizes="180x180" href="/logo/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/logo/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/logo/favicon-16x16.png">
 <link rel="manifest" href="/site.webmanifest">
 <link rel="canonical" href={canonicalURL} />
 
@@ -41,6 +38,23 @@ const canonicalURL = new URL(Astro.url.pathname, SITE_URL);
 <meta name="title" content={`${title} ${title && "|"} ${SITE_TITLE}`} />
 <meta name="description" content={og_description} />
 <meta name="naver-site-verification" content="3b04c1a0cbb253e39502483512d9c179cd305721" />
+
+<!-- Site icons -->
+<link rel="apple-touch-icon" sizes="57x57" href="/logo/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/logo/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/logo/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/logo/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/logo/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/logo/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/logo/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/logo/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/logo/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/logo/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/logo/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/logo/favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/logo/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
 
 <!-- Open Graph / Facebook / LinkedIn -->
 <meta property="og:type" content="website" />
