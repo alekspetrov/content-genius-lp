@@ -25,37 +25,85 @@ const {
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, SITE_URL);
+
+const schema_org = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Content Genius",
+  url: "https://contentgenius.io/",
+  logo: "https://contentgenius.io/favicon.svg",
+  email: "hq@contentgenius.io",
+  sameAs: ["https://twitter.com/contentgeniusio", "https://www.reddit.com/r/contentgeniusio/"],
+});
 ---
 
 <!-- Global Metadata -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<link rel="manifest" href="/site.webmanifest">
+<link rel="manifest" href="/site.webmanifest" />
 <link rel="canonical" href={canonicalURL} />
 
 <!-- Primary Meta Tags -->
 <title>{`${title} ${title && "|"} ${SITE_TITLE}`}</title>
 <meta name="title" content={`${title} ${title && "|"} ${SITE_TITLE}`} />
 <meta name="description" content={og_description} />
-<meta name="naver-site-verification" content="3b04c1a0cbb253e39502483512d9c179cd305721" />
+<meta
+  name="naver-site-verification"
+  content="3b04c1a0cbb253e39502483512d9c179cd305721"
+/>
 
 <!-- Site icons -->
-<link rel="apple-touch-icon" sizes="57x57" href="/logo/apple-icon-57x57.png">
-<link rel="apple-touch-icon" sizes="60x60" href="/logo/apple-icon-60x60.png">
-<link rel="apple-touch-icon" sizes="72x72" href="/logo/apple-icon-72x72.png">
-<link rel="apple-touch-icon" sizes="76x76" href="/logo/apple-icon-76x76.png">
-<link rel="apple-touch-icon" sizes="114x114" href="/logo/apple-icon-114x114.png">
-<link rel="apple-touch-icon" sizes="120x120" href="/logo/apple-icon-120x120.png">
-<link rel="apple-touch-icon" sizes="144x144" href="/logo/apple-icon-144x144.png">
-<link rel="apple-touch-icon" sizes="152x152" href="/logo/apple-icon-152x152.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/logo/apple-icon-180x180.png">
-<link rel="icon" href="/logo/favicon.svg" type="image/svg+xml">
-<link rel="icon" type="image/png" sizes="32x32" href="/logo/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/logo/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/logo/favicon-16x16.png">
-<meta name="msapplication-TileColor" content="#ffffff">
-<meta name="msapplication-TileImage" content="/logo/ms-icon-144x144.png">
-<meta name="theme-color" content="#ffffff">
+<link rel="apple-touch-icon" sizes="57x57" href="/logo/apple-icon-57x57.png" />
+<link rel="apple-touch-icon" sizes="60x60" href="/logo/apple-icon-60x60.png" />
+<link rel="apple-touch-icon" sizes="72x72" href="/logo/apple-icon-72x72.png" />
+<link rel="apple-touch-icon" sizes="76x76" href="/logo/apple-icon-76x76.png" />
+<link
+  rel="apple-touch-icon"
+  sizes="114x114"
+  href="/logo/apple-icon-114x114.png"
+/>
+<link
+  rel="apple-touch-icon"
+  sizes="120x120"
+  href="/logo/apple-icon-120x120.png"
+/>
+<link
+  rel="apple-touch-icon"
+  sizes="144x144"
+  href="/logo/apple-icon-144x144.png"
+/>
+<link
+  rel="apple-touch-icon"
+  sizes="152x152"
+  href="/logo/apple-icon-152x152.png"
+/>
+<link
+  rel="apple-touch-icon"
+  sizes="180x180"
+  href="/logo/apple-icon-180x180.png"
+/>
+<link rel="icon" href="/logo/favicon.svg" type="image/svg+xml" />
+<link
+  rel="icon"
+  type="image/png"
+  sizes="32x32"
+  href="/logo/favicon-32x32.png"
+/>
+<link
+  rel="icon"
+  type="image/png"
+  sizes="16x16"
+  href="/logo/favicon-16x16.png"
+/>
+<link
+  rel="icon"
+  type="image/png"
+  sizes="16x16"
+  href="/logo/favicon-16x16.png"
+/>
+<meta name="msapplication-TileColor" content="#ffffff" />
+<meta name="msapplication-TileImage" content="/logo/ms-icon-144x144.png" />
+<meta name="theme-color" content="#ffffff" />
 
 <!-- Open Graph / Facebook / LinkedIn -->
 <meta property="og:type" content="website" />
@@ -78,5 +126,7 @@ const canonicalURL = new URL(Astro.url.pathname, SITE_URL);
   href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700&display=swap"
   rel="stylesheet"
 />
+
+<script type="application/ld+json" set:html={schema_org}></script>
 
 <GoogleTagManager id="GTM-M5ZNS2FF" />
