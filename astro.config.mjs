@@ -2,7 +2,6 @@ import { SITE_URL } from "./src/config";
 import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
 import sitemap from "@astrojs/sitemap";
-import image from "@astrojs/image";
 import mdx from "@astrojs/mdx";
 import robotsTxt from "astro-robots-txt";
 
@@ -51,7 +50,6 @@ export default defineConfig({
       },
       changefreq: "hourly",
     }),
-    image(),
     mdx(),
     solidJs(),
     partytown(),
