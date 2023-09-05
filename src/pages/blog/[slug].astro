@@ -1,5 +1,7 @@
 ---
 import { getCollection } from "astro:content";
+import BlogLayout from "../../layouts/BlogLayout.astro";
+import { Image } from "astro:assets";
 
 export async function getStaticPaths() {
   const posts = await getCollection("blog");
@@ -13,5 +15,13 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
-
-<Content />
+<BlogLayout frontmatter={entry.data}>
+  <Image
+    src={entry.data.cover}
+    alt={entry.data.coverAlt}
+    itemprop="image"
+    class="w-full min-h-96 object-cover mt-10"
+    slot="cover"
+  />
+  <Content />
+</BlogLayout>

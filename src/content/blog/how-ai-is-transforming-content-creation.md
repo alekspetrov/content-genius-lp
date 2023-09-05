@@ -2,16 +2,11 @@
 isNew: false
 isDraft: false
 isFeatured: false
-layout: "../../layouts/BlogLayout.astro"
-
 title: "How AI is Transforming Content Creation"
 subtitle: "How AI is Changing the Game"
 description: "Discover how AI is transforming the content creation landscape and how to stay competitive by embracing AI-powered tools."
-image:
-  {
-    src: "/blog/how-ai-is-transforming-content-creation/cover.png",
-    alt: "Content Genius preview",
-  }
+cover: "./assets/how-ai-is-transforming-content-creation-cover.png"
+coverAlt: "AI-Empowers creators illustration"
 openGraph:
   image: "blog/how-ai-is-transforming-content-creation/og_image.png"
   description: "AI-Empowers creators illustration"

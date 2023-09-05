@@ -1,6 +1,7 @@
 ---
-import { map } from "astro/zod";
 import Layout from "../layouts/Layout.astro";
+import { Image } from 'astro:assets'
+import checkmarkImage from '../assets/list-checkmark.svg'
 
 export const frontmatter = {
   title: "Pricing"
@@ -138,7 +139,7 @@ const PRICING = [
                 {tier.features.map((feature) => (
                   <li class="flex items-center gap-2">
                     <span class="flex-shrink-0">
-                      <img alt="checkmark" src="/list-checkmark.svg" loading="lazy" />
+                      <Image src={checkmarkImage} alt="checkmark" loading="lazy" />
                     </span>
                     <span>{feature}</span>
                   </li>

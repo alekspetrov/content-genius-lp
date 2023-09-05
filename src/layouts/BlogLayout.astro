@@ -4,33 +4,28 @@ import Header from "../components/Header.astro";
 import BaseHead from "../components/BaseHead.astro";
 import { dateToFormat } from "../helpers/dateToFormat";
 
-export interface Props {
-  content: {
-    title: string;
-    description: string;
-    image: {
-      src: string;
-      alt: string;
-    };
-    openGraph: {
-      image: string;
-      description: string;
-    };
-    publishDate: string;
-  };
-}
+// export interface Props {
+//   content: {
+//     title: string;
+//     description: string;
+//     cover: string;
+//     openGraph: {
+//       image: string;
+//       description: string;
+//     };
+//     publishDate: string;
+//   };
+// }
 
-const {
-  content: { title, description, openGraph, publishDate, image },
-} = Astro.props;
+const { frontmatter } = Astro.props;
 ---
 
 <html lang="en" class="scroll-smooth">
   <head>
     <BaseHead
-      title={title}
-      og_image={openGraph.image}
-      og_description={description}
+      title={frontmatter.title}
+      og_image={frontmatter.openGraph.image}
+      og_description={frontmatter.description}
     />
   </head>
   <body class="font-sans text-zinc-600 antialiased">
@@ -46,26 +41,22 @@ const {
             class="mb-3 font-bold text-gray-900 text-5xl leading-[1.25]"
             itemprop="headline"
           >
-            {title}
+            {frontmatter.title}
           </h1>
-          {description && <p class="text-lg leading-8 mb-6">{description}</p>}
+          {
+            frontmatter.description && (
+              <p class="text-lg leading-8 mb-6">{frontmatter.description}</p>
+            )
+          }
           <time
             class="mb-8 block text-sm text-gray-400"
-            datetime={publishDate}
+            datetime={frontmatter.publishDate}
             itemprop="datePublished"
-            content={publishDate}>{dateToFormat(publishDate)}</time
+            content={frontmatter.publishDate}
+            >{dateToFormat(frontmatter.publishDate)}</time
           >
           <div class="md:-mx-12 xl:-mx-24">
-            {
-              image?.src && (
-                <img
-                  itemprop="image"
-                  src={image?.src}
-                  alt={image.alt}
-                  class="w-full min-h-96 object-cover mt-10"
-                />
-              )
-            }
+            <slot name="cover" />
           </div>
         </header>
         <div
@@ -78,4 +69,5 @@ const {
     </main>
     <Footer />
   </body>
+  ...
 </html>

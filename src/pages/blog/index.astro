@@ -1,11 +1,11 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-
+import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 
 export const frontmatter = {
-  title: "Blog"
-}
+  title: "Blog",
+};
 
 const allBlogPosts = await getCollection("blog");
 
@@ -39,9 +39,9 @@ import { dateToFormat } from "../../helpers/dateToFormat";
               itemprop="url"
             >
               <div class="flex-1 flex-col">
-                <img
-                  src={`${post.data.image?.src}`}
-                  alt={post.data.image?.alt}
+                <Image
+                  src={post.data.cover}
+                  alt={post.data.coverAlt}
                   itemprop="image"
                   loading="lazy"
                   class={`object-cover w-full h-full rounded-lg ${
