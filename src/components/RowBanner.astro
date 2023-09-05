@@ -1,6 +1,7 @@
 ---
 import CustomersCounter from "./CustomersCounter";
-import { Image } from "astro:assets";
+import { Image, getImage } from "astro:assets";
+import ResponsiveImage from "../components/ResponsiveImage.astro";
 import main2Image from "../assets/main-2.png";
 
 const schema = JSON.stringify({
@@ -82,11 +83,19 @@ const schema = JSON.stringify({
       </div>
     </div>
     <div class="mb-8 md:-mx-8 lg:-mx-12">
-      <Image
+      <!-- <Image
         alt="Content Genius preview"
         src={main2Image}
         class="border rounded-lg md:rouded-xl lg:rounded-2xl"
         loading="eager"
+      /> -->
+      <ResponsiveImage
+        src={main2Image}
+        sizes={[400, 1223, 2446]}
+        alt="Content Genius preview"
+        class="border rounded-lg md:rouded-xl lg:rounded-2xl"
+        loading="eager"
+        format="webp"
       />
     </div>
   </div>
