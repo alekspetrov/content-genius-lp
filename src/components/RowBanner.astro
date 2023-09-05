@@ -1,6 +1,5 @@
 ---
 import CustomersCounter from "./CustomersCounter";
-import { Image, getImage } from "astro:assets";
 import ResponsiveImage from "../components/ResponsiveImage.astro";
 import main2Image from "../assets/main-2.png";
 
@@ -91,7 +90,7 @@ const schema = JSON.stringify({
       /> -->
       <ResponsiveImage
         src={main2Image}
-        sizes={[400, 1223, 2446]}
+        sizes={[300, 400, 1223, 2446]}
         alt="Content Genius preview"
         class="border rounded-lg md:rouded-xl lg:rounded-2xl"
         loading="eager"

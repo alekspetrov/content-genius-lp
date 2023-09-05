@@ -5,6 +5,7 @@ import RowFAQ from "../components/RowFAQ.astro";
 import Assistants from "../components/Assitatnts.astro";
 import Frameworks from "../components/Frameworks.astro";
 import { Image } from "astro:assets";
+import ResponsiveImage from "../components/ResponsiveImage.astro";
 import assistantForm1Image from "../assets/assistant-form-1.png";
 import notes1Image from "../assets/notes-1.png";
 import checkmarkImage from "../assets/checkmark.svg";
@@ -81,12 +82,14 @@ import checkmarkImage from "../assets/checkmark.svg";
               <div
                 class="-mx-4 px-8 md:pt-8 bg-[url('/bg-grid-1.png')] bg-cover bg-repeat-none bg-center overflow-hidden"
               >
-                <Image
-                  src={assistantForm1Image}
-                  alt="Blog post writer"
-                  loading="lazy"
-                  class="border border-b-0 border-gray-150 rounded-t-xl shadow-lg"
-                />
+                <ResponsiveImage
+              src={assistantForm1Image}
+              sizes={[542, 1085, 2170]}
+              alt="Blog post writer"
+              loading="lazy"
+              class="border border-b-0 border-gray-150 rounded-t-xl shadow-lg"
+              format="webp"
+            />
               </div>
             </div>
           </div>
@@ -141,7 +144,13 @@ import checkmarkImage from "../assets/checkmark.svg";
             </ul>
           </div>
           <div class="flex-1">
-            <Image src={notes1Image} alt="AI-Powered Notes" loading="lazy" />
+            <ResponsiveImage
+              src={notes1Image}
+              sizes={[640, 800, 1287]}
+              alt="AI-Powered Notes"
+              loading="lazy"
+              format="webp"
+            />
           </div>
         </article>
       </div>
