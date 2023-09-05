@@ -2,9 +2,14 @@
 import RowTextImage from "../../components/RowTextImage.astro";
 import Layout from "../../layouts/Layout.astro";
 
+import { Image } from "astro:assets";
+import blog1Image from "../../assets/use-cases/sales-1.png";
+import blog2Image from "../../assets/use-cases/sales-2.png";
+import blog3Image from "../../assets/use-cases/sales-3.png";
+
 export const frontmatter = {
-  title: "Content Genius for sales"
-}
+  title: "Content Genius for sales",
+};
 ---
 
 <Layout title="Content Genius for sales">
@@ -41,30 +46,36 @@ export const frontmatter = {
             title="Supercharge Your Sales Pitches"
             text="Let Content Genius create compelling, persuasive sales pitches tailored for your audience. Our AI will help you craft the perfect message to close deals faster."
             ctaText="Create winning pitches"
-            image={{
-              alt: "Sales pitches assistatnt prompt",
-              url: "/blog/ai-use-case-sales-1-1.png",
-            }}
-          />
+          >
+            <Image
+              loading="lazy"
+              src={blog1Image}
+              alt="Sales pitches assistatnt prompt"
+            />
+          </RowTextImage>
           <RowTextImage
             imageFirst={true}
             title=" Boost Your Outreach Game"
             text="Streamline your email and LinkedIn outreach campaigns with Content Genius. Our AI will help you craft personalized, engaging messages that resonate with your prospects."
             ctaText="Enhance your outreach"
-            image={{
-              alt: "Sales outreach assistant prompt",
-              url: "/blog/ai-use-case-sales-2-1.png",
-            }}
-          />
+          >
+            <Image
+              loading="lazy"
+              src={blog2Image}
+              alt="Sales outreach assistant prompt"
+            />
+          </RowTextImage>
           <RowTextImage
             title="Sales Collateral Made Easy"
             text="Content Genius is your secret weapon for creating professional sales materials. From product presentations to case studies, our AI has you covered."
             ctaText="Upgrade sales content"
-            image={{
-              alt: "Sales content assistant prompt",
-              url: "/blog/ai-use-case-sales-3-1.png",
-            }}
-          />
+          >
+            <Image
+              loading="lazy"
+              src={blog3Image}
+              alt="Sales content assistant prompt"
+            />
+          </RowTextImage>
         </div>
       </section>
     </article>

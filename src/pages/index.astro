@@ -4,6 +4,11 @@ import RowBanner from "../components/RowBanner.astro";
 import RowFAQ from "../components/RowFAQ.astro";
 import Assistants from "../components/Assitatnts.astro";
 import Frameworks from "../components/Frameworks.astro";
+import { Image } from 'astro:assets'
+import assistantForm1Image from '../assets/assistant-form-1.png'
+import notes1Image from '../assets/notes-1.png'
+import checkmarkImage from '../assets/checkmark.svg'
+
 ---
 
 <Layout title="">
@@ -77,10 +82,10 @@ import Frameworks from "../components/Frameworks.astro";
               <div
                 class="-mx-4 px-8 md:pt-8 bg-[url('/bg-grid-1.png')] bg-cover bg-repeat-none bg-center overflow-hidden"
               >
-                <img
-                  loading="lazy"
-                  src="/assistant-form-1.png"
+                <Image
+                  src={assistantForm1Image}
                   alt="Blog post writer"
+                  loading="lazy"
                   class="border border-b-0 border-gray-150 rounded-t-xl shadow-lg"
                 />
               </div>
@@ -115,29 +120,29 @@ import Frameworks from "../components/Frameworks.astro";
             </p>
             <ul class="py-4">
               <li class="flex items-center gap-3">
-                <img src="/checkmark.svg" alt="checkmark" loading="lazy" />
+                <Image src={checkmarkImage} alt="checkmark" loading="lazy" />
                 <div>
                   Ask an AI assistant to summarise, edit, translate, and more.
                 </div>
               </li>
               <li class="flex items-center gap-3">
-                <img src="/checkmark.svg" alt="checkmark" loading="lazy" />
+                <Image src={checkmarkImage} alt="checkmark" loading="lazy" />
                 <div>
                   Organize your notes into collections, and select favorites.
                 </div>
               </li>
               <li class="flex items-center gap-3">
-                <img src="/checkmark.svg" alt="checkmark" loading="lazy" />
+                <Image src={checkmarkImage} alt="checkmark" loading="lazy" />
                 <div>Convert notes into SEO-optimized blog posts.</div>
               </li>
               <li class="flex items-center gap-3">
-                <img src="/checkmark.svg" alt="checkmark" loading="lazy" />
+                <Image src={checkmarkImage} alt="checkmark" loading="lazy" />
                 <div>See the length of the generated content.</div>
               </li>
             </ul>
           </div>
           <div class="flex-1">
-            <img src="/notes-1.png" alt="AI-Powered Notes" loading="lazy" />
+            <Image src={notes1Image} alt="AI-Powered Notes" loading="lazy" />
           </div>
         </article>
       </div>

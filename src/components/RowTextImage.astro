@@ -3,14 +3,10 @@ interface Props {
   title: string;
   text: string;
   ctaText: string;
-  image: {
-    alt: string;
-    url: string;
-  };
   imageFirst?: boolean;
 }
 
-const { title, text, ctaText, image, imageFirst } = Astro.props;
+const { title, text, ctaText, imageFirst } = Astro.props;
 ---
 
 <div class="md:flex items-center text-center md:text-left">
@@ -19,7 +15,7 @@ const { title, text, ctaText, image, imageFirst } = Astro.props;
       imageFirst && "md:order-1"
     }`}
   >
-    <img loading="lazy" src={image.url} alt={image.alt} />
+    <slot/>
   </div>
   <div class="md:w-1/2">
     <h2 class="mb-4 text-2xl lg:text-3xl text-gray-900 font-semibold">

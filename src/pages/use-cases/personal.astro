@@ -2,9 +2,14 @@
 import RowTextImage from "../../components/RowTextImage.astro";
 import Layout from "../../layouts/Layout.astro";
 
+import { Image } from "astro:assets";
+import blog1Image from "../../assets/use-cases/personal-1.png";
+import blog2Image from "../../assets/use-cases/personal-2.png";
+import blog3Image from "../../assets/use-cases/personal-3.png";
+
 export const frontmatter = {
-  title: "Content Genius for personal usage"
-}
+  title: "Content Genius for personal usage",
+};
 ---
 
 <Layout title="Content Genius for personal usage">
@@ -39,33 +44,40 @@ export const frontmatter = {
       <section>
         <div class="container py-12 space-y-8">
           <RowTextImage
-            title="Boost your wring skills"
+            title="Boost your writing skills"
             text="Enhance your writing skills with AI-generated suggestions specified for your blog topic, format, and audience."
             ctaText="Create blog post"
-            image={{
-              alt: "Personal blogging assistatnt prompt",
-              url: "/blog/ai-use-case-personal-1-1.png",
-            }}
-          />
+          >
+            <Image
+              loading="lazy"
+              src={blog1Image}
+              alt="Personal blogging assistatnt prompt"
+            />
+          </RowTextImage>
+
           <RowTextImage
             imageFirst={true}
             title="Level up you social media game"
             text="Unleash your imagination with our AI-powered storytelling assistant, generating captivating stories and social media blog posts."
             ctaText="Write story"
-            image={{
-              alt: "Social media assistant prompt",
-              url: "/blog/ai-use-case-personal-2-1.png",
-            }}
-          />
+          >
+            <Image
+              loading="lazy"
+              src={blog2Image}
+              alt="Social media assistant prompt"
+            />
+          </RowTextImage>
           <RowTextImage
             title="Personalize Learning"
             text="Customize your AI assistant to help you learn and grow in your desired areas, providing content and resources based on your interests and goals."
             ctaText="Start learning"
-            image={{
-              alt: "Personalized lerning assistant prompt",
-              url: "/blog/ai-use-case-personal-3-1.png",
-            }}
-          />
+          >
+            <Image
+              loading="lazy"
+              src={blog3Image}
+              alt="Personalized lerning assistant prompt"
+            />
+          </RowTextImage>
         </div>
       </section>
     </article>
