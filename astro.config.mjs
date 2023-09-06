@@ -4,13 +4,9 @@ import tailwind from "@astrojs/tailwind";
 import sitemap from "@astrojs/sitemap";
 import mdx from "@astrojs/mdx";
 import robotsTxt from "astro-robots-txt";
-
 import solidJs from "@astrojs/solid-js";
-
-// https://astro.build/config
-
-// https://astro.build/config
 import partytown from "@astrojs/partytown";
+import webmanifest from "astro-webmanifest";
 
 // https://astro.build/config
 export default defineConfig({
@@ -51,12 +47,24 @@ export default defineConfig({
       changefreq: "hourly",
     }),
     mdx(),
+    robotsTxt(),
+    webmanifest({
+      name: "Content Genius",
+      icon: "src/assets/favicon.svg",
+      short_name: "Content Genius",
+      description:
+        "Get a better ChatGPT experience. Perfect for copywriters, marketers, social media managers, and professionals from various fields. No specific expertise is necessary",
+      start_url: "/",
+      theme_color: "#FFFFFF",
+      background_color: "#FFFFFF",
+      display: "standalone",
+      insertAppleTouchLinks: true,
+    }),
     solidJs(),
     partytown({
       config: {
-        forward: ['dataLayer.push', 'fbq']
-      }
+        forward: ["dataLayer.push", "fbq"],
+      },
     }),
-    robotsTxt(),
   ],
 });
