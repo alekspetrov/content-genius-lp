@@ -58,7 +58,11 @@ export default defineConfig({
       theme_color: "#FFFFFF",
       background_color: "#FFFFFF",
       display: "standalone",
-      insertAppleTouchLinks: true,
+      config: {
+        icon: "src/assets/favicon.svg",
+        iconPurpose: ['badge', 'maskable'], 
+        insertAppleTouchLinks: true,
+      },
     }),
     solidJs(),
     partytown({
