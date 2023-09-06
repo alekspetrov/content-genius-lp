@@ -52,7 +52,11 @@ export default defineConfig({
     }),
     mdx(),
     solidJs(),
-    partytown(),
+    partytown({
+      config: {
+        forward: ['dataLayer.push', 'fbq']
+      }
+    }),
     robotsTxt(),
   ],
 });
