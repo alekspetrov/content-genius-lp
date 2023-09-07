@@ -54,7 +54,6 @@ export default defineConfig({
       short_name: "Content Genius",
       description:
         "Get a better ChatGPT experience. Perfect for copywriters, marketers, social media managers, and professionals from various fields. No specific expertise is necessary",
-      start_url: "/",
       theme_color: "#FFFFFF",
       background_color: "#FFFFFF",
       display: "standalone",
