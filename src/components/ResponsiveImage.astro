@@ -6,21 +6,21 @@ type PropEx<T> = T & {
     src: ImageMetadata;
     alt: string;
     format?: ImageOutputFormat;
-    sizes: number[];
+    sets: number[];
 };
 type Props = Simplify<PropEx<ImgAttributes>>;
 
 async function generateResponsiveImage({
     src,
     format,
-    sizes,
+    sets,
 }: Omit<Props, "alt">) {
-    const imgSrcSet = sizes.map(async (size) => {
+    const imgSrcSet = sets.map(async (size) => {
         const image = await getImage({ src, width: size, format });
         return `${image.src} ${size}w`;
     });
 
-    const imgSrc = await getImage({ src, width: Math.max(...sizes), format });
+    const imgSrc = await getImage({ src, width: src.width, format });
 
     return {
         srcSet: await Promise.all(imgSrcSet),
@@ -30,13 +30,14 @@ async function generateResponsiveImage({
 
 const props = Astro.props;
 const image = await getImage(props);
-const { src, sizes, format } = props;
+const { src, sets, format } = props;
 
 const { srcSet, imgSrc } = await generateResponsiveImage({
     src,
-    sizes,
+    sets,
     format,
 });
+delete image.attributes.sets
 ---
 
 <img srcset={srcSet.join(", ")} src={imgSrc} {...image.attributes} />
