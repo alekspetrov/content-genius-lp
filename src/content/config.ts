@@ -7,7 +7,9 @@ const blogCollection = defineCollection({
     isFeatured: z.boolean(),
     title: z.string(),
     subtitle: z.string().optional(),
+    intro: z.string().optional(),
     description: z.string().optional(),
+    keywords: z.string().optional(),
     cover: image().refine((img) => img.width >= 1200, {
       message: "Cover image must be at least 1200 pixels wide!",
     }),

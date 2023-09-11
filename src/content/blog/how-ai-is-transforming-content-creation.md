@@ -4,7 +4,9 @@ isDraft: false
 isFeatured: false
 title: "How AI is Transforming Content Creation"
 subtitle: "How AI is Changing the Game"
-description: "Discover how AI is transforming the content creation landscape and how to stay competitive by embracing AI-powered tools."
+intro: "Discover how AI is transforming the content creation landscape and how to stay competitive by embracing AI-powered tools."
+description: "The top features of Content Genius are outlined, including AI Assistants, AI-powered notes, and publishing options"
+keywords: "AI Assistants, content creation, AI-powered content generation"
 cover: "./assets/how-ai-is-transforming-content-creation-cover.png"
 coverAlt: "AI-Empowers creators illustration"
 openGraph:

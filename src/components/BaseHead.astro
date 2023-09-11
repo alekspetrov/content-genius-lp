@@ -17,12 +17,14 @@ export interface Props {
   title?: string;
   og_description?: string;
   og_image?: string;
+  keywords?: string;
 }
 
 const {
   title = SITE_TITLE,
   og_description = SITE_DESCRIPTION,
   og_image = SITE_OG_IMAGE_URL,
+  keywords,
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, SITE_URL);
@@ -50,7 +52,8 @@ const schema_org = JSON.stringify({
   url="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700&display=swap"
 />
 <meta name="title" content={`${title} ${title && "|"} ${SITE_TITLE}`} />
-<meta name="description" content={og_description} />
+{og_description && <meta name="description" content={og_description} />}
+{keywords && <meta name="keywords" content={keywords} />}
 
 <!-- Open Graph / Facebook / LinkedIn -->
 <meta property="og:type" content="website" />

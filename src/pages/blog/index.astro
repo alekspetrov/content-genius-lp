@@ -5,6 +5,8 @@ import { getCollection } from "astro:content";
 
 export const frontmatter = {
   title: "Blog",
+  description: "Blog posts about Prompt Framework and Content Creation using AI powered tools with ChatGPT",
+  keywords: "Blog posts, ChatGPT, Prompt Framework, Prompts Collection, Content Creation",
 };
 
 const allBlogPosts = await getCollection("blog");
@@ -20,7 +22,7 @@ const posts = allBlogPosts
 import { dateToFormat } from "../../helpers/dateToFormat";
 ---
 
-<Layout title="Blog">
+<Layout title={frontmatter.title} description={frontmatter.description} keywords={frontmatter.keywords}>
   <main>
     <div
       class="container py-20 md:grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3"
@@ -81,7 +83,7 @@ import { dateToFormat } from "../../helpers/dateToFormat";
                   )}
                   {post.data.isNew && (
                     <p class="mt-4 text-lg text-gray-450" itemprop="abstract">
-                      {post.data.description}
+                      {post.data.intro}
                     </p>
                   )}
                 </div>

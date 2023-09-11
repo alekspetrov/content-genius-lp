@@ -26,6 +26,7 @@ const { frontmatter } = Astro.props;
       title={frontmatter.title}
       og_image={frontmatter.openGraph.image}
       og_description={frontmatter.description}
+      keywords={frontmatter.keywords}
     />
   </head>
   <body class="font-sans text-zinc-600 antialiased">
@@ -44,8 +45,8 @@ const { frontmatter } = Astro.props;
             {frontmatter.title}
           </h1>
           {
-            frontmatter.description && (
-              <p class="text-lg leading-8 mb-6">{frontmatter.description}</p>
+            frontmatter.intro && (
+              <p class="text-lg leading-8 mb-6">{frontmatter.intro}</p>
             )
           }
           <time
