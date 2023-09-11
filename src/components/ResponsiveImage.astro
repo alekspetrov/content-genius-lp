@@ -37,10 +37,18 @@ const { srcSet, imgSrc } = await generateResponsiveImage({
     sets,
     format,
 });
-delete image.attributes.sets
+delete image.attributes.sets;
 ---
 
-{props.loading === "eager" && (
-<link rel="preload" as="image" href={imgSrc} imagesrcset={srcSet.join(", ")} imagesizes={props.sizes}>
-)}
+{
+    // props.loading === "eager" && (
+    //     <link
+    //         rel="preload"
+    //         as="image"
+    //         href={imgSrc}
+    //         imagesrcset={srcSet.join(", ")}
+    //         imagesizes={props.sizes}
+    //     />
+    // )
+}
 <img srcset={srcSet.join(", ")} src={imgSrc} {...image.attributes} />
