@@ -6,11 +6,18 @@ const entry = await getEntryBySlug("static", "terms");
 const { Content } = await entry.render();
 
 export const frontmatter = {
-  title: "Terms",
-}
-
+  title: "Terms of Services",
+  description:
+    "Terms of Service for Content Genius covers the description of services, user accounts and registration, acceptable use policy",
+  keywords: "Content Genius, Terms of Service, property rights, payment terms",
+};
 ---
 
-<TextLayout title={entry.data.title} supportText={entry.data.supportText}>
+<TextLayout
+  title={frontmatter.title}
+  supportText={entry.data.supportText}
+  description={frontmatter.description}
+  keywords={frontmatter.keywords}
+>
   <Content />
 </TextLayout>

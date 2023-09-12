@@ -6,10 +6,18 @@ const entry = await getEntryBySlug("static", "privacy");
 const { Content } = await entry.render();
 
 export const frontmatter = {
-  title: "Privacy",
-}
+  title: "Privacy Policy",
+  description:
+    "Privacy Policy of Content Genius, an AI-powered content studio, outlines how the company collects, uses, stores, and protects personal information",
+  keywords: "Content Genius, Privacy Policy, personal information",
+};
 ---
 
-<TextLayout title={entry.data.title} supportText={entry.data.supportText}>
+<TextLayout
+  title={frontmatter.title}
+  supportText={entry.data.supportText}
+  description={frontmatter.description}
+  keywords={frontmatter.keywords}
+>
   <Content />
 </TextLayout>

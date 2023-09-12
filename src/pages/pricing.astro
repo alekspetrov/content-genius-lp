@@ -5,6 +5,10 @@ import checkmarkImage from "../assets/list-checkmark.svg";
 
 export const frontmatter = {
   title: "Pricing",
+  description:
+    "Unleash Your Content Genius: Unlock your creative potential, grow your brand, engage your audience. Get started for free!",
+  keywords:
+    "Content Genius, content strategy, AI Assistants, start for free",
 };
 
 const PRICING = [
@@ -75,9 +79,9 @@ const PRICING = [
 ---
 
 <Layout
-  title="Pricing"
-  description="Unleash Your Content Genius: Unlock your creative potential, grow your brand, engage your audience. Get started for free!"
-  keywords="Content Genius, content strategy, AI Assistants, start for free"
+  title={frontmatter.title}
+  description={frontmatter.description}
+  keywords={frontmatter.keywords}
 >
   <main class="py-20">
     <article class="container">

@@ -6,10 +6,18 @@ const entry = await getEntryBySlug("static", "refund");
 const { Content } = await entry.render();
 
 export const frontmatter = {
-  title: "Refund",
-}
+  title: "Refund Policy",
+  description:
+    "Refund policy of Content Genius offers a 30-day money-back guarantee for new customers who are unsatisfied with the product",
+  keywords: "Content Genius, Refund policy, money-back guarantee",
+};
 ---
 
-<TextLayout title={entry.data.title} supportText={entry.data.supportText}>
+<TextLayout
+  title={frontmatter.title}
+  supportText={entry.data.supportText}
+  description={frontmatter.description}
+  keywords={frontmatter.keywords}
+>
   <Content />
 </TextLayout>

@@ -2,7 +2,6 @@
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
 import "../assets/index.pcss";
-// import GoogleAnalitics from "./GoogleAnalitics.astro";
 import GoogleTagManager from "./GoogleTagManager.astro";
 import { GoogleFontsOptimizer } from "astro-google-fonts-optimizer";
 
@@ -52,7 +51,11 @@ const schema_org = JSON.stringify({
   url="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700&display=swap"
 />
 <meta name="title" content={`${title} ${title && "|"} ${SITE_TITLE}`} />
-{Astro.props.og_description && <meta name="description" content={og_description} />}
+{
+  Astro.props.og_description && (
+    <meta name="description" content={og_description} />
+  )
+}
 {keywords && <meta name="keywords" content={keywords} />}
 
 <!-- Open Graph / Facebook / LinkedIn -->
