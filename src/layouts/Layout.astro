@@ -3,12 +3,19 @@ import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import BaseHead from "../components/BaseHead.astro";
 
-const { title, description, keywords } = Astro.props;
+export interface Props {
+  title?: string;
+  full_title?:boolean;
+  description?: string;
+  keywords?: string;
+}
+
+const { title, description, keywords, full_title = true } = Astro.props;
 ---
 
 <html lang="en" class="scroll-smooth">
   <head>
-    <BaseHead title={title} og_description={description} keywords={keywords} />
+    <BaseHead title={title} og_description={description} keywords={keywords} full_title={full_title} />
   </head>
   <body class="font-sans text-zinc-600 antialiased">
     <Header />
