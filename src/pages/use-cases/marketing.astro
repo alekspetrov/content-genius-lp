@@ -9,10 +9,18 @@ import blog3Image from "../../assets/use-cases/marketing-3.png";
 
 export const frontmatter = {
   title: "Content Genius for marketers",
+  description:
+    "Content Genius offers powerful ideas for marketing campaigns, generating high-quality and engaging content that is SEO-friendly",
+  keywords:
+    "marketing campaigns, Content Creation, seo friendly, Audience Insights",
 };
 ---
 
-<Layout title="Content Genius for marketers">
+<Layout
+  title={frontmatter.title}
+  description={frontmatter.description}
+  keywords={frontmatter.keywords}
+>
   <main class="py-20">
     <article class="container">
       <header class="relative mb-24">
@@ -22,7 +30,7 @@ export const frontmatter = {
           Supercharge marketing campaigns
         </h1>
         <p class="max-w-[65ch] text-lg lg:text-xl leading-8 mb-8 md:mb-12">
-          Content Genious can boost your marketing campaigns with powerful ideas
+          Content Genius can boost your marketing campaigns with powerful ideas
           generated based on your audience and product features. Let specialized
           assistants do your routine job.
         </p>
@@ -67,7 +75,7 @@ export const frontmatter = {
           </RowTextImage>
           <RowTextImage
             title="Social Media Management"
-            text="Streamline your social media management with our AI-powered chatbot assistants. Write engaging posts, generate catchy titles, find performant hash tags, store insigth in notes."
+            text="Streamline your social media management with our AI-powered chatbot assistants. Write engaging posts, generate catchy titles, find performant hash tags, store insights in notes."
             ctaText="Boost audience"
           >
             <Image

@@ -9,10 +9,18 @@ import blog3Image from "../../assets/use-cases/sales-3.png";
 
 export const frontmatter = {
   title: "Content Genius for sales",
+  description:
+    "With the help of AI, users can create compelling messages tailored to their audience and boost their campaigns through engaging communication",
+  keywords:
+    "boost conversions, persuasive sales pitches, craft the perfect message, personalized messages, engaging messages",
 };
 ---
 
-<Layout title="Content Genius for sales">
+<Layout
+  title={frontmatter.title}
+  description={frontmatter.description}
+  keywords={frontmatter.keywords}
+>
   <main class="py-20">
     <article class="container">
       <header class="relative mb-24">
