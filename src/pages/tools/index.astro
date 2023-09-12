@@ -3,11 +3,15 @@ import Layout from "../../layouts/Layout.astro";
 
 export const frontmatter = {
   title: "Tools",
+  description:
+    "Use ChatGPT to create, rewrite and transform your content. Best AI powered tools for content creation",
+  keywords:
+    "ai tools, Paraphrasing tool, grammar checker, blog writing, letter writer",
 };
 
 const TOOLS_LIST = [
   {
-    title: "Blog writing",
+    title: "Blog post writer",
     text: "Compose SEO-optimized blog posts based on the topic.",
     link: "/tools/blog-writer/",
   },
@@ -29,17 +33,21 @@ const TOOLS_LIST = [
 ];
 ---
 
-<Layout title="AI Tools">
+<Layout
+  title="AI Tools"
+  description={frontmatter.description}
+  keywords={frontmatter.keywords}
+>
   <main class="py-8 lg:py-20">
     <article class="container">
       <header>
         <h1
           class="text-gray-900 font-semibold text-4xl lg:text-5xl lg:leading-[1.1] mb-4 max-w-[25ch]"
         >
-          GPT writing tools
+          ChatGPT writing tools
         </h1>
         <p class="max-w-[65ch] text-lg lg:text-xl leading-8 mb-8 md:mb-12">
-          Use chatGPT to create, rewrite and transform your content.
+          Use ChatGPT to create, rewrite and transform your content.
         </p>
       </header>
       <div>

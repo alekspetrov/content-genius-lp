@@ -4,6 +4,10 @@ import Layout from "../../layouts/Layout.astro";
 
 export const frontmatter = {
   title: "Letter writer",
+  description:
+    "Effortlessly compose professional cover letters, resignation letters, recommendations, and personal letters with AI-powered Letter Writer Tool",
+  keywords:
+    "write a letter, write a cover letter, write a resignation letter, recommendation letter",
 };
 
 const ContentData = {
@@ -48,7 +52,11 @@ const ContentData = {
 };
 ---
 
-<Layout title={ContentData.header.title} description={ContentData.description}>
+<Layout
+  title={frontmatter.title}
+  description={frontmatter.description}
+  keywords={frontmatter.keywords}
+>
   <main class="py-20">
     <article itemscope itemtype="https://schema.org/TechArticle">
       <div class="container">

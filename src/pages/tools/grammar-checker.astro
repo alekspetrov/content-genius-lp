@@ -4,6 +4,9 @@ import Layout from "../../layouts/Layout.astro";
 
 export const frontmatter = {
   title: "Grammar checker",
+  description:
+    "Improve your writing with a free AI-powered Grammar Checker. Enhance your grammar, punctuation, and sentence structure",
+  keywords: "gramar checker, grammar check, grammer check, grammer checker, tool",
 };
 
 const ContentData = {
@@ -48,7 +51,11 @@ const ContentData = {
 };
 ---
 
-<Layout title={ContentData.header.title} description={ContentData.description}>
+<Layout
+  title={frontmatter.title}
+  description={frontmatter.description}
+  keywords={frontmatter.keywords}
+>
   <main class="py-20">
     <article itemscope itemtype="https://schema.org/TechArticle">
       <div class="container">
@@ -182,7 +189,3 @@ const ContentData = {
     </article>
   </main>
 </Layout>
-
-<!-- <picture class="block mb-4">
-//               <img src="/blog/ai-use-case-copywriting-1.png" alt="" />
-//             </picture> -->

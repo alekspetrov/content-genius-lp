@@ -1,9 +1,12 @@
 ---
-import ToolsForm, { Field } from "../../components/ToolsForm";
+import ToolsForm, { type Field } from "../../components/ToolsForm";
 import Layout from "../../layouts/Layout.astro";
 
 export const frontmatter = {
   title: "Blog post writer",
+  description:
+    "Effortlessly generate engaging blog posts and articles with the AI-powered Blog Writer Tool",
+  keywords: "blog post writer, write a blog post, tool",
 };
 
 const ContentData = {
@@ -100,7 +103,11 @@ const ToolsFormFields: Field[] = [
 ];
 ---
 
-<Layout title={ContentData.header.title} description={ContentData.description}>
+<Layout
+  title={frontmatter.title}
+  description={frontmatter.description}
+  keywords={frontmatter.keywords}
+>
   <main class="py-20">
     <article itemscope itemtype="https://schema.org/TechArticle">
       <div class="container">

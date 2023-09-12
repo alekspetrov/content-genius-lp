@@ -4,12 +4,17 @@ import ToolsForm from "../../components/ToolsForm";
 
 export const frontmatter = {
   title: "Paraphrasing tool",
+  description:
+    "Rewrite content with AI Paraphrasing free online tool. Renew old blogs, avoid plagiarism, transform your content while retaining essence",
+  keywords:
+    "paraphrasing tool, paraphraser tool, free paraphrasing tool, paraphrase online",
 };
 ---
 
 <Layout
-  title="Paraphrasing tool"
-  description="Rewrite content with AI Paraphrasing free online tool. Renew old blogs, avoid plagiarism, and change the tone. Transform your content while retaining essence."
+  title={frontmatter.title}
+  description={frontmatter.description}
+  keywords={frontmatter.keywords}
 >
   <main class="py-8 lg:py-20">
     <article itemscope itemtype="https://schema.org/TechArticle">

@@ -1,11 +1,11 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { Image } from 'astro:assets'
-import checkmarkImage from '../assets/list-checkmark.svg'
+import { Image } from "astro:assets";
+import checkmarkImage from "../assets/list-checkmark.svg";
 
 export const frontmatter = {
-  title: "Pricing"
-}
+  title: "Pricing",
+};
 
 const PRICING = [
   {
@@ -74,7 +74,11 @@ const PRICING = [
 ];
 ---
 
-<Layout title="Pricing" description="Unleash Your Content Genius: Elevate Your Brand with AI-Powered Assistance. Unlock your creative potential, grow your brand, engage your audience. Get started for free!">
+<Layout
+  title="Pricing"
+  description="Unleash Your Content Genius: Unlock your creative potential, grow your brand, engage your audience. Get started for free!"
+  keywords="Content Genius, content strategy, AI Assistants, start for free"
+>
   <main class="py-20">
     <article class="container">
       <header class="text-center mb-20">
@@ -139,7 +143,11 @@ const PRICING = [
                 {tier.features.map((feature) => (
                   <li class="flex items-center gap-2">
                     <span class="flex-shrink-0">
-                      <Image src={checkmarkImage} alt="checkmark" loading="lazy" />
+                      <Image
+                        src={checkmarkImage}
+                        alt="checkmark"
+                        loading="lazy"
+                      />
                     </span>
                     <span>{feature}</span>
                   </li>
