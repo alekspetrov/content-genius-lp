@@ -4,6 +4,8 @@
 import "../assets/index.pcss";
 import GoogleTagManager from "./GoogleTagManager.astro";
 import { GoogleFontsOptimizer } from "astro-google-fonts-optimizer";
+import ResponsiveImageLink from "../components/ResponsiveImageLink.astro";
+import main2Image from "../assets/main-2.png";
 
 import {
   SITE_TITLE,
@@ -58,6 +60,17 @@ const schema_org = JSON.stringify({
   )
 }
 {keywords && <meta name="keywords" content={keywords} />}
+{(Astro.url.pathname === "/") && (
+<ResponsiveImageLink
+        src={main2Image}
+        sets={[305, 420, 611, 1223, 1350, 2446]}
+        sizes="100vw"
+        alt="Content Genius preview"
+        class="border rounded-lg md:rouded-xl lg:rounded-2xl"
+        loading="eager"
+        format="webp"
+      />
+)}
 
 <!-- Open Graph / Facebook / LinkedIn -->
 <meta property="og:type" content="website" />

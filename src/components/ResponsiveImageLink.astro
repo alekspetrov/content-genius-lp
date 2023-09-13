@@ -1,0 +1,49 @@
+---
+import type { ImageOutputFormat } from "astro";
+import { getImage, type ImgAttributes } from "astro:assets";
+type Simplify<T> = { [KeyType in keyof T]: T[KeyType] } & {};
+type PropEx<T> = T & {
+    src: ImageMetadata;
+    alt: string;
+    format?: ImageOutputFormat;
+    sets: number[];
+};
+type Props = Simplify<PropEx<ImgAttributes>>;
+
+async function generateResponsiveImage({
+    src,
+    format,
+    sets,
+}: Omit<Props, "alt">) {
+    const imgSrcSet = sets.map(async (size) => {
+        const image = await getImage({ src, width: size, format });
+        return `${image.src} ${size}w`;
+    });
+
+    const imgSrc = await getImage({ src, width: src.width, format });
+
+    return {
+        srcSet: await Promise.all(imgSrcSet),
+        imgSrc: imgSrc.src,
+    };
+}
+
+const props = Astro.props;
+const image = await getImage(props);
+const { src, sets, format } = props;
+
+const { srcSet, imgSrc } = await generateResponsiveImage({
+    src,
+    sets,
+    format,
+});
+delete image.attributes.sets;
+---
+
+<link
+    rel="preload"
+    as="image"
+    href={imgSrc}
+    imagesrcset={srcSet.join(", ")}
+    imagesizes={props.sizes}
+/>
