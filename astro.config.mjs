@@ -69,7 +69,7 @@ export default defineConfig({
         forward: [
           "dataLayer.push",
           "gtag",
-          ["ym", { preserveBehavior: false }],
+          "ym",
           "fbq"],
       },
     }),
