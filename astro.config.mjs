@@ -66,7 +66,11 @@ export default defineConfig({
     solidJs(),
     partytown({
       config: {
-        forward: ["dataLayer.push", "gtag", "ym", "ym.a", "fbq"],
+        forward: [
+          "dataLayer.push",
+          "gtag",
+          ["ym", { preserveBehavior: true }],
+          "fbq"],
       },
     }),
   ],
