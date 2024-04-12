@@ -66,7 +66,7 @@ export default defineConfig({
     solidJs(),
     partytown({
       config: {
-        forward: ["dataLayer.push", "ym", "Ya", "yaCounter97006990", "fbq"],
+        forward: ["dataLayer.push", "ym", "ym.l", "ym.a", "Ya", "Ya.Metrika2", "Ya._metrika", "yaCounter97006990", "fbq"],
       },
     }),
   ],
